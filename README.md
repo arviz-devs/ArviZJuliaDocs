@@ -1,0 +1,5 @@
+# ArviZJuliaDocs
+
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://arviz-devs.github.io/ArviZJuliaDocs.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://arviz-devs.github.io/ArviZJuliaDocs.jl/dev/)
+[![Build Status](https://github.com/arviz-devs/ArviZJuliaDocs.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/arviz-devs/ArviZJuliaDocs.jl/actions/workflows/CI.yml?query=branch%3Amain)

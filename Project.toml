@@ -1,0 +1,13 @@
+name = "ArviZJuliaDocs"
+uuid = "986d1b91-5607-41de-a492-41cbc96924c3"
+authors = ["Seth Axen <seth@sethaxen.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
