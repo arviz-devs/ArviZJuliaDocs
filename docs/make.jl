@@ -9,28 +9,23 @@ docs = [
         name="ArviZ",
         giturl="https://github.com/arviz-devs/ArviZ.jl.git",
     ),
-    MultiDocumenter.DropdownNav(
-        "Components",
-        [
-            MultiDocumenter.MultiDocRef(;
-                upstream=joinpath(clonedir, "InferenceObjects"),
-                path="InferenceObjects",
-                name="InferenceObjects",
-                giturl="https://github.com/arviz-devs/InferenceObjects.jl.git",
-            ),
-            MultiDocumenter.MultiDocRef(;
-                upstream=joinpath(clonedir, "ArviZExampleData"),
-                path="ArviZExampleData",
-                name="ArviZExampleData",
-                giturl="https://github.com/arviz-devs/ArviZExampleData.jl.git",
-            ),
-            MultiDocumenter.MultiDocRef(;
-                upstream=joinpath(clonedir, "PSIS"),
-                path="PSIS",
-                name="PSIS",
-                giturl="https://github.com/arviz-devs/PSIS.jl.git",
-            ),
-        ],
+    MultiDocumenter.MultiDocRef(;
+        upstream=joinpath(clonedir, "InferenceObjects"),
+        path="InferenceObjects",
+        name="InferenceObjects",
+        giturl="https://github.com/arviz-devs/InferenceObjects.jl.git",
+    ),
+    MultiDocumenter.MultiDocRef(;
+        upstream=joinpath(clonedir, "ArviZExampleData"),
+        path="ArviZExampleData",
+        name="ArviZExampleData",
+        giturl="https://github.com/arviz-devs/ArviZExampleData.jl.git",
+    ),
+    MultiDocumenter.MultiDocRef(;
+        upstream=joinpath(clonedir, "PSIS"),
+        path="PSIS",
+        name="PSIS",
+        giturl="https://github.com/arviz-devs/PSIS.jl.git",
     ),
 ]
 
