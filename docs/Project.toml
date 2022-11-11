@@ -1,3 +1,2 @@
 [deps]
-ArviZJuliaDocs = "986d1b91-5607-41de-a492-41cbc96924c3"
-Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+MultiDocumenter = "87ed4bf0-c935-4a67-83c3-2a03bee4197c"
