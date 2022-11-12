@@ -28,7 +28,7 @@ MultiDocumenter.make(
     search_engine=MultiDocumenter.SearchConfig(;
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
-    brand_image=MultiDocumenter.BrandImage("/", joinpath("assets", "logo.png")),
+    brand_image=MultiDocumenter.BrandImage(".", joinpath("assets", "logo.png")),
 )
 
 # remove any CNAME files
