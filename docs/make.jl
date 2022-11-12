@@ -28,7 +28,7 @@ MultiDocumenter.make(
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
     brand_image=MultiDocumenter.BrandImage(
-        "/", "https://www.arviz.org/en/latest/_static/ArviZ_fav.png"
+        "https://www.arviz.org", "en/latest/_static/ArviZ_fav.png"
     ),
 )
 
