@@ -31,11 +31,6 @@ MultiDocumenter.make(
     brand_image=MultiDocumenter.BrandImage(".", joinpath("assets", "logo.png")),
 )
 
-# remove any CNAME files
-for pkg_name in vcat(packages, packages_experimental)
-    rm(joinpath(outpath, pkg_name, "CNAME"); force=true)
-end
-
 # download logo
 assets_dir = joinpath(outpath, "assets")
 mkpath(assets_dir)
