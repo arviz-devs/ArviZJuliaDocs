@@ -27,6 +27,9 @@ MultiDocumenter.make(
     search_engine=MultiDocumenter.SearchConfig(;
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
+    brand_image=MultiDocumenter.BrandImage(
+        "/", "https://www.arviz.org/en/latest/_static/ArviZ_fav.png"
+    ),
 )
 
 gitroot = normpath(joinpath(@__DIR__, ".."))
