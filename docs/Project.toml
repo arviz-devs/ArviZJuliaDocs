@@ -1,0 +1,4 @@
+[deps]
+ArviZJuliaDocs = "986d1b91-5607-41de-a492-41cbc96924c3"
+ModuleInfo = "3c3ff5e7-c68c-4a09-80d1-9526a1e9878a"
+Pollen = "c88717ad-5130-4874-a664-5a9aba5ec443"
