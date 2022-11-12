@@ -32,6 +32,9 @@ MultiDocumenter.make(
     ),
 )
 
+# remove ArivZ.jl's CMAKE file
+isfile(joinpath(outpath, "CMAKE")) && rm(joinpath(outpath, "CMAKE"))
+
 gitroot = normpath(joinpath(@__DIR__, ".."))
 run(`git pull`)
 outbranch = "gh-pages"
