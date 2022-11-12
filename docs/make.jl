@@ -4,16 +4,16 @@ clonedir = mktempdir()
 
 docs = [
     MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, "ArviZ"),
-        path="ArviZ",
-        name="ArviZ",
-        giturl="https://github.com/arviz-devs/ArviZ.jl.git",
-    ),
-    MultiDocumenter.MultiDocRef(;
         upstream=joinpath(clonedir, "InferenceObjects"),
         path="InferenceObjects",
         name="InferenceObjects",
         giturl="https://github.com/arviz-devs/InferenceObjects.jl.git",
+    ),
+    MultiDocumenter.MultiDocRef(;
+        upstream=joinpath(clonedir, "ArviZ"),
+        path="ArviZ",
+        name="ArviZ",
+        giturl="https://github.com/arviz-devs/ArviZ.jl.git",
     ),
     MultiDocumenter.MultiDocRef(;
         upstream=joinpath(clonedir, "ArviZExampleData"),
