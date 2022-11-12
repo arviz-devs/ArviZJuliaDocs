@@ -2,31 +2,21 @@ using MultiDocumenter
 
 clonedir = mktempdir()
 
+packages = ["ArviZ", "InferenceObjects", "ArviZExampleData", "PSIS"]
+packages_experimental = ["ArviZGen", "ArviZPlots"]
+
+function multi_doc_ref(pkg_name, org="arviz-devs")
+    return MultiDocumenter.MultiDocRef(;
+        upstream=joinpath(clonedir, pkg_name),
+        path=pkg_name,
+        name=pkg_name,
+        giturl="https://github.com/$(org)/$(pkg_name).jl.git",
+    )
+end
+
 docs = [
-    MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, "ArviZ"),
-        path="ArviZ",
-        name="ArviZ",
-        giturl="https://github.com/arviz-devs/ArviZ.jl.git",
-    ),
-    MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, "InferenceObjects"),
-        path="InferenceObjects",
-        name="InferenceObjects",
-        giturl="https://github.com/arviz-devs/InferenceObjects.jl.git",
-    ),
-    MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, "ArviZExampleData"),
-        path="ArviZExampleData",
-        name="ArviZExampleData",
-        giturl="https://github.com/arviz-devs/ArviZExampleData.jl.git",
-    ),
-    MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, "PSIS"),
-        path="PSIS",
-        name="PSIS",
-        giturl="https://github.com/arviz-devs/PSIS.jl.git",
-    ),
+    map(multi_doc_ref, packages)...,
+    MultiDocumenter.DropdownNav("Experimental", map(multi_doc_ref, packages_experimental)),
 ]
 
 outpath = mktempdir()
