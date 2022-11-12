@@ -32,8 +32,10 @@ MultiDocumenter.make(
     ),
 )
 
-# remove ArivZ.jl's CMAKE file
-isfile(joinpath(outpath, "CMAKE")) && rm(joinpath(outpath, "CMAKE"))
+# remove any CNAME files
+for pkg_name in vcat(packages, packages_experimental)
+    rm(joinpath(outpath, pkg_name, "CNAME"); force=true)
+end
 
 gitroot = normpath(joinpath(@__DIR__, ".."))
 run(`git pull`)
