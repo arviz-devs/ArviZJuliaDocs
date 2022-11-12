@@ -3,7 +3,7 @@ using MultiDocumenter
 clonedir = mktempdir()
 
 packages = ["ArviZ", "InferenceObjects", "ArviZExampleData", "PSIS"]
-packages_experimental = ["ArviZGen", "ArviZPlots"]
+packages_experimental = [#="ArviZGen",=# "ArviZPlots"]
 
 function multi_doc_ref(pkg_name, org="arviz-devs")
     return MultiDocumenter.MultiDocRef(;
