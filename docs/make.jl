@@ -1,3 +1,4 @@
+using Downloads
 using MultiDocumenter
 
 clonedir = mktempdir()
@@ -27,15 +28,22 @@ MultiDocumenter.make(
     search_engine=MultiDocumenter.SearchConfig(;
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
-    brand_image=MultiDocumenter.BrandImage(
-        "https://www.arviz.org", "en/latest/_static/ArviZ_fav.png"
-    ),
+    brand_image=MultiDocumenter.BrandImage("/", joinpath("assets", "logo.png")),
 )
 
 # remove any CNAME files
 for pkg_name in vcat(packages, packages_experimental)
     rm(joinpath(outpath, pkg_name, "CNAME"); force=true)
 end
+
+# download logo
+assets_dir = joinpath(outpath, "assets")
+mkpath(assets_dir)
+Downloads.download(
+    "https://raw.githubusercontent.com/arviz-devs/arviz-project/main/arviz_logos/ArviZ_fav.png",
+    joinpath(assets_dir, "logo.png");
+    verbose=true,
+)
 
 gitroot = normpath(joinpath(@__DIR__, ".."))
 run(`git pull`)
