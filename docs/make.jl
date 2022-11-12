@@ -1,72 +1,30 @@
-using Downloads
-using MultiDocumenter
+"""
+This script builds the Pollen.jl documentation so that it can be loaded
+by the frontend. It accepts one argument: the path where the generated
+files should be stored.
 
-clonedir = mktempdir()
+    > julia docs/make.jl DIR TAG
 
-packages = ["ArviZ", "InferenceObjects", "ArviZExampleData", "PSIS"]
-packages_experimental = [#="ArviZGen",=# "ArviZPlots"]
+Use `./serve.jl` for interactive development.
+"""
 
-function multi_doc_ref(pkg_name, org="arviz-devs")
-    return MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, pkg_name),
-        path=pkg_name,
-        name=pkg_name,
-        giturl="https://github.com/$(org)/$(pkg_name).jl.git",
-    )
-end
+# Create target folder
+length(ARGS) != 2 && error("Please pass a file path and a version tag to make.jl:\n\t> julia docs/make.jl \$DIR \$TAG ")
+DIR = abspath(mkpath(ARGS[1]))
+TAG = ARGS[2]
 
-docs = [
-    map(multi_doc_ref, packages)...,
-    MultiDocumenter.DropdownNav("Experimental", map(multi_doc_ref, packages_experimental)),
-]
+# Create Project
+createproject = include("project.jl")
+project = createproject(tag = TAG)
 
-outpath = mktempdir()
+@info "Rewriting documents..."
+Pollen.rewritesources!(project)
 
-MultiDocumenter.make(
-    outpath,
-    docs;
-    search_engine=MultiDocumenter.SearchConfig(;
-        index_versions=["stable"], engine=MultiDocumenter.FlexSearch
+@info "Writing to disk at \"$DIR\"..."
+Pollen.build(
+    FileBuilder(
+        JSONFormat(),
+        DIR,
     ),
-    brand_image=MultiDocumenter.BrandImage(".", joinpath("assets", "logo.png")),
+    project,
 )
-
-# download logo
-assets_dir = joinpath(outpath, "assets")
-mkpath(assets_dir)
-Downloads.download(
-    "https://raw.githubusercontent.com/arviz-devs/arviz-project/main/arviz_logos/ArviZ_fav.png",
-    joinpath(assets_dir, "logo.png");
-    verbose=true,
-)
-
-gitroot = normpath(joinpath(@__DIR__, ".."))
-run(`git pull`)
-outbranch = "gh-pages"
-has_outbranch = true
-if !success(`git checkout $outbranch`)
-    has_outbranch = false
-    if !success(`git switch --orphan $outbranch`)
-        @error "Cannot create new orphaned branch $outbranch."
-        exit(1)
-    end
-end
-for file in readdir(gitroot; join=true)
-    endswith(file, ".git") && continue
-    rm(file; force=true, recursive=true)
-end
-for file in readdir(outpath)
-    cp(joinpath(outpath, file), joinpath(gitroot, file))
-end
-run(`git add .`)
-if success(`git commit -m 'Aggregate documentation'`)
-    @info "Pushing updated documentation."
-    if has_outbranch
-        run(`git push`)
-    else
-        run(`git push -u origin $outbranch`)
-    end
-    run(`git checkout main`)
-else
-    @info "No changes to aggregated documentation."
-end
