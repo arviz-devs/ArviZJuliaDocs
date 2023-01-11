@@ -3,8 +3,17 @@ using MultiDocumenter
 
 clonedir = mktempdir()
 
-packages = ["ArviZ", "InferenceObjects", "ArviZExampleData", "PSIS"]
-packages_experimental = [#="ArviZGen",=# "ArviZPlots"]
+packages = [
+    ("ArviZ", "arviz-devs"),
+    ("InferenceObjects", "arviz-devs"),
+    ("ArviZExampleData", "arviz-devs"),
+    ("PSIS", "arviz-devs"),
+    ("MCMCDiagnosticTools", "TuringLang"),
+]
+packages_experimental = [
+    # ("ArviZGen", "arviz-devs"),
+    ("ArviZPlots", "arviz-devs"),
+]
 
 function multi_doc_ref(pkg_name, org="arviz-devs")
     return MultiDocumenter.MultiDocRef(;
@@ -16,8 +25,8 @@ function multi_doc_ref(pkg_name, org="arviz-devs")
 end
 
 docs = [
-    map(multi_doc_ref, packages)...,
-    MultiDocumenter.DropdownNav("Experimental", map(multi_doc_ref, packages_experimental)),
+    map(Base.splat(multi_doc_ref), packages)...,
+    MultiDocumenter.DropdownNav("Experimental", map(Base.splat(multi_doc_ref), packages_experimental)),
 ]
 
 outpath = mktempdir()
