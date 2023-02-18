@@ -1,7 +1,50 @@
 using Downloads
 using MultiDocumenter
 
-clonedir = mktempdir()
+function multi_doc_ref(pkg_name, org="arviz-devs")
+    return MultiDocumenter.MultiDocRef(;
+        upstream=joinpath(clone_dir, pkg_name),
+        path=pkg_name,
+        name=pkg_name,
+        giturl="https://github.com/$(org)/$(pkg_name).jl.git",
+    )
+end
+
+function deploy_to_ghpages(git_root, out_dir)
+    run(`git pull`)
+    out_branch = "gh-pages"
+    has_out_branch = true
+    if !success(`git checkout $out_branch`)
+        has_out_branch = false
+        if !success(`git switch --orphan $out_branch`)
+            @error "Cannot create new orphaned branch $out_branch."
+            exit(1)
+        end
+    end
+    for file in readdir(git_root; join=true)
+        endswith(file, ".git") && continue
+        rm(file; force=true, recursive=true)
+    end
+    for file in readdir(out_dir)
+        cp(joinpath(out_dir, file), joinpath(git_root, file))
+    end
+    run(`git add .`)
+    if success(`git commit -m 'Aggregate documentation'`)
+        @info "Pushing updated documentation."
+        if has_out_branch
+            run(`git push`)
+        else
+            run(`git push -u origin $out_branch`)
+        end
+        run(`git checkout main`)
+    else
+        @info "No changes to aggregated documentation."
+    end
+    return nothing
+end
+
+clone_dir = mktempdir(; cleanup=false)
+out_dir = mktempdir(; cleanup=false)
 
 packages = [
     ("ArviZ", "arviz-devs"),
@@ -16,15 +59,6 @@ packages_experimental = [
 ]
 packages_third_party = [("DimensionalData", "rafaqz")]
 
-function multi_doc_ref(pkg_name, org="arviz-devs")
-    return MultiDocumenter.MultiDocRef(;
-        upstream=joinpath(clonedir, pkg_name),
-        path=pkg_name,
-        name=pkg_name,
-        giturl="https://github.com/$(org)/$(pkg_name).jl.git",
-    )
-end
-
 docs = [
     map(Base.splat(multi_doc_ref), packages)...,
     MultiDocumenter.DropdownNav(
@@ -35,10 +69,8 @@ docs = [
     ),
 ]
 
-outpath = mktempdir()
-
 MultiDocumenter.make(
-    outpath,
+    out_dir,
     docs;
     search_engine=MultiDocumenter.SearchConfig(;
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
@@ -47,7 +79,7 @@ MultiDocumenter.make(
 )
 
 # download logo
-assets_dir = joinpath(outpath, "assets")
+assets_dir = joinpath(out_dir, "assets")
 mkpath(assets_dir)
 Downloads.download(
     "https://raw.githubusercontent.com/arviz-devs/arviz-project/main/arviz_logos/ArviZ_fav.png",
@@ -55,33 +87,6 @@ Downloads.download(
     verbose=true,
 )
 
-gitroot = normpath(joinpath(@__DIR__, ".."))
-run(`git pull`)
-outbranch = "gh-pages"
-has_outbranch = true
-if !success(`git checkout $outbranch`)
-    has_outbranch = false
-    if !success(`git switch --orphan $outbranch`)
-        @error "Cannot create new orphaned branch $outbranch."
-        exit(1)
-    end
-end
-for file in readdir(gitroot; join=true)
-    endswith(file, ".git") && continue
-    rm(file; force=true, recursive=true)
-end
-for file in readdir(outpath)
-    cp(joinpath(outpath, file), joinpath(gitroot, file))
-end
-run(`git add .`)
-if success(`git commit -m 'Aggregate documentation'`)
-    @info "Pushing updated documentation."
-    if has_outbranch
-        run(`git push`)
-    else
-        run(`git push -u origin $outbranch`)
-    end
-    run(`git checkout main`)
-else
-    @info "No changes to aggregated documentation."
-end
+# deploy to GitHub Pages
+git_root = normpath(joinpath(@__DIR__, ".."))
+deploy_to_ghpages(git_root, out_dir)

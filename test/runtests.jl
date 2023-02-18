@@ -1,5 +1,4 @@
 using ArviZJuliaDocs
 using Test
 
-@testset "ArviZJuliaDocs.jl" begin
-end
+@testset "ArviZJuliaDocs.jl" begin end
