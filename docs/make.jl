@@ -26,7 +26,9 @@ end
 
 docs = [
     map(Base.splat(multi_doc_ref), packages)...,
-    MultiDocumenter.DropdownNav("Experimental", map(Base.splat(multi_doc_ref), packages_experimental)),
+    MultiDocumenter.DropdownNav(
+        "Experimental", map(Base.splat(multi_doc_ref), packages_experimental)
+    ),
 ]
 
 outpath = mktempdir()
