@@ -14,6 +14,7 @@ packages_experimental = [
     # ("ArviZGen", "arviz-devs"),
     ("ArviZPlots", "arviz-devs"),
 ]
+packages_third_party = [("DimensionalData", "rafaqz")]
 
 function multi_doc_ref(pkg_name, org="arviz-devs")
     return MultiDocumenter.MultiDocRef(;
@@ -28,6 +29,9 @@ docs = [
     map(Base.splat(multi_doc_ref), packages)...,
     MultiDocumenter.DropdownNav(
         "Experimental", map(Base.splat(multi_doc_ref), packages_experimental)
+    ),
+    MultiDocumenter.DropdownNav(
+        "Third-party", map(Base.splat(multi_doc_ref), packages_third_party)
     ),
 ]
 
