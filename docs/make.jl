@@ -1,12 +1,18 @@
 using Downloads
 using MultiDocumenter
 
-function multi_doc_ref(pkg_name, org="arviz-devs")
+function multi_doc_ref(pkg_name::String, org::String, tag=nothing)
+    name = pkg_name * (tag === nothing ? "" : " ($tag)")
     return MultiDocumenter.MultiDocRef(;
         upstream=joinpath(clone_dir, pkg_name),
         path=pkg_name,
-        name=pkg_name,
+        name=name,
         giturl="https://github.com/$(org)/$(pkg_name).jl.git",
+    )
+end
+function multi_doc_ref(section_name::String, packages::Vector)
+    return MultiDocumenter.DropdownNav(
+        section_name, map(Base.splat(multi_doc_ref), packages)
     )
 end
 
@@ -48,30 +54,20 @@ out_dir = mktempdir(; cleanup=false)
 
 packages = [
     ("ArviZ", "arviz-devs"),
-    ("InferenceObjects", "arviz-devs"),
-    ("ArviZExampleData", "arviz-devs"),
-    ("PSIS", "arviz-devs"),
-    ("MCMCDiagnosticTools", "TuringLang"),
-]
-packages_experimental = [
-    # ("ArviZGen", "arviz-devs"),
-    ("ArviZPlots", "arviz-devs"),
-]
-packages_third_party = [("DimensionalData", "rafaqz")]
-
-docs = [
-    map(Base.splat(multi_doc_ref), packages)...,
-    MultiDocumenter.DropdownNav(
-        "Experimental", map(Base.splat(multi_doc_ref), packages_experimental)
-    ),
-    MultiDocumenter.DropdownNav(
-        "Third-party", map(Base.splat(multi_doc_ref), packages_third_party)
-    ),
+    "Plots" => [("ArviZPlots", "arviz-devs", "experimental")],
+    "Stats" => [("PSIS", "arviz-devs")],
+    "Diagnostics" => [("MCMCDiagnosticTools", "TuringLang")],
+    "Data" => [
+        ("InferenceObjects", "arviz-devs"),
+        ("ArviZExampleData", "arviz-devs"),
+        ("DimensionalData", "rafaqz", "third-party"),
+        # ("ArviZGen", "arviz-devs", "experimental"),
+    ],
 ]
 
 MultiDocumenter.make(
     out_dir,
-    docs;
+    map(Base.splat(multi_doc_ref), packages);
     search_engine=MultiDocumenter.SearchConfig(;
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
