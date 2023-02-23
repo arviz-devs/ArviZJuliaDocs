@@ -69,23 +69,6 @@ docs = [
     ),
 ]
 
-# TODO: Remove if MultiDocumenter.jl ever ends up supporting non-root hosting.
-# Related issue: https://github.com/JuliaComputing/MultiDocumenter.jl/issues/36
-# HACK: Make search work properly.
-# adapted from https://github.com/TuringLang/turinglang.github.io/pull/46
-multidoc_path = "ArviZJuliaDocs"
-
-function MultiDocumenter.FlexSearch.generate_index(root, docs, config)
-    search_index = MultiDocumenter.FlexSearch.SearchIndex()
-    MultiDocumenter.FlexSearch.walk_outputs(root, docs, config.index_versions) do path, file
-        MultiDocumenter.FlexSearch.add_to_index!(
-            search_index, "/$(multidoc_path)" * path, file
-        )
-    end
-
-    return search_index
-end
-
 MultiDocumenter.make(
     out_dir,
     docs;
@@ -97,25 +80,13 @@ MultiDocumenter.make(
 
 # download logo
 assets_dir = joinpath(out_dir, "assets")
+mkpath(assets_dir)
 Downloads.download(
     "https://raw.githubusercontent.com/arviz-devs/arviz-project/main/arviz_logos/ArviZ_fav.png",
     joinpath(assets_dir, "logo.png");
     verbose=true,
 )
 
-# HACK: Make search work properly.
-# adapted from https://github.com/TuringLang/turinglang.github.io/pull/46
-flexsearch_path = joinpath(assets_dir, "default", "flexsearch_integration.js")
-run(`chmod a+rw $(flexsearch_path)`)
-write(
-    flexsearch_path,
-    replace(
-        read(flexsearch_path, String), "/search-data/" => "/$(multidoc_path)/search-data/"
-    ),
-)
-
 # deploy to GitHub Pages
-if haskey(ENV, "GITHUB_ACTIONS")
-    git_root = normpath(joinpath(@__DIR__, ".."))
-    deploy_to_ghpages(git_root, out_dir)
-end
+git_root = normpath(joinpath(@__DIR__, ".."))
+deploy_to_ghpages(git_root, out_dir)
