@@ -22,7 +22,7 @@ function deploy_to_ghpages(git_root, out_dir)
         end
     end
     for file in readdir(git_root; join=true)
-        endswith(file, ".git") && continue
+        (endswith(file, ".git") || (basename(file) == "CNAME")) && continue
         rm(file; force=true, recursive=true)
     end
     for file in readdir(out_dir)
