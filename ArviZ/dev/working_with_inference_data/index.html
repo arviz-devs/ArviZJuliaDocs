@@ -251,21 +251,19 @@ with metadata Dict{String, Any} with 6 entries:
   "inference_library"         =&gt; "pymc"</code></pre><h2 id="Obtain-an-array-for-a-given-parameter"><a class="docs-heading-anchor" href="#Obtain-an-array-for-a-given-parameter">Obtain an array for a given parameter</a><a id="Obtain-an-array-for-a-given-parameter-1"></a><a class="docs-heading-anchor-permalink" href="#Obtain-an-array-for-a-given-parameter" title="Permalink"></a></h2><p>Let’s say we want to get the values for <code>mu</code> as an array. Parameters can be accessed with either property or index syntax.</p><pre><code class="language-julia hljs">post.tau</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">500×4 DimArray{Float64,2} tau with dimensions: 
   Dim{:draw} Sampled{Int64} Int64[0, 1, …, 498, 499] ForwardOrdered Irregular Points,
   Dim{:chain} Sampled{Int64} Int64[0, 1, 2, 3] ForwardOrdered Irregular Points
-      0         1         2        3
-   0  4.72574   1.97083   3.50128  6.07326
-   1  3.90899   2.04903   2.89324  3.77187
-   2  4.84403   2.12376   4.27329  3.17054
-   3  1.8567    3.39183  11.8965   6.00193
-   4  4.74841   4.84368   7.11325  3.28632
-   5  3.51387  10.8872    7.18892  2.16314
-   ⋮                               
- 493  5.97049   1.67101   5.19169  8.23756
- 494  8.15827   1.61268   4.96249  3.13966
- 495  7.56498   1.61268   3.56495  2.78607
- 496  2.24702   1.84816   2.55959  4.28196
- 497  1.89384   2.17459   4.08978  2.74061
- 498  5.92006   1.32755   2.72017  2.93238
- 499  4.3259    1.21199   1.91701  4.46125</code></pre><pre><code class="language-julia hljs">post[:tau] === post.tau</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">true</code></pre><p>To remove the dimensions, just use <code>parent</code> to retrieve the underlying array.</p><pre><code class="language-julia hljs">parent(post.tau)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">500×4 Matrix{Float64}:
+      0        1         2        3
+   0  4.72574  1.97083   3.50128  6.07326
+   1  3.90899  2.04903   2.89324  3.77187
+   2  4.84403  2.12376   4.27329  3.17054
+   3  1.8567   3.39183  11.8965   6.00193
+   4  4.74841  4.84368   7.11325  3.28632
+   ⋮                              
+ 494  8.15827  1.61268   4.96249  3.13966
+ 495  7.56498  1.61268   3.56495  2.78607
+ 496  2.24702  1.84816   2.55959  4.28196
+ 497  1.89384  2.17459   4.08978  2.74061
+ 498  5.92006  1.32755   2.72017  2.93238
+ 499  4.3259   1.21199   1.91701  4.46125</code></pre><pre><code class="language-julia hljs">post[:tau] === post.tau</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">true</code></pre><p>To remove the dimensions, just use <code>parent</code> to retrieve the underlying array.</p><pre><code class="language-julia hljs">parent(post.tau)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">500×4 Matrix{Float64}:
  4.72574   1.97083   3.50128  6.07326
  3.90899   2.04903   2.89324  3.77187
  4.84403   2.12376   4.27329  3.17054
@@ -792,10 +790,10 @@ with metadata Dict{String, Any} with 4 entries:
   "Mt. Hermon"          0.219695        0.222054       NaN</code></pre><h2 id="Advanced-subsetting"><a class="docs-heading-anchor" href="#Advanced-subsetting">Advanced subsetting</a><a id="Advanced-subsetting-1"></a><a class="docs-heading-anchor-permalink" href="#Advanced-subsetting" title="Permalink"></a></h2><p>To select the value corresponding to the difference between the Choate and Deerfield schools do:</p><pre><code class="language-julia hljs">school_idx = ["Choate", "Hotchkiss", "Mt. Hermon"]
 school_bis_idx = ["Deerfield", "Choate", "Lawrenceville"]
 theta_school_diff[school=At(school_idx), school_bis=At(school_bis_idx)]</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">3×500×4×3 DimArray{Float64,4} theta with dimensions: 
-  Dim{:school} Categorical{String} String[Choate, Hotchkiss, Mt. Hermon] Unordered,
+  Dim{:school} Categorical{String} String["Choate", "Hotchkiss", "Mt. Hermon"] Unordered,
   Dim{:draw} Sampled{Int64} Int64[0, 1, …, 498, 499] ForwardOrdered Irregular Points,
   Dim{:chain} Sampled{Int64} Int64[0, 1, 2, 3] ForwardOrdered Irregular Points,
-  Dim{:school_bis} Categorical{String} String[Deerfield, Choate, Lawrenceville] Unordered
+  Dim{:school_bis} Categorical{String} String["Deerfield", "Choate", "Lawrenceville"] Unordered
 [:, :, 1, 1]
                  0         1        …  497        498         499
   "Choate"       2.41532   2.1563       -1.56898    3.49509    -0.752459
@@ -831,4 +829,4 @@ with metadata Dict{String, Any} with 6 entries:
   "sampling_time" =&gt; 7.48011
   "tuning_steps" =&gt; 1000
   "arviz_version" =&gt; "0.13.0.dev0"
-  "inference_library" =&gt; "pymc"</code></pre></details></div></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Friday 3 March 2023 20:47">Friday 3 March 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+  "inference_library" =&gt; "pymc"</code></pre></details></div></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Saturday 24 June 2023 08:23">Saturday 24 June 2023</span>. Using Julia version 1.9.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>

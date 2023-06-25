@@ -95,13 +95,13 @@ julia&gt; idata_cat1.posterior
 Dataset with dimensions:
   Dim{:draw},
   Dim{:chain},
-  Dim{:a_dim} Categorical{String} String[x, y, z] ForwardOrdered
+  Dim{:a_dim} Categorical{String} String["x", "y", "z"] ForwardOrdered
 and 2 layers:
   :a Float64 dims: Dim{:draw}, Dim{:chain}, Dim{:a_dim} (100×8×3)
   :b Float64 dims: Dim{:draw}, Dim{:chain} (100×8)
 
 with metadata Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2023-02-17T18:47:29.679"</code></pre><p>Alternatively, we can concatenate along a new <code>run</code> dimension, which will be created.</p><pre><code class="language-julia-repl hljs">julia&gt; idata_cat2 = cat(idata, idata; dims=:run)
+  "created_at" =&gt; "2023-04-03T18:41:35.779"</code></pre><p>Alternatively, we can concatenate along a new <code>run</code> dimension, which will be created.</p><pre><code class="language-julia-repl hljs">julia&gt; idata_cat2 = cat(idata, idata; dims=:run)
 InferenceData with groups:
   &gt; posterior
 
@@ -109,14 +109,14 @@ julia&gt; idata_cat2.posterior
 Dataset with dimensions:
   Dim{:draw},
   Dim{:chain},
-  Dim{:a_dim} Categorical{String} String[x, y, z] ForwardOrdered,
+  Dim{:a_dim} Categorical{String} String["x", "y", "z"] ForwardOrdered,
   Dim{:run}
 and 2 layers:
   :a Float64 dims: Dim{:draw}, Dim{:chain}, Dim{:a_dim}, Dim{:run} (100×4×3×2)
   :b Float64 dims: Dim{:draw}, Dim{:chain}, Dim{:run} (100×4×2)
 
 with metadata Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2023-02-17T18:47:29.679"</code></pre><p>We can also concatenate only a subset of groups and merge the rest, which is useful when some groups are present only in some of the <code>InferenceData</code> objects or will be identical in all of them:</p><pre><code class="language-julia-repl hljs">julia&gt; observed_data = Dict(:y =&gt; randn(10));
+  "created_at" =&gt; "2023-04-03T18:41:35.779"</code></pre><p>We can also concatenate only a subset of groups and merge the rest, which is useful when some groups are present only in some of the <code>InferenceData</code> objects or will be identical in all of them:</p><pre><code class="language-julia-repl hljs">julia&gt; observed_data = Dict(:y =&gt; randn(10));
 
 julia&gt; idata2 = from_dict(data; observed_data=observed_data, coords=coords, dims=dims)
 InferenceData with groups:
@@ -132,14 +132,14 @@ julia&gt; idata_cat3.posterior
 Dataset with dimensions:
   Dim{:draw},
   Dim{:chain},
-  Dim{:a_dim} Categorical{String} String[x, y, z] ForwardOrdered,
+  Dim{:a_dim} Categorical{String} String["x", "y", "z"] ForwardOrdered,
   Dim{:run}
 and 2 layers:
   :a Float64 dims: Dim{:draw}, Dim{:chain}, Dim{:a_dim}, Dim{:run} (100×4×3×2)
   :b Float64 dims: Dim{:draw}, Dim{:chain}, Dim{:run} (100×4×2)
 
 with metadata Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2023-02-17T18:47:29.679"
+  "created_at" =&gt; "2023-04-03T18:41:35.779"
 
 julia&gt; idata_cat3.observed_data
 Dataset with dimensions: Dim{:y_dim_1}
@@ -158,4 +158,4 @@ InferenceData with groups:
 julia&gt; idata_merged = merge(idata1, idata2)
 InferenceData with groups:
   &gt; posterior
-  &gt; prior</code></pre></div></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../data/">« Data</a><a class="docs-footer-nextpage" href="../dataset/">Dataset »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Friday 3 March 2023 20:47">Friday 3 March 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+  &gt; prior</code></pre></div></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../data/">« Data</a><a class="docs-footer-nextpage" href="../dataset/">Dataset »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Saturday 24 June 2023 08:23">Saturday 24 June 2023</span>. Using Julia version 1.9.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
