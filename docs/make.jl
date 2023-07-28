@@ -54,7 +54,10 @@ out_dir = mktempdir(; cleanup=false)
 
 packages = [
     ("ArviZ", "arviz-devs"),
-    "Plots" => [("ArviZPlots", "arviz-devs", "experimental")],
+    "Plots" => [
+        ("ArviZPythonPlots", "arviz-devs"),
+        ("ArviZPlots", "arviz-devs", "experimental"),
+    ],
     "Stats" => [("PSIS", "arviz-devs")],
     "Diagnostics" => [("MCMCDiagnosticTools", "TuringLang")],
     "Data" => [
