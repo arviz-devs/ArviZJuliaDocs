@@ -58,7 +58,7 @@ packages = [
         ("ArviZPythonPlots", "arviz-devs", "unregistered"),
         ("ArviZPlots", "arviz-devs", "experimental"),
     ],
-    "Stats" => [("PosteriorStats", "arviz-devs", "unregistered"), ("PSIS", "arviz-devs")],
+    "Stats" => [("PosteriorStats", "arviz-devs"), ("PSIS", "arviz-devs")],
     "Diagnostics" => [("MCMCDiagnosticTools", "TuringLang")],
     "Data" => [
         ("InferenceObjects", "arviz-devs"),
