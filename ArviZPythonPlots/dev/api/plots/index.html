@@ -1,4 +1,4 @@
-<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Plotting functions · ArviZPythonPlots.jl</title><script data-outdated-warner="" src="../../assets/warner.js"></script><link href="stable/api/plots/" rel="canonical"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script data-main="../../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../../assets/themeswap.js"></script><link href="../../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../../.."><img alt="home" src="../../../../assets/logo.png"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link nav-item" href="../../../../ArviZ/">ArviZ</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Plots</button><ul class="nav-dropdown-container"><a class="nav-link active nav-item" href="../../../">ArviZPythonPlots</a><a class="nav-link nav-item" href="../../../../ArviZPlots/dev/">ArviZPlots (unregistered)</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Stats</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../PosteriorStats/">PosteriorStats</a><a class="nav-link nav-item" href="../../../../PSIS/">PSIS</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Diagnostics</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../MCMCDiagnosticTools/">MCMCDiagnosticTools</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Data</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../InferenceObjects/">InferenceObjects</a><a class="nav-link nav-item" href="../../../../ArviZExampleData/">ArviZExampleData</a><a class="nav-link nav-item" href="../../../../DimensionalData/">DimensionalData (third-party)</a></ul></div><div class="search nav-item"><input id="search-input" placeholder="Search..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><form action="../../search/" class="docs-search"><input class="docs-search-query" id="documenter-search-query" name="q" placeholder="Search docs" type="text"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><a class="tocitem" href="../../examples/">Examples gallery</a></li><li><span class="tocitem">API</span><ul><li><a class="tocitem" href="../style/">Plotting styles</a></li><li><a class="tocitem" href="../rcparams/">rcParams</a></li><li class="is-active"><a class="tocitem" href="">Plotting functions</a><ul class="internal"><li><a class="tocitem" href="#Reference"><span>Reference</span></a></li></ul></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">API</a></li><li class="is-active"><a href="">Plotting functions</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Plotting functions</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/main/docs/src/api/plots.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a></div></header><article class="content" id="documenter-page"><h1 id="plots-api"><a class="docs-heading-anchor" href="#plots-api">Plotting functions</a><a id="plots-api-1"></a><a class="docs-heading-anchor-permalink" href="#plots-api" title="Permalink"></a></h1><ul><li><a href="#ArviZPythonPlots.plot_autocorr-Tuple"><code>ArviZPythonPlots.plot_autocorr</code></a></li><li><a href="#ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a></li><li><a href="#ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a></li><li><a href="#ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a></li><li><a href="#ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a></li><li><a href="#ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a></li><li><a href="#ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a></li><li><a href="#ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a></li><li><a href="#ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a></li><li><a href="#ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a></li><li><a href="#ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a></li><li><a href="#ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a></li><li><a href="#ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a></li><li><a href="#ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a></li><li><a href="#ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a></li><li><a href="#ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a></li><li><a href="#ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a></li><li><a href="#ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a></li><li><a href="#ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a></li><li><a href="#ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a></li><li><a href="#ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a></li><li><a href="#ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a></li><li><a href="#ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a></li></ul><h2 id="Reference"><a class="docs-heading-anchor" href="#Reference">Reference</a><a id="Reference-1"></a><a class="docs-heading-anchor-permalink" href="#Reference" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_autocorr-Tuple" id="ArviZPythonPlots.plot_autocorr-Tuple"><code>ArviZPythonPlots.plot_autocorr</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Bar plot of the autocorrelation function (ACF) for a sequence of data.
+<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Plotting functions · ArviZPythonPlots.jl</title><script data-outdated-warner="" src="../../assets/warner.js"></script><link href="stable/api/plots/" rel="canonical"/><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script data-main="../../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../../assets/themeswap.js"></script><link href="../../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../../.."><img alt="home" src="../../../../assets/logo.png"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link nav-item" href="../../../../ArviZ/">ArviZ</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Plots</button><ul class="nav-dropdown-container"><a class="nav-link active nav-item" href="../../../">ArviZPythonPlots</a><a class="nav-link nav-item" href="../../../../ArviZPlots/dev/">ArviZPlots (unregistered)</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Stats</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../PosteriorStats/">PosteriorStats</a><a class="nav-link nav-item" href="../../../../PSIS/">PSIS</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Diagnostics</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../MCMCDiagnosticTools/">MCMCDiagnosticTools</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Data</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../InferenceObjects/">InferenceObjects</a><a class="nav-link nav-item" href="../../../../ArviZExampleData/">ArviZExampleData</a><a class="nav-link nav-item" href="../../../../DimensionalData/">DimensionalData (third-party)</a></ul></div><div class="search nav-item"><input id="search-input" placeholder="Search..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><form action="../../search/" class="docs-search"><input class="docs-search-query" id="documenter-search-query" name="q" placeholder="Search docs" type="text"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><a class="tocitem" href="../../examples/">Examples gallery</a></li><li><span class="tocitem">API</span><ul><li><a class="tocitem" href="../style/">Plotting styles</a></li><li><a class="tocitem" href="../rcparams/">rcParams</a></li><li class="is-active"><a class="tocitem" href="">Plotting functions</a><ul class="internal"><li><a class="tocitem" href="#Reference"><span>Reference</span></a></li></ul></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">API</a></li><li class="is-active"><a href="">Plotting functions</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Plotting functions</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/main/docs/src/api/plots.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a></div></header><article class="content" id="documenter-page"><h1 id="plots-api"><a class="docs-heading-anchor" href="#plots-api">Plotting functions</a><a id="plots-api-1"></a><a class="docs-heading-anchor-permalink" href="#plots-api" title="Permalink"></a></h1><ul><li><a href="#ArviZPythonPlots.plot_autocorr-Tuple"><code>ArviZPythonPlots.plot_autocorr</code></a></li><li><a href="#ArviZPythonPlots.plot_bf-Tuple"><code>ArviZPythonPlots.plot_bf</code></a></li><li><a href="#ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a></li><li><a href="#ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a></li><li><a href="#ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a></li><li><a href="#ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a></li><li><a href="#ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a></li><li><a href="#ArviZPythonPlots.plot_dot-Tuple"><code>ArviZPythonPlots.plot_dot</code></a></li><li><a href="#ArviZPythonPlots.plot_ecdf-Tuple"><code>ArviZPythonPlots.plot_ecdf</code></a></li><li><a href="#ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a></li><li><a href="#ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a></li><li><a href="#ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a></li><li><a href="#ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a></li><li><a href="#ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a></li><li><a href="#ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a></li><li><a href="#ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a></li><li><a href="#ArviZPythonPlots.plot_lm-Tuple"><code>ArviZPythonPlots.plot_lm</code></a></li><li><a href="#ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a></li><li><a href="#ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a></li><li><a href="#ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a></li><li><a href="#ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a></li><li><a href="#ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a></li><li><a href="#ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a></li><li><a href="#ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a></li><li><a href="#ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a></li><li><a href="#ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a></li><li><a href="#ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a></li></ul><h2 id="Reference"><a class="docs-heading-anchor" href="#Reference">Reference</a><a id="Reference-1"></a><a class="docs-heading-anchor-permalink" href="#Reference" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_autocorr-Tuple" id="ArviZPythonPlots.plot_autocorr-Tuple"><code>ArviZPythonPlots.plot_autocorr</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Bar plot of the autocorrelation function (ACF) for a sequence of data.
 
     The ACF plots are helpful as a convergence diagnostic for posteriors from MCMC
     samples which display autocorrelation.
@@ -91,7 +91,76 @@
 
         &gt;&gt;&gt; az.plot_autocorr(data, var_names=['mu', 'tau'], max_lag=200, combined=True)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L1" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_bpv-Tuple" id="ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Bayesian p-value for observed data and Posterior/Prior predictive.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_bf-Tuple" id="ArviZPythonPlots.plot_bf-Tuple"><code>ArviZPythonPlots.plot_bf</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Approximated Bayes Factor for comparing hypothesis of two nested models.
+
+    The Bayes factor is estimated by comparing a model (H1) against a model in which the
+    parameter of interest has been restricted to be a point-null (H0). This computation
+    assumes the models are nested and thus H0 is a special case of H1.
+
+    Notes
+    -----
+    The bayes Factor is approximated pproximated as the Savage-Dickey density ratio
+    algorithm presented in [1]_.
+
+    Parameters
+    -----------
+    idata : InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details.
+    var_name : str, optional
+        Name of variable we want to test.
+    prior : numpy.array, optional
+        In case we want to use different prior, for example for sensitivity analysis.
+    ref_val : int, default 0
+        Point-null for Bayes factor estimation.
+    xlim :  tuple, optional
+        Set the x limits, which might be used for visualization purposes.
+    colors : tuple, default ('C0', 'C1')
+        Tuple of valid Matplotlib colors. First element for the prior, second for the posterior.
+    figsize : (float, float), optional
+        Figure size. If `None` it will be defined automatically.
+    textsize: float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled based
+        on `figsize`.
+    plot_kwargs : dicts, optional
+        Additional keywords passed to :func:`matplotlib.pyplot.plot`.
+    hist_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_dist`. Only works for discrete variables.
+    ax : axes, optional
+        :class:`matplotlib.axes.Axes` or :class:`bokeh.plotting.Figure`.
+    backend :{"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    dict : A dictionary with BF10 (Bayes Factor 10 (H1/H0 ratio), and BF01 (H0/H1 ratio).
+    axes : matplotlib_axes or bokeh_figure
+
+    References
+    ----------
+    .. [1] Heck, D., 2019. A caveat on the avage-Dickey density ratio:
+    The case of computing Bayes factors for regression parameters.
+
+    Examples
+    --------
+    Moderate evidence indicating that the parameter "a" is different from zero.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata = az.from_dict(posterior={"a":np.random.normal(1, 0.5, 5000)},
+        ...     prior={"a":np.random.normal(0, 1, 5000)})
+        &gt;&gt;&gt; az.plot_bf(idata, var_name="a", ref_val=0)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_bpv-Tuple" id="ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Bayesian p-value for observed data and Posterior/Prior predictive.
 
     Parameters
     ----------
@@ -237,7 +306,7 @@
         &gt;&gt;&gt; data = az.load_arviz_data("regression1d")
         &gt;&gt;&gt; az.plot_bpv(data, kind="t_stat", t_stat=lambda x:np.percentile(x, q=50, axis=-1))
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L2" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_compare-Tuple" id="ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Summary plot for model comparison.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_compare-Tuple" id="ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Summary plot for model comparison.
 
     Models are compared based on their expected log pointwise predictive density (ELPD).
     This plot is in the style of the one used in [2]_. Chapter 6 in the first edition
@@ -329,7 +398,7 @@
         &gt;&gt;&gt; az.plot_compare(model_compare, insample_dev=True)
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_density-Tuple" id="ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Generate KDE plots for continuous variables and histograms for discrete ones.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_density-Tuple" id="ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Generate KDE plots for continuous variables and histograms for discrete ones.
 
     Plots are truncated at their 100*(1-alpha)% highest density intervals. Plots are grouped per
     variable and colors assigned to models.
@@ -476,7 +545,7 @@
 
         &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"], bw=.9)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L4" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist-Tuple" id="ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot distribution as histogram or kernel density estimates.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist-Tuple" id="ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot distribution as histogram or kernel density estimates.
 
     By default continuous variables are plotted using KDEs and discrete ones using histograms
 
@@ -618,7 +687,7 @@
 
         &gt;&gt;&gt; az.plot_dist(b, rug=True, quantiles=[.25, .5, .75], cumulative=True)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L5" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist_comparison-Tuple" id="ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot to compare fitted and unfitted distributions.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist_comparison-Tuple" id="ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot to compare fitted and unfitted distributions.
 
     The resulting plots will show the compared distributions both on
     separate axes (particularly useful when one of them is substantially tighter
@@ -699,7 +768,247 @@
         &gt;&gt;&gt; az.plot_dist_comparison(data, var_names=["defs"], coords={"team" : ["Italy"]})
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L6" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_elpd-Tuple" id="ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot pointwise elpd differences between two or more models.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_dot-Tuple" id="ArviZPythonPlots.plot_dot-Tuple"><code>ArviZPythonPlots.plot_dot</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot distribution as dot plot or quantile dot plot.
+
+    This function uses the Wilkinson's Algorithm [1]_ to allot dots to bins.
+    The quantile dot plots was inspired from [2]_.
+
+    Parameters
+    ----------
+    values : array-like
+        Values to plot from an unknown continuous or discrete distribution.
+    binwidth : float, optional
+        Width of the bin for drawing the dot plot.
+    dotsize : float, default 1
+        The size of the dots relative to the bin width. The default makes dots be
+        just about as wide as the bin width.
+    stackratio : float, default 1
+        The distance between the center of the dots in the same stack relative to the bin height.
+        The default makes dots in the same stack just touch each other.
+    point_interval : bool, default False
+        Plots the point interval. Uses ``hdi_prob`` to plot the HDI interval
+    point_estimate : str, optional
+        Plot point estimate per variable. Values should be ``mean``, ``median``, ``mode`` or None.
+        Defaults to ``auto`` i.e. it falls back to default set in rcParams.
+    dotcolor : string, optional
+        The color of the dots. Should be a valid matplotlib color.
+    intervalcolor : string, optional
+        The color of the interval. Should be a valid matplotlib color.
+    linewidth : int, default None
+        Line width throughout. If None it will be autoscaled based on `figsize`.
+    markersize : int, default None
+        Markersize throughout. If None it will be autoscaled based on `figsize`.
+    markercolor : string, optional
+        The color of the marker when plot_interval is True. Should be a valid matplotlib color.
+    marker : string, default "o"
+        The shape of the marker. Valid for matplotlib backend.
+    hdi_prob : float, optional
+        Valid only when point_interval is True. Plots HDI for chosen percentage of density.
+        Defaults to ``stats.hdi_prob`` rcParam. See :ref:`this section &lt;common_hdi_prob&gt;`
+        for usage examples.
+    rotated : bool, default False
+        Whether to rotate the dot plot by 90 degrees.
+    nquantiles : int, default 50
+        Number of quantiles to plot, used for quantile dot plots.
+    quartiles : bool, default True
+        If True then the quartile interval will be plotted with the HDI.
+    figsize : (float,float), optional
+        Figure size. If ``None`` it will be defined automatically.
+    plot_kwargs : dict, optional
+        Keywords passed for customizing the dots. Passed to :class:`mpl:matplotlib.patches.Circle`
+        in matplotlib and :meth:`bokeh.plotting.figure.circle` in bokeh.
+    backend :{"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    ax : axes, optional
+        Matplotlib_axes or bokeh_figure.
+    show : bool, optional
+        Call backend show function.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    plot_dist : Plot distribution as histogram or kernel density estimates.
+
+    References
+    ----------
+    .. [1] Leland Wilkinson (1999) Dot Plots, The American Statistician, 53:3, 276-281,
+        DOI: 10.1080/00031305.1999.10474474
+    .. [2] Matthew Kay, Tara Kola, Jessica R. Hullman,
+        and Sean A. Munson. 2016. When (ish) is My Bus? User-centered Visualizations of Uncertainty
+        in Everyday, Mobile Predictive Systems. DOI:https://doi.org/10.1145/2858036.2858558
+
+    Examples
+    --------
+    Plot dot plot for a set of data points
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; values = np.random.normal(0, 1, 500)
+        &gt;&gt;&gt; az.plot_dot(values)
+
+    Manually adjust number of quantiles to plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dot(values, nquantiles=100)
+
+    Add a point interval under the dot plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dot(values, point_interval=True)
+
+    Rotate the dot plots by 90 degrees i.e swap x and y axis
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dot(values, point_interval=True, rotated=True)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_ecdf-Tuple" id="ArviZPythonPlots.plot_ecdf-Tuple"><code>ArviZPythonPlots.plot_ecdf</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot ECDF or ECDF-Difference Plot with Confidence bands.
+
+    Plots of the empirical CDF estimates of an array. When `values2` argument is provided,
+    the two empirical CDFs are overlaid with the distribution of `values` on top
+    (in a darker shade) and confidence bands in a more transparent shade. Optionally, the difference
+    between the two empirical CDFs can be computed, and the PIT for a single dataset or a comparison
+    between two samples.
+
+    Notes
+    -----
+    This plot computes the confidence bands with the simulated based algorithm presented in [1]_.
+
+    Parameters
+    ----------
+    values : array-like
+        Values to plot from an unknown continuous or discrete distribution.
+    values2 : array-like, optional
+        Values to compare to the original sample.
+    cdf : callable, optional
+        Cumulative distribution function of the distribution to compare the original sample.
+    difference : bool, default False
+        If True then plot ECDF-difference plot otherwise ECDF plot.
+    pit : bool, default False
+        If True plots the ECDF or ECDF-diff of PIT of sample.
+    confidence_bands : bool, default None
+        If True plots the simultaneous or pointwise confidence bands with `1 - fpr`
+        confidence level.
+    pointwise : bool, default False
+        If True plots pointwise confidence bands otherwise simultaneous bands.
+    npoints : int, default 100
+        This denotes the granularity size of our plot i.e the number of evaluation points
+        for the ecdf or ecdf-difference plots.
+    num_trials : int, default 500
+        The number of random ECDFs to generate for constructing simultaneous confidence bands.
+    fpr : float, default 0.05
+        The type I error rate s.t `1 - fpr` denotes the confidence level of bands.
+    figsize : (float,float), optional
+        Figure size. If `None` it will be defined automatically.
+    fill_band : bool, default True
+        If True it fills in between to mark the area inside the confidence interval. Otherwise,
+        plot the border lines.
+    plot_kwargs : dict, optional
+        Additional kwargs passed to :func:`mpl:matplotlib.pyplot.step` or
+        :meth:`bokeh.plotting.figure.step`
+    fill_kwargs : dict, optional
+        Additional kwargs passed to :func:`mpl:matplotlib.pyplot.fill_between` or
+        :meth:`bokeh:bokeh.plotting.Figure.varea`
+    plot_outline_kwargs : dict, optional
+        Additional kwargs passed to :meth:`mpl:matplotlib.axes.Axes.plot` or
+        :meth:`bokeh:bokeh.plotting.Figure.line`
+    ax :axes, optional
+        Matplotlib axes or bokeh figures.
+    show : bool, optional
+        Call backend show function.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    References
+    ----------
+    .. [1] Säilynoja, T., Bürkner, P.C. and Vehtari, A., 2021. Graphical Test for
+        Discrete Uniformity and its Applications in Goodness of Fit Evaluation and
+        Multiple Sample Comparison. arXiv preprint arXiv:2103.10522.
+
+    Examples
+    --------
+    Plot ecdf plot for a given sample
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; from scipy.stats import uniform, binom, norm
+
+        &gt;&gt;&gt; sample = norm(0,1).rvs(1000)
+        &gt;&gt;&gt; az.plot_ecdf(sample)
+
+    Plot ecdf plot with confidence bands for comparing a given sample w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; distribution = norm(0,1)
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf, confidence_bands = True)
+
+    Plot ecdf-difference plot with confidence bands for comparing a given sample
+    w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf,
+        &gt;&gt;&gt;              confidence_bands = True, difference = True)
+
+    Plot ecdf plot with confidence bands for PIT of sample for comparing a given sample
+    w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf,
+        &gt;&gt;&gt;              confidence_bands = True, pit = True)
+
+    Plot ecdf-difference plot with confidence bands for PIT of sample for comparing a given
+    sample w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf,
+        &gt;&gt;&gt;              confidence_bands = True, difference = True, pit = True)
+
+    You could also plot the above w.r.t another sample rather than a given distribution.
+    For eg: Plot ecdf-difference plot with confidence bands for PIT of sample for
+    comparing a given sample w.r.t a given sample
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; sample2 = norm(0,1).rvs(5000)
+        &gt;&gt;&gt; az.plot_ecdf(sample, sample2, confidence_bands = True, difference = True, pit = True)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_elpd-Tuple" id="ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot pointwise elpd differences between two or more models.
 
     Pointwise model comparison based on their expected log pointwise predictive density (ELPD).
 
@@ -802,7 +1111,7 @@
         )
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L8" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_energy-Tuple" id="ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot energy transition distribution and marginal energy distribution in HMC algorithms.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_energy-Tuple" id="ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot energy transition distribution and marginal energy distribution in HMC algorithms.
 
     This may help to diagnose poor exploration by gradient-based algorithms like HMC or NUTS.
     The energy function in HMC can identify posteriors with heavy tailed distributions, that
@@ -885,7 +1194,7 @@
         &gt;&gt;&gt; az.plot_energy(data, kind='hist')
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L9" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_ess-Tuple" id="ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Generate quantile, local, or evolution ESS plots.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_ess-Tuple" id="ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Generate quantile, local, or evolution ESS plots.
 
     The local and the quantile ESS plots are recommended for checking
     that there are enough samples for all the explored regions of the
@@ -1035,7 +1344,7 @@
         ... )
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L10" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_forest-Tuple" id="ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Forest plot to compare HDI intervals from a number of distributions.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_forest-Tuple" id="ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Forest plot to compare HDI intervals from a number of distributions.
 
     Generate forest or ridge plots to compare distributions from a model or list of models.
     Additionally, the function can display effective sample sizes (ess) and Rhats to visualize
@@ -1081,9 +1390,10 @@
     hdi_prob : float, default 0.94
         Plots highest posterior density interval for chosen percentage of density.
         See :ref:`this section &lt;common_ hdi_prob&gt;` for usage examples.
-    rope : list, tuple or dictionary of {str : tuples or lists}, optional
-        A dictionary of tuples with the lower and upper values of the Region Of Practical
-        Equivalence. See :ref:`this section &lt;common_rope&gt;` for usage examples.
+    rope : tuple or dictionary of tuples
+        Lower and upper values of the Region of Practical Equivalence. If a list with one interval
+        only is provided, the ROPE will be displayed across the y-axis. If more than one
+        interval is provided the length of the list should match the number of variables.
     quartiles : bool, default True
         Flag for plotting the interquartile range, in addition to the ``hdi_prob`` intervals.
     r_hat : bool, default False
@@ -1177,6 +1487,20 @@
         &gt;&gt;&gt;                            figsize=(9, 7))
         &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools models')
 
+    Forestplot with ropes
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; rope = {'theta': [{'school': 'Choate', 'rope': (2, 4)}], 'mu': [{'rope': (-2, 2)}]}
+        &gt;&gt;&gt; axes = az.plot_forest(non_centered_data,
+        &gt;&gt;&gt;                            rope=rope,
+        &gt;&gt;&gt;                            var_names='~tau',
+        &gt;&gt;&gt;                            combined=True,
+        &gt;&gt;&gt;                            figsize=(9, 7))
+        &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
+
+
     Ridgeplot
 
     .. plot::
@@ -1207,7 +1531,8 @@
         &gt;&gt;&gt;                            figsize=(9, 7))
         &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L11" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_hdi-Tuple" id="ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot HDI intervals for regression data.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_hdi-Tuple" id="ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
+    Plot HDI intervals for regression data.
 
     Parameters
     ----------
@@ -1220,20 +1545,20 @@
         Precomputed HDI values to use. Assumed shape is ``(*x.shape, 2)``.
     hdi_prob : float, optional
         Probability for the highest density interval. Defaults to ``stats.hdi_prob`` rcParam.
-        See :ref:`this section &lt;common_ hdi_prob&gt;` for usage examples.
-    color : str, default "C1"
+    color : str, optional
         Color used for the limits of the HDI and fill. Should be a valid matplotlib color.
-    circular : bool, default False
+    circular : bool, optional
         Whether to compute the HDI taking into account ``x`` is a circular variable
         (in the range [-np.pi, np.pi]) or not. Defaults to False (i.e non-circular variables).
-    smooth : boolean, default True
+    smooth : boolean, optional
         If True the result will be smoothed by first computing a linear interpolation of the data
         over a regular grid and then applying the Savitzky-Golay filter to the interpolated data.
+        Defaults to True.
     smooth_kwargs : dict, optional
         Additional keywords modifying the Savitzky-Golay filter. See
         :func:`scipy:scipy.signal.savgol_filter` for details.
-    figsize : (float, float), optional
-        Figure size. If ``None``, it will be defined automatically.
+    figsize : tuple
+        Figure size. If None it will be defined automatically.
     fill_kwargs : dict, optional
         Keywords passed to :meth:`mpl:matplotlib.axes.Axes.fill_between`
         (use ``fill_kwargs={'alpha': 0}`` to disable fill) or to
@@ -1245,12 +1570,12 @@
         Keyword arguments passed to :func:`~arviz.hdi`. Ignored if ``hdi_data`` is present.
     ax : axes, optional
         Matplotlib axes or bokeh figures.
-    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+    backend : {"matplotlib","bokeh"}, optional
         Select plotting backend.
-    backend_kwargs : dict, optional
+    backend_kwargs : bool, optional
         These are kwargs specific to the backend being used, passed to
-        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
-        For additional documentation check the plotting method of the backend.
+        :meth:`mpl:matplotlib.axes.Axes.plot` or
+        :meth:`bokeh.plotting.Figure.patch`.
     show : bool, optional
         Call backend show function.
 
@@ -1264,20 +1589,15 @@
 
     Examples
     --------
-    Plot HDI interval of simulated random-walk data using `y` argument:
+    Plot HDI interval of simulated regression data using `y` argument:
 
     .. plot::
         :context: close-figs
 
         &gt;&gt;&gt; import numpy as np
         &gt;&gt;&gt; import arviz as az
-        &gt;&gt;&gt; # time-steps random walk
-        &gt;&gt;&gt; x_data =np.arange(0,100)
-        &gt;&gt;&gt; # Mean random walk
-        &gt;&gt;&gt; mu = np.zeros(100)
-        &gt;&gt;&gt; for i in x_data: mu[i] = mu[i-1] + np.random.normal(0, 1, 1)
-        &gt;&gt;&gt; # Simulated pp samples form the random walk time series
-        &gt;&gt;&gt; y_data = np.random.normal(2 + mu * 0.5, 0.5, size = (2, 50, 100))
+        &gt;&gt;&gt; x_data = np.random.normal(0, 1, 100)
+        &gt;&gt;&gt; y_data = np.random.normal(2 + x_data * 0.5, 0.5, size=(2, 50, 100))
         &gt;&gt;&gt; az.plot_hdi(x_data, y_data)
 
     ``plot_hdi`` can also be given precalculated values with the argument ``hdi_data``. This example
@@ -1307,7 +1627,7 @@
         &gt;&gt;&gt; az.plot_hdi(x_data, y_data)
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L12" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_kde-Tuple" id="ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">1D or 2D KDE plot taking into account boundary conditions.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_kde-Tuple" id="ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">1D or 2D KDE plot taking into account boundary conditions.
 
     Parameters
     ----------
@@ -1315,13 +1635,13 @@
         Values to plot
     values2 : array-like, optional
         Values to plot. If present, a 2D KDE will be estimated
-    cumulative : bool, dafault False
-        If True plot the estimated cumulative distribution function. Ignored for 2D KDE.
-    rug : bool, default False
-        Add a `rug plot &lt;https://en.wikipedia.org/wiki/Rug_plot&gt;`_ for a specific subset of
-        values. Ignored for 2D KDE.
-    label : string, optional
-        Text to include as part of the legend.
+    cumulative : bool
+        If true plot the estimated cumulative distribution function. Defaults to False.
+        Ignored for 2D KDE
+    rug : bool
+        If True adds a rugplot. Defaults to False. Ignored for 2D KDE
+    label : string
+        Text to include as part of the legend
     bw : float or str, optional
         If numeric, indicates the bandwidth and must be positive.
         If str, indicates the method to estimate the bandwidth and must be
@@ -1329,65 +1649,69 @@
         and "taylor" (for now) when ``is_circular`` is True.
         Defaults to "default" which means "experimental" when variable is not circular
         and "taylor" when it is.
-    adaptive : bool, default False
+    adaptive : bool, optional.
         If True, an adaptative bandwidth is used. Only valid for 1D KDE.
-    quantiles : list, optional
-        Quantiles in ascending order used to segment the KDE. Use [.25, .5, .75] for quartiles.
-    rotated : bool, default False
+        Defaults to False.
+    quantiles : list
+        Quantiles in ascending order used to segment the KDE.
+        Use [.25, .5, .75] for quartiles. Defaults to None.
+    rotated : bool
         Whether to rotate the 1D KDE plot 90 degrees.
-    contour : bool, default True
+    contour : bool
         If True plot the 2D KDE using contours, otherwise plot a smooth 2D KDE.
-    hdi_probs : list, optional
+        Defaults to True.
+    hdi_probs : list
         Plots highest density credibility regions for the provided probabilities for a 2D KDE.
         Defaults to matplotlib chosen levels with no fixed probability associated.
-    fill_last : bool, default False
-        If True fill the last contour of the 2D KDE plot.
+    fill_last : bool
+        If True fill the last contour of the 2D KDE plot. Defaults to False.
     figsize : (float, float), optional
-        Figure size. If ``None`` it will be defined automatically.
-    textsize : float, optional
-        Text size scaling factor for labels, titles and lines. If ``None`` it will be autoscaled
-        based on ``figsize``. Not implemented for bokeh backend.
-    plot_kwargs : dict, optional
+        Figure size. If None it will be defined automatically.
+    textsize : float
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on ``figsize``. Not implemented for bokeh backend.
+    plot_kwargs : dict
         Keywords passed to the pdf line of a 1D KDE. See :meth:`mpl:matplotlib.axes.Axes.plot`
         or :meth:`bokeh:bokeh.plotting.Figure.line` for a description of accepted values.
-    fill_kwargs : dict, optional
+    fill_kwargs : dict
         Keywords passed to the fill under the line (use ``fill_kwargs={'alpha': 0}``
         to disable fill). Ignored for 2D KDE. Passed to
         :meth:`bokeh.plotting.Figure.patch`.
-    rug_kwargs : dict, optional
+    rug_kwargs : dict
         Keywords passed to the rug plot. Ignored if ``rug=False`` or for 2D KDE
         Use ``space`` keyword (float) to control the position of the rugplot. The larger this number
         the lower the rugplot. Passed to :class:`bokeh:bokeh.models.glyphs.Scatter`.
-    contour_kwargs : dict, optional
+    contour_kwargs : dict
         Keywords passed to :meth:`mpl:matplotlib.axes.Axes.contour`
         to draw contour lines or :meth:`bokeh.plotting.Figure.patch`.
         Ignored for 1D KDE.
-    contourf_kwargs : dict, optional
+    contourf_kwargs : dict
         Keywords passed to :meth:`mpl:matplotlib.axes.Axes.contourf`
         to draw filled contours. Ignored for 1D KDE.
-    pcolormesh_kwargs : dict, optional
+    pcolormesh_kwargs : dict
         Keywords passed to :meth:`mpl:matplotlib.axes.Axes.pcolormesh` or
         :meth:`bokeh.plotting.Figure.image`.
         Ignored for 1D KDE.
-    is_circular : {False, True, "radians", "degrees"}. Default False
+    is_circular : {False, True, "radians", "degrees"}. Default False.
         Select input type {"radians", "degrees"} for circular histogram or KDE plot. If True,
         default input type is "radians". When this argument is present, it interprets ``values``
-        as a circular variable measured in radians and a circular KDE is used. Inputs in
+        is a circular variable measured in radians and a circular KDE is used. Inputs in
         "degrees" will undergo an internal conversion to radians.
     ax : axes, optional
         Matplotlib axes or bokeh figures.
-    legend : bool, default True
-        Add legend to the figure.
-    backend : {"matplotlib", "bokeh"}, default "matplotlib"
-        Select plotting backend.
-    backend_kwargs : dict, optional
+    legend : bool
+        Add legend to the figure. By default True.
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs: bool, optional
         These are kwargs specific to the backend being used, passed to
-        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
-        For additional documentation check the plotting method of the backend.
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`. For additional documentation
+        check the plotting method of the backend.
     show : bool, optional
         Call backend show function.
     return_glyph : bool, optional
-        Internal argument to return glyphs for bokeh.
+        Internal argument to return glyphs for bokeh
 
     Returns
     -------
@@ -1511,60 +1835,60 @@
         &gt;&gt;&gt; az.plot_kde(mu_posterior, values2=tau_posterior, contour=False)
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L13" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_khat-Tuple" id="ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Pareto tail indices :math:`\hat{k}` for diagnosing convergence in PSIS-LOO.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_khat-Tuple" id="ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
+    Plot Pareto tail indices for diagnosing convergence.
 
     Parameters
     ----------
-    khats : ELPDData or array-like
-        The input Pareto tail indices to be plotted. It can be an ``ELPDData`` object containing
-        Pareto shapes or an array. In this second case, all the values in the array are interpreted
-        as Pareto tail indices.
-    color : str or array_like, default "C0"
-        Colors of the scatter plot, if color is a str all dots will have the same color,
-        if it is the size of the observations, each dot will have the specified color,
-        otherwise, it will be interpreted as a list of the dims to be used for the color
-        code. If Matplotlib c argument is passed, it will override the color argument.
-    xlabels : bool, default False
-        Use coords as xticklabels.
-    show_hlines : bool, default False
+    khats : ELPDData containing Pareto shapes information or array of
+        Pareto tail indices.
+    color : str or array_like, optional
+        Colors of the scatter plot, if color is a str all dots will
+        have the same color, if it is the size of the observations,
+        each dot will have the specified color, otherwise, it will be
+        interpreted as a list of the dims to be used for the color
+        code. If Matplotlib c argument is passed, it will override
+        the color argument
+    xlabels : bool, optional
+        Use coords as xticklabels
+    show_hlines : bool, optional
         Show the horizontal lines, by default at the values [0, 0.5, 0.7, 1].
-    show_bins : bool, default False
+    show_bins : bool, optional
         Show the percentage of khats falling in each bin, as delimited by hlines.
     bin_format : str, optional
         The string is used as formatting guide calling ``bin_format.format(count, pct)``.
     threshold : float, optional
-        Show the labels of k values larger than `threshold`. If ``None`` (default), no
-        observations will be highlighted.
-    hover_label : bool, default False
+        Show the labels of k values larger than threshold. Defaults to `None`,
+        no observations will be highlighted.
+    hover_label : bool, optional
         Show the datapoint label when hovering over it with the mouse. Requires an interactive
         backend.
-    hover_format : str, default "{1}"
+    hover_format : str, optional
         String used to format the hover label via ``hover_format.format(idx, coord_label)``
     figsize : (float, float), optional
-        Figure size. If ``None`` it will be defined automatically.
+        Figure size. If None it will be defined automatically.
     textsize : float, optional
-        Text size scaling factor for labels, titles and lines. If ``None`` it will be autoscaled
-        based on `figsize`.
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on figsize.
     coords : mapping, optional
         Coordinates of points to plot. **All** values are used for computation, but only a
-        a subset can be plotted for convenience. See :ref:`this section &lt;common_coords&gt;` for
-        usage examples.
-    legend : bool, default False
+        a subset can be plotted for convenience.
+    legend : bool, optional
         Include a legend to the plot. Only taken into account when color argument is a dim name.
     markersize : int, optional
-        markersize for scatter plot. Defaults to ``None`` in which case it will
+        markersize for scatter plot. Defaults to `None` in which case it will
         be chosen based on autoscaling for figsize.
     ax : axes, optional
         Matplotlib axes or bokeh figures.
-    hlines_kwargs : dict, optional
+    hlines_kwargs : dictionary, optional
         Additional keywords passed to
         :meth:`matplotlib.axes.Axes.hlines`.
-    backend : {"matplotlib", "bokeh"}, default "matplotlib"
-        Select plotting backend.
-    backend_kwargs : dict, optional
+    backend : str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs : bool, optional
         These are kwargs specific to the backend being used, passed to
-        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
-        For additional documentation check the plotting method of the backend.
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
     show : bool, optional
         Call backend show function.
     kwargs :
@@ -1613,14 +1937,17 @@
 
     Notes
     -----
-    The Generalized Pareto distribution (GPD) diagnoses convergence rates for importance
-    sampling. GPD has parameters offset, scale, and shape. The shape parameter (:math:`k`)
-    tells the distribution's number of finite moments. The pre-asymptotic convergence rate
-    of importance sampling can be estimated based on the fractional number of finite moments
-    of the importance ratio distribution. GPD is fitted to the largest importance ratios and
-    interprets the estimated shape parameter :math:`k`, i.e., :math:`\hat{k}` can then be
-    used as a diagnostic (most importantly if :math:`\hat{k} &gt; 0.7`, then the convergence
-    rate is impractically low). See [1]_.
+    The Generalized Pareto distribution (GPD) may be used to diagnose
+    convergence rates for importance sampling.  GPD has parameters
+    offset, scale, and shape. The shape parameter is usually denoted
+    with ``k``. ``k`` also tells how many finite moments the
+    distribution has. The pre-asymptotic convergence rate of
+    importance sampling can be estimated based on the fractional
+    number of finite moments of the importance ratio distribution. GPD
+    is fitted to the largest importance ratios and the estimated shape
+    parameter ``k``, i.e., ``\hat{k}`` can then be used as a diagnostic
+    (most importantly if ``\hat{k} &gt; 0.7``, then the convergence rate
+    is impractically low). See [1]_.
 
     References
     ----------
@@ -1628,7 +1955,125 @@
         2019. Pareto Smoothed Importance Sampling. arXiv:1507.02646 [stat].
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L14" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_loo_pit-Tuple" id="ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Leave-One-Out (LOO) probability integral transformation (PIT) predictive checks.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_lm-Tuple" id="ArviZPythonPlots.plot_lm-Tuple"><code>ArviZPythonPlots.plot_lm</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Posterior predictive and mean plots for regression-like data.
+
+    Parameters
+    ----------
+    y : str or DataArray or ndarray
+        If str, variable name from ``observed_data``.
+    idata : InferenceData, Optional
+        Optional only if ``y`` is not str.
+    x : str, tuple of strings, DataArray or array-like, optional
+        If str or tuple, variable name from ``constant_data``.
+        If ndarray, could be 1D, or 2D for multiple plots.
+        If None, coords name of ``y`` (``y`` should be DataArray).
+    y_model : str or Sequence, Optional
+        If str, variable name from ``posterior``.
+        Its dimensions should be same as ``y`` plus added chains and draws.
+    y_hat : str, Optional
+        If str, variable name from ``posterior_predictive``.
+        Its dimensions should be same as ``y`` plus added chains and draws.
+    num_samples : int, Optional, Default 50
+        Significant if ``kind_pp`` is "samples" or ``kind_model`` is "lines".
+        Number of samples to be drawn from posterior predictive or
+    kind_pp : {"samples", "hdi"}, Default "samples"
+        Options to visualize uncertainty in data.
+    kind_model : {"lines", "hdi"}, Default "lines"
+        Options to visualize uncertainty in mean of the data.
+    plot_dim : str, Optional
+        Necessary if ``y`` is multidimensional.
+    backend : str, Optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    y_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.circle` in bokeh
+    y_hat_plot_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.circle` in bokeh
+    y_hat_fill_kwargs : dict, optional
+        Passed to :func:`arviz.plot_hdi`
+    y_model_plot_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.line` in bokeh
+    y_model_fill_kwargs : dict, optional
+        Significant if ``kind_model`` is "hdi". Passed to :func:`arviz.plot_hdi`
+    y_model_mean_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.line` in bokeh
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used. Passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If None it will be
+        autoscaled based on ``figsize``.
+    axes : 2D numpy array-like of matplotlib_axes or bokeh_figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, Arviz will create
+        its own array of plot areas (and return it).
+    show : bool, optional
+        Call backend show function.
+    legend : bool, optional
+        Add legend to figure. By default True.
+    grid : bool, optional
+        Add grid to figure. By default True.
+
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_ts : Plot timeseries data
+    plot_ppc : Plot for posterior/prior predictive checks
+
+    Examples
+    --------
+    Plot regression default plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; import xarray as xr
+        &gt;&gt;&gt; idata = az.load_arviz_data('regression1d')
+        &gt;&gt;&gt; x = xr.DataArray(np.linspace(0, 1, 100))
+        &gt;&gt;&gt; idata.posterior["y_model"] = idata.posterior["intercept"] + idata.posterior["slope"]*x
+        &gt;&gt;&gt; az.plot_lm(idata=idata, y="y", x=x)
+
+    Plot regression data and mean uncertainty
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_lm(idata=idata, y="y", x=x, y_model="y_model")
+
+    Plot regression data and mean uncertainty in hdi form
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_lm(
+        ...     idata=idata, y="y", x=x, y_model="y_model", kind_pp="hdi", kind_model="hdi"
+        ... )
+
+    Plot regression data for multi-dimensional y using plot_dim
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; data = az.from_dict(
+        ...     observed_data = { "y": np.random.normal(size=(5, 7)) },
+        ...     posterior_predictive = {"y": np.random.randn(4, 1000, 5, 7) / 2},
+        ...     dims={"y": ["dim1", "dim2"]},
+        ...     coords={"dim1": range(5), "dim2": range(7)}
+        ... )
+        &gt;&gt;&gt; az.plot_lm(idata=data, y="y", plot_dim="dim1")
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_loo_pit-Tuple" id="ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Leave-One-Out (LOO) probability integral transformation (PIT) predictive checks.
 
     Parameters
     ----------
@@ -1734,7 +2179,7 @@
         &gt;&gt;&gt; az.plot_loo_pit(idata=idata, y="y", ecdf=True)
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L15" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_mcse-Tuple" id="ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot quantile or local Monte Carlo Standard Error.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_mcse-Tuple" id="ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot quantile or local Monte Carlo Standard Error.
 
     Parameters
     ----------
@@ -1825,7 +2270,7 @@
         ... )
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L16" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_pair-Tuple" id="ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_pair-Tuple" id="ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
     Plot a scatter, kde and/or hexbin matrix with (optional) marginals on the diagonal.
 
     Parameters
@@ -1955,7 +2400,7 @@
         ...             divergences=True,
         ...             textsize=18)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L17" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_parallel-Tuple" id="ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_parallel-Tuple" id="ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
     Plot parallel coordinates plot showing posterior points with and without divergences.
 
     Described by https://arxiv.org/abs/1709.01449
@@ -2056,7 +2501,7 @@
         &gt;&gt;&gt; ax = az.plot_parallel(data, var_names=["theta", "tau", "mu"], norm_method="rank")
         &gt;&gt;&gt; ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L18" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_posterior-Tuple" id="ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Posterior densities in the style of John K. Kruschke's book.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_posterior-Tuple" id="ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot Posterior densities in the style of John K. Kruschke's book.
 
     Parameters
     ----------
@@ -2101,9 +2546,9 @@
         Defaults to 'auto' i.e. it falls back to default set in rcParams.
     group: str, optional
         Specifies which InferenceData group should be plotted. Defaults to 'posterior'.
-    rope : list, tuple or dictionary of {str: tuples or lists}, optional
-        A dictionary of tuples with the lower and upper values of the Region Of Practical
-        Equivalence. See :ref:`this section &lt;common_rope&gt;` for usage examples.
+    rope: tuple or dictionary of tuples
+        Lower and upper values of the Region Of Practical Equivalence. If a list is provided, its
+        length should match the number of variables.
     ref_val: float or dictionary of floats
         display the percentage below and above the values in ref_val. Must be None (default),
         a constant, a list or a dictionary like see an example below. If a list is provided, its
@@ -2242,7 +2687,7 @@
 
         &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu'], hdi_prob=.75)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L19" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_ppc-Tuple" id="ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_ppc-Tuple" id="ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">
     Plot for posterior/prior predictive checks.
 
     Parameters
@@ -2260,7 +2705,7 @@
         Defaults to ``True``.
     observed: bool, default True
         Whether or not to plot the observed data.
-    observed_rug: bool, default False
+    observed: bool, default False
         Whether or not to plot a rug plot for the observed data. Only valid if `observed` is
         `True` and for kind `kde` or `cumulative`.
     color: str
@@ -2415,7 +2860,7 @@
 
         &gt;&gt;&gt; az.plot_ppc(data, num_pp_samples=30, random_seed=7)
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L20" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_rank-Tuple" id="ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot rank order statistics of chains.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_rank-Tuple" id="ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot rank order statistics of chains.
 
     From the paper: Rank plots are histograms of the ranked posterior draws (ranked over all
     chains) plotted separately for each chain.
@@ -2542,7 +2987,7 @@
         &gt;&gt;&gt; az.plot_rank(noncentered_data, var_names="mu", kind="vlines",
         &gt;&gt;&gt;              vlines_kwargs={'lw':0}, marker_vlines_kwargs={'lw':3});
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L21" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_separation-Tuple" id="ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Separation plot for binary outcome models.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_separation-Tuple" id="ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Separation plot for binary outcome models.
 
     Model predictions are sorted and plotted using a color code according to
     the observed data.
@@ -2613,7 +3058,7 @@
         &gt;&gt;&gt; az.plot_separation(idata=idata, y='outcome', y_hat='outcome', figsize=(8, 1))
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L22" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_trace-Tuple" id="ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot distribution (histogram or kernel density estimates) and sampled values or rank plot.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_trace-Tuple" id="ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot distribution (histogram or kernel density estimates) and sampled values or rank plot.
 
     If `divergences` data is available in `sample_stats`, will plot the location of divergences as
     dashed vertical lines.
@@ -2744,7 +3189,7 @@
         &gt;&gt;&gt; az.plot_trace(data, var_names=('theta_t', 'theta'), coords=coords, lines=lines)
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L23" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_violin-Tuple" id="ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot posterior of traces as violin plot.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-binding" href="#ArviZPythonPlots.plot_violin-Tuple" id="ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="nohighlight hljs">Plot posterior of traces as violin plot.
 
     Notes
     -----
@@ -2846,4 +3291,4 @@
         &gt;&gt;&gt; az.plot_violin(data)
 
     
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/161aa79042f6983ce4388f60015bf5ca9d25266e/src/plots.jl#L24" target="_blank">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../rcparams/">« rcParams</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Wednesday 9 August 2023 11:49">Wednesday 9 August 2023</span>. Using Julia version 1.9.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/e14d612199a607f8e9ef052d32d876118834ccb2/src/plots.jl#L3" target="_blank">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../rcparams/">« rcParams</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.25 on <span class="colophon-date" title="Friday 11 August 2023 14:35">Friday 11 August 2023</span>. Using Julia version 1.9.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
