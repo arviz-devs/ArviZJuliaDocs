@@ -10,7 +10,7 @@ use_style("arviz-darkgrid")
 
 idata = from_namedtuple((a = 1 .+ randn(5_000) ./ 2,), prior=(a = randn(5_000),))
 plot_bf(idata; var_name="a", ref_val=0)
-gcf()</code></pre><img alt="Example block output" src="0e72cc84.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bf-Tuple"><code>plot_bf</code></a></p><h2 id="Bayesian-P-Value-Posterior-Plot"><a class="docs-heading-anchor" href="#Bayesian-P-Value-Posterior-Plot">Bayesian P-Value Posterior Plot</a><a id="Bayesian-P-Value-Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-P-Value-Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="9d2c0ae5.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bf-Tuple"><code>plot_bf</code></a></p><h2 id="Bayesian-P-Value-Posterior-Plot"><a class="docs-heading-anchor" href="#Bayesian-P-Value-Posterior-Plot">Bayesian P-Value Posterior Plot</a><a id="Bayesian-P-Value-Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-P-Value-Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -70,7 +70,7 @@ use_style("arviz-darkgrid")
 sample = randn(1_000)
 dist = Normal()
 plot_ecdf(sample; cdf=x -&gt; cdf(dist, x), confidence_bands=true)
-gcf()</code></pre><img alt="Example block output" src="a3934935.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ecdf-Tuple"><code>plot_ecdf</code></a></p><h2 id="ELPD-Plot"><a class="docs-heading-anchor" href="#ELPD-Plot">ELPD Plot</a><a id="ELPD-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ELPD-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="df8ab1c5.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ecdf-Tuple"><code>plot_ecdf</code></a></p><h2 id="ELPD-Plot"><a class="docs-heading-anchor" href="#ELPD-Plot">ELPD Plot</a><a id="ELPD-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ELPD-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -211,7 +211,7 @@ use_style("arviz-darkgrid")
 
 idata = load_example_data("non_centered_eight")
 plot_loo_pit(; idata, y="obs", color="indigo")
-gcf()</code></pre><img alt="Example block output" src="b701604a.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo_pit"><code>loo_pit</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_loo_pit-Tuple"><code>plot_loo_pit</code></a></p><h2 id="Quantile-Monte-Carlo-Standard-Error-Plot"><a class="docs-heading-anchor" href="#Quantile-Monte-Carlo-Standard-Error-Plot">Quantile Monte Carlo Standard Error Plot</a><a id="Quantile-Monte-Carlo-Standard-Error-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Quantile-Monte-Carlo-Standard-Error-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="b379d5f9.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo_pit"><code>loo_pit</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_loo_pit-Tuple"><code>plot_loo_pit</code></a></p><h2 id="Quantile-Monte-Carlo-Standard-Error-Plot"><a class="docs-heading-anchor" href="#Quantile-Monte-Carlo-Standard-Error-Plot">Quantile Monte Carlo Standard Error Plot</a><a id="Quantile-Monte-Carlo-Standard-Error-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Quantile-Monte-Carlo-Standard-Error-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -297,13 +297,13 @@ use_style("arviz-darkgrid")
 
 data = load_example_data("non_centered_eight")
 plot_ppc(data; data_pairs=Dict("obs" =&gt; "obs"), alpha=0.03, figsize=(12, 6), textsize=14)
-gcf()</code></pre><img alt="Example block output" src="64e13b6c.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Posterior-Predictive-Check-Cumulative-Plot"><a class="docs-heading-anchor" href="#Posterior-Predictive-Check-Cumulative-Plot">Posterior Predictive Check Cumulative Plot</a><a id="Posterior-Predictive-Check-Cumulative-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Predictive-Check-Cumulative-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="5a3d3f20.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Posterior-Predictive-Check-Cumulative-Plot"><a class="docs-heading-anchor" href="#Posterior-Predictive-Check-Cumulative-Plot">Posterior Predictive Check Cumulative Plot</a><a id="Posterior-Predictive-Check-Cumulative-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Predictive-Check-Cumulative-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("non_centered_eight")
 plot_ppc(data; alpha=0.3, kind="cumulative", figsize=(12, 6), textsize=14)
-gcf()</code></pre><img alt="Example block output" src="e183f930.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Rank-Plot"><a class="docs-heading-anchor" href="#Rank-Plot">Rank Plot</a><a id="Rank-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Rank-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="3defaf27.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Rank-Plot"><a class="docs-heading-anchor" href="#Rank-Plot">Rank Plot</a><a id="Rank-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Rank-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -321,7 +321,7 @@ y_model = broadcast_dims(muladd, posterior.intercept, posterior.slope, constant_
 posterior = merge(posterior, (; y_model))
 data = merge(data, InferenceData(; posterior, constant_data))
 plot_lm("y"; idata=data, x="x", y_model="y_model")
-gcf()</code></pre><img alt="Example block output" src="e929479e.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_lm-Tuple"><code>plot_lm</code></a></p><h2 id="Separation-Plot"><a class="docs-heading-anchor" href="#Separation-Plot">Separation Plot</a><a id="Separation-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Separation-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="58bc4033.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_lm-Tuple"><code>plot_lm</code></a></p><h2 id="Separation-Plot"><a class="docs-heading-anchor" href="#Separation-Plot">Separation Plot</a><a id="Separation-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Separation-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -380,4 +380,4 @@ for (idx, style) in enumerate(style_list)
     end
 end
 tight_layout()
-gcf()</code></pre><img alt="Example block output" src="2c161319.png"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API Overview »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="auto">Automatic (OS)</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.1.0 on <span class="colophon-date" title="Thursday 5 October 2023 23:08">Thursday 5 October 2023</span>. Using Julia version 1.9.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+gcf()</code></pre><img alt="Example block output" src="2c161319.png"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API Overview »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="auto">Automatic (OS)</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.1.2 on <span class="colophon-date" title="Tuesday 31 October 2023 12:54">Tuesday 31 October 2023</span>. Using Julia version 1.9.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
