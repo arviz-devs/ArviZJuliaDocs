@@ -63,7 +63,7 @@ packages = [
     "Data" => [
         ("InferenceObjects", "arviz-devs"),
         ("ArviZExampleData", "arviz-devs"),
-        ("DimensionalData", "rafaqz", "third-party"),
+        # ("DimensionalData", "rafaqz", "third-party"),
         # ("ArviZGen", "arviz-devs", "experimental"),
     ],
 ]
