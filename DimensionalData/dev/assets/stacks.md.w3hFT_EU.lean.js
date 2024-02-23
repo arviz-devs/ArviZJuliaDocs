@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t,V as o}from"./chunks/framework.-hqW-2cI.js";const u=JSON.parse('{"title":"Stacks","description":"","frontmatter":{},"headers":[],"relativePath":"stacks.md","filePath":"stacks.md","lastUpdated":null}'),s={name:"stacks.md"},c=o("",9),r=[c];function n(i,d,l,m,h,p){return t(),a("div",null,r)}const k=e(s,[["render",n]]);export{u as __pageData,k as default};
