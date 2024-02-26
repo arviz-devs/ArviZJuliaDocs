@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,V as h}from"./chunks/framework.SSsEDEan.js";const E=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"basics.md","filePath":"basics.md","lastUpdated":null}'),n={name:"basics.md"},l=h("",20),k=[l];function t(p,e,d,r,g,y){return a(),i("div",null,k)}const c=s(n,[["render",t]]);export{E as __pageData,c as default};
