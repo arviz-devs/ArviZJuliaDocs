@@ -1,1 +1,0 @@
-import{_ as A,c as Q,o as C,V as E}from"./chunks/framework.SSsEDEan.js";const a=JSON.parse('{"title":"Plots.jl","description":"","frontmatter":{},"headers":[],"relativePath":"plots.md","filePath":"plots.md","lastUpdated":null}'),I={name:"plots.md"},h=E("",13),g=[h];function B(i,e,t,o,s,l){return C(),Q("div",null,g)}const U=A(I,[["render",B]]);export{a as __pageData,U as default};
