@@ -9,7 +9,7 @@ The eight schools model is a hierarchical model used for an analysis of the effe
 
 See Bayesian Data Analysis (Gelman et. al.) for more details.
 
-local: /home/runner/.julia/artifacts/1a48fb48ab2b35cdeeb84e0dcdcda134e24a1c20/arviz_example_data-0.1.1/data/centered_eight.nc
+local: /home/runner/.julia/artifacts/88acee5c1db592b660a577a21fa9bdc783ec49d7/arviz_example_data-0.2.0/data/centered_eight.nc
 
 non_centered_eight
 ==================
@@ -20,7 +20,7 @@ The eight schools model is a hierarchical model used for an analysis of the effe
 
 See Bayesian Data Analysis (Gelman et. al.) for more details.
 
-local: /home/runner/.julia/artifacts/1a48fb48ab2b35cdeeb84e0dcdcda134e24a1c20/arviz_example_data-0.1.1/data/non_centered_eight.nc
+local: /home/runner/.julia/artifacts/88acee5c1db592b660a577a21fa9bdc783ec49d7/arviz_example_data-0.2.0/data/non_centered_eight.nc
 
 radon
 =====
@@ -38,11 +38,22 @@ rugby
 
 The Six Nations Championship is a yearly rugby competition between Italy, Ireland, Scotland, England, France and Wales. Fifteen games are played each year, representing all combinations of the six teams.
 
-This example uses and includes results from 2014 - 2017, comprising 60 total games. It models latent parameters for each team's attack and defense, as well as a parameter for home team advantage.
+This example uses and includes results from 2014 - 2017, comprising 60 total games. It models latent parameters for each team's attack and defense, as well as a global parameter for home team advantage.
 
-See https://docs.pymc.io/notebooks/rugby_analytics.html by Peader Coyle for more details and references.
+See https://github.com/arviz-devs/arviz_example_data/blob/main/code/rugby/rugby.ipynb for the whole model specification.
 
-remote: http://ndownloader.figshare.com/files/16254359
+remote: http://figshare.com/ndownloader/files/44916469
+
+rugby_field
+===========
+
+A variant of the 'rugby' example dataset. The Six Nations Championship is a yearly rugby competition between Italy, Ireland, Scotland, England, France and Wales. Fifteen games are played each year, representing all combinations of the six teams.
+
+This example uses and includes results from 2014 - 2017, comprising 60 total games. It models latent parameters for each team's attack and defense, with each team having different values depending on them being home or away team.
+
+See https://github.com/arviz-devs/arviz_example_data/blob/main/code/rugby_field/rugby_field.ipynb for the whole model specification.
+
+remote: http://figshare.com/ndownloader/files/44667112
 
 regression1d
 ============
@@ -87,4 +98,4 @@ Torsion angles phi and psi are critical for determining the three dimensional st
 
 This model uses a Von Mises distribution to propose torsion angles for the structure of a glycan molecule (pdb id: 2LIQ), and a Potential to estimate the proposed structure's energy. Said Potential is bound by Boltzman's law.
 
-remote: http://ndownloader.figshare.com/files/22882652</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.3.0 on <span class="colophon-date" title="Sunday 10 March 2024 01:13">Sunday 10 March 2024</span>. Using Julia version 1.10.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+remote: http://ndownloader.figshare.com/files/22882652</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.3.0 on <span class="colophon-date" title="Monday 11 March 2024 11:40">Monday 11 March 2024</span>. Using Julia version 1.10.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>

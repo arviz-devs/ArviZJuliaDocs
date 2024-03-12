@@ -4,25 +4,25 @@ use_style("arviz-darkgrid")
 
 data = load_example_data("centered_eight")
 plot_autocorr(data; var_names=["tau", "mu"])
-gcf()</code></pre><img alt="Example block output" src="7e6dd80e.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_autocorr-Tuple"><code>plot_autocorr</code></a></p><h2 id="Bayes-Factor-Plot"><a class="docs-heading-anchor" href="#Bayes-Factor-Plot">Bayes Factor Plot</a><a id="Bayes-Factor-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayes-Factor-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots
+gcf()</code></pre><img alt="Example block output" src="8d899ce2.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_autocorr-Tuple"><code>plot_autocorr</code></a></p><h2 id="Bayes-Factor-Plot"><a class="docs-heading-anchor" href="#Bayes-Factor-Plot">Bayes Factor Plot</a><a id="Bayes-Factor-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayes-Factor-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots
 
 use_style("arviz-darkgrid")
 
 idata = from_namedtuple((a = 1 .+ randn(5_000) ./ 2,), prior=(a = randn(5_000),))
 plot_bf(idata; var_name="a", ref_val=0)
-gcf()</code></pre><img alt="Example block output" src="a4d54302.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bf-Tuple"><code>plot_bf</code></a></p><h2 id="Bayesian-P-Value-Posterior-Plot"><a class="docs-heading-anchor" href="#Bayesian-P-Value-Posterior-Plot">Bayesian P-Value Posterior Plot</a><a id="Bayesian-P-Value-Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-P-Value-Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="3b376c97.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bf-Tuple"><code>plot_bf</code></a></p><h2 id="Bayesian-P-Value-Posterior-Plot"><a class="docs-heading-anchor" href="#Bayesian-P-Value-Posterior-Plot">Bayesian P-Value Posterior Plot</a><a id="Bayesian-P-Value-Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-P-Value-Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("regression1d")
 plot_bpv(data)
-gcf()</code></pre><img alt="Example block output" src="51d46e25.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bpv-Tuple"><code>plot_bpv</code></a></p><h2 id="Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot"><a class="docs-heading-anchor" href="#Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot">Bayesian P-Value with Median T Statistic Posterior Plot</a><a id="Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="797f31a5.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bpv-Tuple"><code>plot_bpv</code></a></p><h2 id="Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot"><a class="docs-heading-anchor" href="#Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot">Bayesian P-Value with Median T Statistic Posterior Plot</a><a id="Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Bayesian-P-Value-with-Median-T-Statistic-Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("regression1d")
 plot_bpv(data; kind="t_stat", t_stat="0.5")
-gcf()</code></pre><img alt="Example block output" src="489512e5.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bpv-Tuple"><code>plot_bpv</code></a></p><h2 id="Compare-Plot"><a class="docs-heading-anchor" href="#Compare-Plot">Compare Plot</a><a id="Compare-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Compare-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="41cfad5a.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_bpv-Tuple"><code>plot_bpv</code></a></p><h2 id="Compare-Plot"><a class="docs-heading-anchor" href="#Compare-Plot">Compare Plot</a><a id="Compare-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Compare-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -33,7 +33,7 @@ model_compare = compare(
     ),
 )
 plot_compare(model_compare; figsize=(12, 4))
-gcf()</code></pre><img alt="Example block output" src="57582004.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.compare"><code>compare</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_compare-Tuple"><code>plot_compare</code></a></p><h2 id="Density-Plot"><a class="docs-heading-anchor" href="#Density-Plot">Density Plot</a><a id="Density-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Density-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="7c7be325.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.compare"><code>compare</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_compare-Tuple"><code>plot_compare</code></a></p><h2 id="Density-Plot"><a class="docs-heading-anchor" href="#Density-Plot">Density Plot</a><a id="Density-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Density-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -45,7 +45,7 @@ plot_density(
     var_names=["theta"],
     shade=0.1,
 )
-gcf()</code></pre><img alt="Example block output" src="30434eb7.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_density-Tuple"><code>plot_density</code></a></p><h2 id="Dist-Plot"><a class="docs-heading-anchor" href="#Dist-Plot">Dist Plot</a><a id="Dist-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Dist-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, Distributions, Random
+gcf()</code></pre><img alt="Example block output" src="fe00b21a.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_density-Tuple"><code>plot_density</code></a></p><h2 id="Dist-Plot"><a class="docs-heading-anchor" href="#Dist-Plot">Dist Plot</a><a id="Dist-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Dist-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, Distributions, Random
 
 Random.seed!(308)
 
@@ -56,52 +56,52 @@ b = rand(Normal(0, 1), 1000)
 _, ax = subplots(1, 2; figsize=(10, 4))
 plot_dist(a; color="C1", label="Poisson", ax=ax[0])
 plot_dist(b; color="C2", label="Gaussian", ax=ax[1])
-gcf()</code></pre><img alt="Example block output" src="ba354cc7.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_dist-Tuple"><code>plot_dist</code></a></p><h2 id="Dot-Plot"><a class="docs-heading-anchor" href="#Dot-Plot">Dot Plot</a><a id="Dot-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Dot-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots
+gcf()</code></pre><img alt="Example block output" src="1f6d2824.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_dist-Tuple"><code>plot_dist</code></a></p><h2 id="Dot-Plot"><a class="docs-heading-anchor" href="#Dot-Plot">Dot Plot</a><a id="Dot-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Dot-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots
 
 use_style("arviz-darkgrid")
 
 data = randn(1000)
 plot_dot(data; dotcolor="C1", point_interval=true)
 title("Gaussian Distribution")
-gcf()</code></pre><img alt="Example block output" src="1c7f868a.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_dot-Tuple"><code>plot_dot</code></a></p><h2 id="ECDF-Plot"><a class="docs-heading-anchor" href="#ECDF-Plot">ECDF Plot</a><a id="ECDF-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ECDF-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, Distributions
+gcf()</code></pre><img alt="Example block output" src="cc28fac0.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_dot-Tuple"><code>plot_dot</code></a></p><h2 id="ECDF-Plot"><a class="docs-heading-anchor" href="#ECDF-Plot">ECDF Plot</a><a id="ECDF-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ECDF-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, Distributions
 
 use_style("arviz-darkgrid")
 
 sample = randn(1_000)
 dist = Normal()
 plot_ecdf(sample; cdf=x -&gt; cdf(dist, x), confidence_bands=true)
-gcf()</code></pre><img alt="Example block output" src="579b5e5f.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ecdf-Tuple"><code>plot_ecdf</code></a></p><h2 id="ELPD-Plot"><a class="docs-heading-anchor" href="#ELPD-Plot">ELPD Plot</a><a id="ELPD-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ELPD-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="36194073.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ecdf-Tuple"><code>plot_ecdf</code></a></p><h2 id="ELPD-Plot"><a class="docs-heading-anchor" href="#ELPD-Plot">ELPD Plot</a><a id="ELPD-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ELPD-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 d1 = load_example_data("centered_eight")
 d2 = load_example_data("non_centered_eight")
 plot_elpd(Dict("Centered eight" =&gt; d1, "Non centered eight" =&gt; d2); xlabels=true)
-gcf()</code></pre><img alt="Example block output" src="f7ebe073.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_elpd-Tuple"><code>plot_elpd</code></a></p><h2 id="Energy-Plot"><a class="docs-heading-anchor" href="#Energy-Plot">Energy Plot</a><a id="Energy-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Energy-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="f80722b1.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_elpd-Tuple"><code>plot_elpd</code></a></p><h2 id="Energy-Plot"><a class="docs-heading-anchor" href="#Energy-Plot">Energy Plot</a><a id="Energy-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Energy-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("centered_eight")
 plot_energy(data; figsize=(12, 8))
-gcf()</code></pre><img alt="Example block output" src="954c1200.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_energy-Tuple"><code>plot_energy</code></a></p><h2 id="ESS-Evolution-Plot"><a class="docs-heading-anchor" href="#ESS-Evolution-Plot">ESS Evolution Plot</a><a id="ESS-Evolution-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ESS-Evolution-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="adebc9e6.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_energy-Tuple"><code>plot_energy</code></a></p><h2 id="ESS-Evolution-Plot"><a class="docs-heading-anchor" href="#ESS-Evolution-Plot">ESS Evolution Plot</a><a id="ESS-Evolution-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ESS-Evolution-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 idata = load_example_data("radon")
 plot_ess(idata; var_names=["b"], kind="evolution")
-gcf()</code></pre><img alt="Example block output" src="358423c0.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ess-Tuple"><code>plot_ess</code></a></p><h2 id="ESS-Local-Plot"><a class="docs-heading-anchor" href="#ESS-Local-Plot">ESS Local Plot</a><a id="ESS-Local-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ESS-Local-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="a0ef0dbf.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ess-Tuple"><code>plot_ess</code></a></p><h2 id="ESS-Local-Plot"><a class="docs-heading-anchor" href="#ESS-Local-Plot">ESS Local Plot</a><a id="ESS-Local-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ESS-Local-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 idata = load_example_data("non_centered_eight")
 plot_ess(idata; var_names=["mu"], kind="local", marker="_", ms=20, mew=2, rug=true)
-gcf()</code></pre><img alt="Example block output" src="ab196d09.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ess-Tuple"><code>plot_ess</code></a></p><h2 id="ESS-Quantile-Plot"><a class="docs-heading-anchor" href="#ESS-Quantile-Plot">ESS Quantile Plot</a><a id="ESS-Quantile-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ESS-Quantile-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="4546a86d.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ess-Tuple"><code>plot_ess</code></a></p><h2 id="ESS-Quantile-Plot"><a class="docs-heading-anchor" href="#ESS-Quantile-Plot">ESS Quantile Plot</a><a id="ESS-Quantile-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#ESS-Quantile-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 idata = load_example_data("radon")
 plot_ess(idata; var_names=["sigma"], kind="quantile", color="C4")
-gcf()</code></pre><img alt="Example block output" src="935b435d.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ess-Tuple"><code>plot_ess</code></a></p><h2 id="Forest-Plot"><a class="docs-heading-anchor" href="#Forest-Plot">Forest Plot</a><a id="Forest-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Forest-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="17ce7e47.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ess-Tuple"><code>plot_ess</code></a></p><h2 id="Forest-Plot"><a class="docs-heading-anchor" href="#Forest-Plot">Forest Plot</a><a id="Forest-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Forest-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -113,7 +113,7 @@ plot_forest(
     var_names=["mu"],
 )
 title("Estimated theta for eight schools model")
-gcf()</code></pre><img alt="Example block output" src="3004f57b.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_forest-Tuple"><code>plot_forest</code></a></p><h2 id="Ridge-Plot"><a class="docs-heading-anchor" href="#Ridge-Plot">Ridge Plot</a><a id="Ridge-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Ridge-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="f8b897f2.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_forest-Tuple"><code>plot_forest</code></a></p><h2 id="Ridge-Plot"><a class="docs-heading-anchor" href="#Ridge-Plot">Ridge Plot</a><a id="Ridge-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Ridge-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -129,7 +129,7 @@ plot_forest(
     figsize=(9, 4),
 )
 title("Relative defensive strength\nof Six Nation rugby teams")
-gcf()</code></pre><img alt="Example block output" src="b50e496c.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_forest-Tuple"><code>plot_forest</code></a></p><h2 id="Plot-HDI"><a class="docs-heading-anchor" href="#Plot-HDI">Plot HDI</a><a id="Plot-HDI-1"></a><a class="docs-heading-anchor-permalink" href="#Plot-HDI" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Random
+gcf()</code></pre><img alt="Example block output" src="f38f72b4.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_forest-Tuple"><code>plot_forest</code></a></p><h2 id="Plot-HDI"><a class="docs-heading-anchor" href="#Plot-HDI">Plot HDI</a><a id="Plot-HDI-1"></a><a class="docs-heading-anchor-permalink" href="#Plot-HDI" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Random
 using ArviZPythonPlots
 
 Random.seed!(308)
@@ -142,7 +142,7 @@ y_data_rep = 0.5 .* randn(200, 100) .+ transpose(y_data)
 
 plot(x_data, y_data; color="C6")
 plot_hdi(x_data, y_data_rep; color="k", plot_kwargs=Dict("ls" =&gt; "--"))
-gcf()</code></pre><img alt="Example block output" src="8cc788db.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_hdi-Tuple"><code>plot_hdi</code></a></p><h2 id="Joint-Plot"><a class="docs-heading-anchor" href="#Joint-Plot">Joint Plot</a><a id="Joint-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Joint-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="7a848bad.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_hdi-Tuple"><code>plot_hdi</code></a></p><h2 id="Joint-Plot"><a class="docs-heading-anchor" href="#Joint-Plot">Joint Plot</a><a id="Joint-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Joint-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -155,7 +155,7 @@ plot_pair(
     marginals=true,
     figsize=(10, 10),
 )
-gcf()</code></pre><img alt="Example block output" src="d3ee88ef.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="KDE-Plot"><a class="docs-heading-anchor" href="#KDE-Plot">KDE Plot</a><a id="KDE-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#KDE-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="6b155be2.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="KDE-Plot"><a class="docs-heading-anchor" href="#KDE-Plot">KDE Plot</a><a id="KDE-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#KDE-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -173,7 +173,7 @@ plot_kde(
     plot_kwargs=Dict("linewidth" =&gt; 2, "color" =&gt; "black"),
     rug_kwargs=Dict("color" =&gt; "black"),
 )
-gcf()</code></pre><img alt="Example block output" src="8a04a48c.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_kde-Tuple"><code>plot_kde</code></a></p><h2 id="2d-KDE"><a class="docs-heading-anchor" href="#2d-KDE">2d KDE</a><a id="2d-KDE-1"></a><a class="docs-heading-anchor-permalink" href="#2d-KDE" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Random
+gcf()</code></pre><img alt="Example block output" src="385efdd3.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_kde-Tuple"><code>plot_kde</code></a></p><h2 id="2d-KDE"><a class="docs-heading-anchor" href="#2d-KDE">2d KDE</a><a id="2d-KDE-1"></a><a class="docs-heading-anchor-permalink" href="#2d-KDE" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Random
 using ArviZPythonPlots
 
 Random.seed!(308)
@@ -181,7 +181,7 @@ Random.seed!(308)
 use_style("arviz-darkgrid")
 
 plot_kde(rand(100), rand(100))
-gcf()</code></pre><img alt="Example block output" src="70de467e.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_kde-Tuple"><code>plot_kde</code></a></p><h2 id="KDE-Quantiles-Plot"><a class="docs-heading-anchor" href="#KDE-Quantiles-Plot">KDE Quantiles Plot</a><a id="KDE-Quantiles-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#KDE-Quantiles-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Random
+gcf()</code></pre><img alt="Example block output" src="17475805.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_kde-Tuple"><code>plot_kde</code></a></p><h2 id="KDE-Quantiles-Plot"><a class="docs-heading-anchor" href="#KDE-Quantiles-Plot">KDE Quantiles Plot</a><a id="KDE-Quantiles-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#KDE-Quantiles-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Random
 using Distributions
 using ArviZPythonPlots
 
@@ -191,39 +191,39 @@ use_style("arviz-darkgrid")
 
 dist = rand(Beta(rand(Uniform(0.5, 10)), 5), 1000)
 plot_kde(dist; quantiles=[0.25, 0.5, 0.75])
-gcf()</code></pre><img alt="Example block output" src="66b547a8.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_kde-Tuple"><code>plot_kde</code></a></p><h2 id="Pareto-Shape-Plot"><a class="docs-heading-anchor" href="#Pareto-Shape-Plot">Pareto Shape Plot</a><a id="Pareto-Shape-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Pareto-Shape-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="e0370032.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_kde-Tuple"><code>plot_kde</code></a></p><h2 id="Pareto-Shape-Plot"><a class="docs-heading-anchor" href="#Pareto-Shape-Plot">Pareto Shape Plot</a><a id="Pareto-Shape-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Pareto-Shape-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 idata = load_example_data("radon")
 loo_data = loo(idata)
 plot_khat(loo_data; show_bins=true)
-gcf()</code></pre><img alt="Example block output" src="e366ebf2.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo"><code>loo</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_khat-Tuple"><code>plot_khat</code></a></p><h2 id="LOO-PIT-ECDF-Plot"><a class="docs-heading-anchor" href="#LOO-PIT-ECDF-Plot">LOO-PIT ECDF Plot</a><a id="LOO-PIT-ECDF-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#LOO-PIT-ECDF-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="5ff84e1d.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo"><code>loo</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_khat-Tuple"><code>plot_khat</code></a></p><h2 id="LOO-PIT-ECDF-Plot"><a class="docs-heading-anchor" href="#LOO-PIT-ECDF-Plot">LOO-PIT ECDF Plot</a><a id="LOO-PIT-ECDF-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#LOO-PIT-ECDF-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 idata = load_example_data("radon")
 
 plot_loo_pit(idata; y="y", ecdf=true, color="maroon")
-gcf()</code></pre><img alt="Example block output" src="9256f513.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo_pit"><code>loo_pit</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_loo_pit-Tuple"><code>plot_loo_pit</code></a></p><h2 id="LOO-PIT-Overlay-Plot"><a class="docs-heading-anchor" href="#LOO-PIT-Overlay-Plot">LOO-PIT Overlay Plot</a><a id="LOO-PIT-Overlay-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#LOO-PIT-Overlay-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="b1b7d744.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo_pit"><code>loo_pit</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_loo_pit-Tuple"><code>plot_loo_pit</code></a></p><h2 id="LOO-PIT-Overlay-Plot"><a class="docs-heading-anchor" href="#LOO-PIT-Overlay-Plot">LOO-PIT Overlay Plot</a><a id="LOO-PIT-Overlay-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#LOO-PIT-Overlay-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 idata = load_example_data("non_centered_eight")
 plot_loo_pit(; idata, y="obs", color="indigo")
-gcf()</code></pre><img alt="Example block output" src="3ef04f92.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo_pit"><code>loo_pit</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_loo_pit-Tuple"><code>plot_loo_pit</code></a></p><h2 id="Quantile-Monte-Carlo-Standard-Error-Plot"><a class="docs-heading-anchor" href="#Quantile-Monte-Carlo-Standard-Error-Plot">Quantile Monte Carlo Standard Error Plot</a><a id="Quantile-Monte-Carlo-Standard-Error-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Quantile-Monte-Carlo-Standard-Error-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="dfa896dd.png"/><p>See <a href="https://julia.arviz.org/ArviZ/stable/api/stats/#ArviZ.loo_pit"><code>loo_pit</code></a>, <a href="../api/plots/#ArviZPythonPlots.plot_loo_pit-Tuple"><code>plot_loo_pit</code></a></p><h2 id="Quantile-Monte-Carlo-Standard-Error-Plot"><a class="docs-heading-anchor" href="#Quantile-Monte-Carlo-Standard-Error-Plot">Quantile Monte Carlo Standard Error Plot</a><a id="Quantile-Monte-Carlo-Standard-Error-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Quantile-Monte-Carlo-Standard-Error-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("centered_eight")
 plot_mcse(data; var_names=["tau", "mu"], rug=true, extra_methods=true)
-gcf()</code></pre><img alt="Example block output" src="3f621ff9.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_mcse-Tuple"><code>plot_mcse</code></a></p><h2 id="Quantile-MCSE-Errobar-Plot"><a class="docs-heading-anchor" href="#Quantile-MCSE-Errobar-Plot">Quantile MCSE Errobar Plot</a><a id="Quantile-MCSE-Errobar-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Quantile-MCSE-Errobar-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="5c2a0c17.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_mcse-Tuple"><code>plot_mcse</code></a></p><h2 id="Quantile-MCSE-Errobar-Plot"><a class="docs-heading-anchor" href="#Quantile-MCSE-Errobar-Plot">Quantile MCSE Errobar Plot</a><a id="Quantile-MCSE-Errobar-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Quantile-MCSE-Errobar-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("radon")
 plot_mcse(data; var_names=["sigma_a"], color="C4", errorbar=true)
-gcf()</code></pre><img alt="Example block output" src="dbd31da2.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_mcse-Tuple"><code>plot_mcse</code></a></p><h2 id="Pair-Plot"><a class="docs-heading-anchor" href="#Pair-Plot">Pair Plot</a><a id="Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="60407b00.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_mcse-Tuple"><code>plot_mcse</code></a></p><h2 id="Pair-Plot"><a class="docs-heading-anchor" href="#Pair-Plot">Pair Plot</a><a id="Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -232,7 +232,7 @@ coords = Dict("school" =&gt; ["Choate", "Deerfield"])
 plot_pair(
     centered; var_names=["theta", "mu", "tau"], coords, divergences=true, textsize=22
 )
-gcf()</code></pre><img alt="Example block output" src="526c99b4.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="Hexbin-Pair-Plot"><a class="docs-heading-anchor" href="#Hexbin-Pair-Plot">Hexbin Pair Plot</a><a id="Hexbin-Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Hexbin-Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="e76d4241.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="Hexbin-Pair-Plot"><a class="docs-heading-anchor" href="#Hexbin-Pair-Plot">Hexbin Pair Plot</a><a id="Hexbin-Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Hexbin-Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -246,7 +246,7 @@ plot_pair(
     colorbar=true,
     divergences=true,
 )
-gcf()</code></pre><img alt="Example block output" src="c100fbad.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="KDE-Pair-Plot"><a class="docs-heading-anchor" href="#KDE-Pair-Plot">KDE Pair Plot</a><a id="KDE-Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#KDE-Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="5a88a23e.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="KDE-Pair-Plot"><a class="docs-heading-anchor" href="#KDE-Pair-Plot">KDE Pair Plot</a><a id="KDE-Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#KDE-Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -260,7 +260,7 @@ plot_pair(
     divergences=true,
     textsize=22,
 )
-gcf()</code></pre><img alt="Example block output" src="972dc2f0.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="Point-Estimate-Pair-Plot"><a class="docs-heading-anchor" href="#Point-Estimate-Pair-Plot">Point Estimate Pair Plot</a><a id="Point-Estimate-Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Point-Estimate-Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="e8b4cd4b.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="Point-Estimate-Pair-Plot"><a class="docs-heading-anchor" href="#Point-Estimate-Pair-Plot">Point Estimate Pair Plot</a><a id="Point-Estimate-Pair-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Point-Estimate-Pair-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -276,7 +276,7 @@ plot_pair(
     point_estimate="median",
     figsize=(10, 8),
 )
-gcf()</code></pre><img alt="Example block output" src="25273eaf.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="Parallel-Plot"><a class="docs-heading-anchor" href="#Parallel-Plot">Parallel Plot</a><a id="Parallel-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Parallel-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="93d922bf.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_pair-Tuple"><code>plot_pair</code></a></p><h2 id="Parallel-Plot"><a class="docs-heading-anchor" href="#Parallel-Plot">Parallel Plot</a><a id="Parallel-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Parallel-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
@@ -284,32 +284,32 @@ data = load_example_data("centered_eight")
 ax = plot_parallel(data; var_names=["theta", "tau", "mu"])
 ax.set_xticklabels(ax.get_xticklabels(); rotation=70)
 draw()
-gcf()</code></pre><img alt="Example block output" src="73f13566.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_parallel-Tuple"><code>plot_parallel</code></a></p><h2 id="Posterior-Plot"><a class="docs-heading-anchor" href="#Posterior-Plot">Posterior Plot</a><a id="Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="3e8e746c.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_parallel-Tuple"><code>plot_parallel</code></a></p><h2 id="Posterior-Plot"><a class="docs-heading-anchor" href="#Posterior-Plot">Posterior Plot</a><a id="Posterior-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("centered_eight")
 coords = Dict("school" =&gt; ["Choate"])
 plot_posterior(data; var_names=["mu", "theta"], coords, rope=(-1, 1))
-gcf()</code></pre><img alt="Example block output" src="25c2dc8e.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_posterior-Tuple"><code>plot_posterior</code></a></p><h2 id="Posterior-Predictive-Check-Plot"><a class="docs-heading-anchor" href="#Posterior-Predictive-Check-Plot">Posterior Predictive Check Plot</a><a id="Posterior-Predictive-Check-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Predictive-Check-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="fbb532a6.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_posterior-Tuple"><code>plot_posterior</code></a></p><h2 id="Posterior-Predictive-Check-Plot"><a class="docs-heading-anchor" href="#Posterior-Predictive-Check-Plot">Posterior Predictive Check Plot</a><a id="Posterior-Predictive-Check-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Predictive-Check-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("non_centered_eight")
 plot_ppc(data; data_pairs=Dict("obs" =&gt; "obs"), alpha=0.03, figsize=(12, 6), textsize=14)
-gcf()</code></pre><img alt="Example block output" src="8513934e.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Posterior-Predictive-Check-Cumulative-Plot"><a class="docs-heading-anchor" href="#Posterior-Predictive-Check-Cumulative-Plot">Posterior Predictive Check Cumulative Plot</a><a id="Posterior-Predictive-Check-Cumulative-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Predictive-Check-Cumulative-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="86596fdb.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Posterior-Predictive-Check-Cumulative-Plot"><a class="docs-heading-anchor" href="#Posterior-Predictive-Check-Cumulative-Plot">Posterior Predictive Check Cumulative Plot</a><a id="Posterior-Predictive-Check-Cumulative-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Posterior-Predictive-Check-Cumulative-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("non_centered_eight")
 plot_ppc(data; alpha=0.3, kind="cumulative", figsize=(12, 6), textsize=14)
-gcf()</code></pre><img alt="Example block output" src="97c08294.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Rank-Plot"><a class="docs-heading-anchor" href="#Rank-Plot">Rank Plot</a><a id="Rank-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Rank-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="485fff7d.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_ppc-Tuple"><code>plot_ppc</code></a></p><h2 id="Rank-Plot"><a class="docs-heading-anchor" href="#Rank-Plot">Rank Plot</a><a id="Rank-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Rank-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("centered_eight")
 plot_rank(data; var_names=["tau", "mu"])
-gcf()</code></pre><img alt="Example block output" src="d6aff48a.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_rank-Tuple"><code>plot_rank</code></a></p><h2 id="Regression-Plot"><a class="docs-heading-anchor" href="#Regression-Plot">Regression Plot</a><a id="Regression-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Regression-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots, ArviZExampleData, DimensionalData
+gcf()</code></pre><img alt="Example block output" src="20594f32.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_rank-Tuple"><code>plot_rank</code></a></p><h2 id="Regression-Plot"><a class="docs-heading-anchor" href="#Regression-Plot">Regression Plot</a><a id="Regression-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Regression-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZ, ArviZPythonPlots, ArviZExampleData, DimensionalData
 
 use_style("arviz-darkgrid")
 
@@ -321,25 +321,25 @@ y_model = broadcast_dims(muladd, posterior.intercept, posterior.slope, constant_
 posterior = merge(posterior, (; y_model))
 data = merge(data, InferenceData(; posterior, constant_data))
 plot_lm("y"; idata=data, x="x", y_model="y_model")
-gcf()</code></pre><img alt="Example block output" src="8720e9df.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_lm-Tuple"><code>plot_lm</code></a></p><h2 id="Separation-Plot"><a class="docs-heading-anchor" href="#Separation-Plot">Separation Plot</a><a id="Separation-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Separation-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="f7c0034d.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_lm-Tuple"><code>plot_lm</code></a></p><h2 id="Separation-Plot"><a class="docs-heading-anchor" href="#Separation-Plot">Separation Plot</a><a id="Separation-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Separation-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("classification10d")
 plot_separation(data; y="outcome", y_hat="outcome", figsize=(8, 1))
-gcf()</code></pre><img alt="Example block output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAysAAABvCAYAAADsdl+7AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjguMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8g+/7EAAAACXBIWXMAAA9hAAAPYQGoP6dpAAACuUlEQVR4nO3dsU0DQRBAUQ7RgZtFFGDRD3IhBG6DFsaBE7COsxPsj/RedNKOVpN+bXDLzMwTAABAzPOjFwAAAFgjVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAkl5uHfw4fP3lHgD8Q69v5/8Kv++XH99b59+tzW7dcTm3dtfW+W9nANzf8XN3dcbLCgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACSJFQAAIEmsAAAASWIFAABIEisAAECSWAEAAJLECgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACSJFQAAIEmsAAAASWIFAABIEisAAECSWAEAAJLECgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACSJFQAAIEmsAAAASWIFAABIEisAAECSWAEAAJLECgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACQtMzOPXgIAAOCSlxUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAg6QTEISbX/vbCUAAAAABJRU5ErkJggg=="/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_separation-Tuple"><code>plot_separation</code></a></p><h2 id="Trace-Plot"><a class="docs-heading-anchor" href="#Trace-Plot">Trace Plot</a><a id="Trace-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Trace-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAysAAABvCAYAAADsdl+7AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjguMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/H5lhTAAAACXBIWXMAAA9hAAAPYQGoP6dpAAACuUlEQVR4nO3dsU0DQRBAUQ7RgZtFFGDRD3IhBG6DFsaBE7COsxPsj/RedNKOVpN+bXDLzMwTAABAzPOjFwAAAFgjVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAkl5uHfw4fP3lHgD8Q69v5/8Kv++XH99b59+tzW7dcTm3dtfW+W9nANzf8XN3dcbLCgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACSJFQAAIEmsAAAASWIFAABIEisAAECSWAEAAJLECgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACSJFQAAIEmsAAAASWIFAABIEisAAECSWAEAAJLECgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACSJFQAAIEmsAAAASWIFAABIEisAAECSWAEAAJLECgAAkCRWAACAJLECAAAkiRUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAgSawAAABJYgUAAEgSKwAAQJJYAQAAksQKAACQJFYAAIAksQIAACQtMzOPXgIAAOCSlxUAACBJrAAAAEliBQAASBIrAABAklgBAACSxAoAAJAkVgAAgCSxAgAAJIkVAAAg6QTEISbX/vbCUAAAAABJRU5ErkJggg=="/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_separation-Tuple"><code>plot_separation</code></a></p><h2 id="Trace-Plot"><a class="docs-heading-anchor" href="#Trace-Plot">Trace Plot</a><a id="Trace-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Trace-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("non_centered_eight")
 plot_trace(data; var_names=["tau", "mu"])
-gcf()</code></pre><img alt="Example block output" src="233d4003.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_trace-Tuple"><code>plot_trace</code></a></p><h2 id="Violin-Plot"><a class="docs-heading-anchor" href="#Violin-Plot">Violin Plot</a><a id="Violin-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Violin-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
+gcf()</code></pre><img alt="Example block output" src="3c202429.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_trace-Tuple"><code>plot_trace</code></a></p><h2 id="Violin-Plot"><a class="docs-heading-anchor" href="#Violin-Plot">Violin Plot</a><a id="Violin-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Violin-Plot" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, ArviZExampleData
 
 use_style("arviz-darkgrid")
 
 data = load_example_data("non_centered_eight")
 plot_violin(data; var_names=["mu", "tau"])
-gcf()</code></pre><img alt="Example block output" src="ca61ef52.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_violin-Tuple"><code>plot_violin</code></a></p><h2 id="Styles"><a class="docs-heading-anchor" href="#Styles">Styles</a><a id="Styles-1"></a><a class="docs-heading-anchor-permalink" href="#Styles" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, Distributions, PythonCall
+gcf()</code></pre><img alt="Example block output" src="4011c52a.png"/><p>See <a href="../api/plots/#ArviZPythonPlots.plot_violin-Tuple"><code>plot_violin</code></a></p><h2 id="Styles"><a class="docs-heading-anchor" href="#Styles">Styles</a><a id="Styles-1"></a><a class="docs-heading-anchor-permalink" href="#Styles" title="Permalink"></a></h2><pre><code class="language-julia hljs">using ArviZPythonPlots, Distributions, PythonCall
 
 x = range(0, 1; length=100)
 dist = pdf.(Beta(2, 5), x)
@@ -380,4 +380,4 @@ for (idx, style) in enumerate(style_list)
     end
 end
 tight_layout()
-gcf()</code></pre><img alt="Example block output" src="d9926b1a.png"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API Overview »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="auto">Automatic (OS)</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.2.1 on <span class="colophon-date" title="Thursday 1 February 2024 09:11">Thursday 1 February 2024</span>. Using Julia version 1.10.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+gcf()</code></pre><img alt="Example block output" src="bef15d19.png"/></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API Overview »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.3.0 on <span class="colophon-date" title="Monday 11 March 2024 20:17">Monday 11 March 2024</span>. Using Julia version 1.10.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
