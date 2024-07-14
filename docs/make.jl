@@ -75,6 +75,7 @@ MultiDocumenter.make(
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
     brand_image=MultiDocumenter.BrandImage(".", joinpath("assets", "logo.png")),
+    custom_scripts=Any[joinpath("assets", "hide_turing_menu.js")]
 )
 
 # download logo
@@ -84,6 +85,10 @@ Downloads.download(
     "https://raw.githubusercontent.com/arviz-devs/arviz-project/main/arviz_logos/ArviZ_fav.png",
     joinpath(assets_dir, "logo.png");
     verbose=true,
+)
+cp(
+    joinpath(@__DIR__, "assets", "hide_turing_menu.js"),
+    joinpath(assets_dir, "hide_turing_menu.js"),
 )
 
 # deploy to GitHub Pages
