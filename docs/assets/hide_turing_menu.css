@@ -1,0 +1,6 @@
+.ext-navigation,
+.ext-navigation+script,
+.ext-navigation~script,
+.ext-navigation~style {
+    display: none !important;
+}

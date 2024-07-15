@@ -75,7 +75,8 @@ MultiDocumenter.make(
         index_versions=["stable"], engine=MultiDocumenter.FlexSearch
     ),
     brand_image=MultiDocumenter.BrandImage(".", joinpath("assets", "logo.png")),
-    custom_scripts=Any[joinpath("assets", "hide_turing_menu.js")]
+    custom_stylesheets=[joinpath("assets", "hide_turing_menu.css")],
+    custom_scripts=Any[joinpath("assets", "hide_turing_menu.js")],
 )
 
 # download logo
@@ -86,10 +87,9 @@ Downloads.download(
     joinpath(assets_dir, "logo.png");
     verbose=true,
 )
-cp(
-    joinpath(@__DIR__, "assets", "hide_turing_menu.js"),
-    joinpath(assets_dir, "hide_turing_menu.js"),
-)
+for fn in ["hide_turing_menu.js", "hide_turing_menu.css"]
+    cp(joinpath(@__DIR__, "assets", fn), joinpath(assets_dir, fn))
+end
 
 # deploy to GitHub Pages
 git_root = normpath(joinpath(@__DIR__, ".."))
