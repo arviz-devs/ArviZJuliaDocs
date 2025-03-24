@@ -1,0 +1,3294 @@
+<!DOCTYPE html><HTML lang="en"><head><script charset="utf-8" src="../../../../assets/default/multidoc_injector.js" type="text/javascript"></script><script charset="utf-8" type="text/javascript">window.MULTIDOCUMENTER_ROOT_PATH = '/'</script><script charset="utf-8" src="../../../../assets/default/flexsearch.bundle.js" type="text/javascript"></script><script charset="utf-8" src="../../../../assets/default/flexsearch_integration.js" type="text/javascript"></script><script charset="utf-8" src="../../../../assets/hide_turing_menu.js" type="text/javascript"></script><meta charset="UTF-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Plotting functions · ArviZPythonPlots.jl</title><meta content="Plotting functions · ArviZPythonPlots.jl" name="title"/><meta content="Plotting functions · ArviZPythonPlots.jl" property="og:title"/><meta content="Plotting functions · ArviZPythonPlots.jl" property="twitter:title"/><meta content="Documentation for ArviZPythonPlots.jl." name="description"/><meta content="Documentation for ArviZPythonPlots.jl." property="og:description"/><meta content="Documentation for ArviZPythonPlots.jl." property="twitter:description"/><meta content="stable/api/plots/" property="og:url"/><meta content="stable/api/plots/" property="twitter:url"/><link href="nothing/ArviZPythonPlots/stable/api/plots/" rel="canonical"/><script data-outdated-warner="" src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script data-main="../../assets/documenter.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" data-theme-name="catppuccin-mocha" href="../../assets/themes/catppuccin-mocha.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-macchiato" href="../../assets/themes/catppuccin-macchiato.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-frappe" href="../../assets/themes/catppuccin-frappe.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="catppuccin-latte" href="../../assets/themes/catppuccin-latte.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-dark" data-theme-primary-dark="" href="../../assets/themes/documenter-dark.css" rel="stylesheet" type="text/css"/><link class="docs-theme-link" data-theme-name="documenter-light" data-theme-primary="" href="../../assets/themes/documenter-light.css" rel="stylesheet" type="text/css"/><script src="../../assets/themeswap.js"></script><link href="../../../../assets/default/multidoc.css" rel="stylesheet" type="text/css"/><link href="../../../../assets/default/flexsearch.css" rel="stylesheet" type="text/css"/><link href="../../../../assets/hide_turing_menu.css" rel="stylesheet" type="text/css"/></head><body><nav id="multi-page-nav"><a class="brand" href="../../../.."><img alt="home" src="../../../../assets/logo.png"/></a><div class="hidden-on-mobile" id="nav-items"><a class="nav-link nav-item" href="../../../../ArviZ/">ArviZ</a><div class="nav-dropdown"><button class="nav-item dropdown-label">Plots</button><ul class="nav-dropdown-container"><a class="nav-link active nav-item" href="../../../">ArviZPythonPlots</a><a class="nav-link nav-item" href="../../../../ArviZPlots/dev/">ArviZPlots (unregistered)</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Stats</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../PosteriorStats/">PosteriorStats</a><a class="nav-link nav-item" href="../../../../PSIS/">PSIS</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Diagnostics</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../MCMCDiagnosticTools/">MCMCDiagnosticTools</a></ul></div><div class="nav-dropdown"><button class="nav-item dropdown-label">Data</button><ul class="nav-dropdown-container"><a class="nav-link nav-item" href="../../../../InferenceObjects/">InferenceObjects</a><a class="nav-link nav-item" href="../../../../ArviZExampleData/">ArviZExampleData</a></ul></div><div class="search nav-item"><input id="search-input" placeholder="Search everywhere..."/><ul class="suggestions hidden" id="search-result-container"></ul><div class="search-keybinding">/</div></div></div><button id="multidoc-toggler"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg></button></nav><div id="documenter"><nav class="docs-sidebar"><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><a class="tocitem" href="../../examples/">Examples gallery</a></li><li><span class="tocitem">API</span><ul><li><a class="tocitem" href="../style/">Plotting styles</a></li><li><a class="tocitem" href="../rcparams/">rcParams</a></li><li class="is-active"><a class="tocitem" href="">Plotting functions</a><ul class="internal"><li><a class="tocitem" href="#Reference"><span>Reference</span></a></li></ul></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" href="#" id="documenter-sidebar-button"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">API</a></li><li class="is-active"><a href="">Plotting functions</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="">Plotting functions</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/arviz-devs/ArviZPythonPlots.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/main/docs/src/api/plots.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" href="#" id="documenter-settings-button" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" href="javascript:;" id="documenter-article-toggle-button" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="plots-api"><a class="docs-heading-anchor" href="#plots-api">Plotting functions</a><a id="plots-api-1"></a><a class="docs-heading-anchor-permalink" href="#plots-api" title="Permalink"></a></h1><ul><li><a href="#ArviZPythonPlots.plot_autocorr-Tuple"><code>ArviZPythonPlots.plot_autocorr</code></a></li><li><a href="#ArviZPythonPlots.plot_bf-Tuple"><code>ArviZPythonPlots.plot_bf</code></a></li><li><a href="#ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a></li><li><a href="#ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a></li><li><a href="#ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a></li><li><a href="#ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a></li><li><a href="#ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a></li><li><a href="#ArviZPythonPlots.plot_dot-Tuple"><code>ArviZPythonPlots.plot_dot</code></a></li><li><a href="#ArviZPythonPlots.plot_ecdf-Tuple"><code>ArviZPythonPlots.plot_ecdf</code></a></li><li><a href="#ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a></li><li><a href="#ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a></li><li><a href="#ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a></li><li><a href="#ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a></li><li><a href="#ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a></li><li><a href="#ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a></li><li><a href="#ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a></li><li><a href="#ArviZPythonPlots.plot_lm-Tuple"><code>ArviZPythonPlots.plot_lm</code></a></li><li><a href="#ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a></li><li><a href="#ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a></li><li><a href="#ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a></li><li><a href="#ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a></li><li><a href="#ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a></li><li><a href="#ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a></li><li><a href="#ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a></li><li><a href="#ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a></li><li><a href="#ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a></li><li><a href="#ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a></li></ul><h2 id="Reference"><a class="docs-heading-anchor" href="#Reference">Reference</a><a id="Reference-1"></a><a class="docs-heading-anchor-permalink" href="#Reference" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_autocorr-Tuple" id="ArviZPythonPlots.plot_autocorr-Tuple"><code>ArviZPythonPlots.plot_autocorr</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Bar plot of the autocorrelation function (ACF) for a sequence of data.
+
+    The ACF plots are helpful as a convergence diagnostic for posteriors from MCMC
+    samples which display autocorrelation.
+
+    Parameters
+    ----------
+    data : InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        refer to documentation of :func:`arviz.convert_to_dataset` for details
+    var_names : list of str, optional
+        Variables to be plotted. Prefix the variables by ``~`` when you want to exclude
+        them from the plot. See :ref:`this section &lt;common_var_names&gt;` for usage examples.
+    filter_vars : {None, "like", "regex"}, default None
+        If `None` (default), interpret `var_names` as the real variables names. If "like",
+        interpret `var_names` as substrings of the real variables names. If "regex",
+        interpret `var_names` as regular expressions on the real variables names. See
+        :ref:`this section &lt;common_filter_vars&gt;` for usage examples.
+    max_lag : int, optional
+        Maximum lag to calculate autocorrelation. By Default, the plot displays the
+        first 100 lag or the total number of draws, whichever is smaller.
+    combined : bool, default False
+        Flag for combining multiple chains into a single chain. If False, chains will be
+        plotted separately.
+    grid : tuple, optional
+        Number of rows and columns. Defaults to None, the rows and columns are
+        automatically inferred. See :ref:`this section &lt;common_grid&gt;` for usage examples.
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+        Note this is not used if `ax` is supplied.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on `figsize`.
+    labeller : Labeller, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax : 2D array-like of matplotlib_axes or bokeh_figure, optional
+        A 2D array of locations into which to plot the densities. If not supplied, ArviZ will create
+        its own array of plot areas (and return it).
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_config : dict, optional
+        Currently specifies the bounds to use for bokeh axes. Defaults to value set in ``rcParams``.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figures
+
+    See Also
+    --------
+    autocov : Compute autocovariance estimates for every lag for the input array.
+    autocorr : Compute autocorrelation using FFT for every lag for the input array.
+
+    Examples
+    --------
+    Plot default autocorrelation
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_autocorr(data)
+
+    Plot subset variables by specifying variable name exactly
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_autocorr(data, var_names=['mu', 'tau'] )
+
+
+    Combine chains by variable and select variables by excluding some with partial naming
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_autocorr(data, var_names=['~thet'], filter_vars="like", combined=True)
+
+
+    Specify maximum lag (x axis bound)
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_autocorr(data, var_names=['mu', 'tau'], max_lag=200, combined=True)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_bf-Tuple" id="ArviZPythonPlots.plot_bf-Tuple"><code>ArviZPythonPlots.plot_bf</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Approximated Bayes Factor for comparing hypothesis of two nested models.
+
+    The Bayes factor is estimated by comparing a model (H1) against a model in which the
+    parameter of interest has been restricted to be a point-null (H0). This computation
+    assumes the models are nested and thus H0 is a special case of H1.
+
+    Notes
+    -----
+    The bayes Factor is approximated pproximated as the Savage-Dickey density ratio
+    algorithm presented in [1]_.
+
+    Parameters
+    -----------
+    idata : InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details.
+    var_name : str, optional
+        Name of variable we want to test.
+    prior : numpy.array, optional
+        In case we want to use different prior, for example for sensitivity analysis.
+    ref_val : int, default 0
+        Point-null for Bayes factor estimation.
+    xlim :  tuple, optional
+        Set the x limits, which might be used for visualization purposes.
+    colors : tuple, default ('C0', 'C1')
+        Tuple of valid Matplotlib colors. First element for the prior, second for the posterior.
+    figsize : (float, float), optional
+        Figure size. If `None` it will be defined automatically.
+    textsize: float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled based
+        on `figsize`.
+    plot_kwargs : dicts, optional
+        Additional keywords passed to :func:`matplotlib.pyplot.plot`.
+    hist_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_dist`. Only works for discrete variables.
+    ax : axes, optional
+        :class:`matplotlib.axes.Axes` or :class:`bokeh.plotting.Figure`.
+    backend :{"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    dict : A dictionary with BF10 (Bayes Factor 10 (H1/H0 ratio), and BF01 (H0/H1 ratio).
+    axes : matplotlib_axes or bokeh_figure
+
+    References
+    ----------
+    .. [1] Heck, D., 2019. A caveat on the avage-Dickey density ratio:
+    The case of computing Bayes factors for regression parameters.
+
+    Examples
+    --------
+    Moderate evidence indicating that the parameter "a" is different from zero.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata = az.from_dict(posterior={"a":np.random.normal(1, 0.5, 5000)},
+        ...     prior={"a":np.random.normal(0, 1, 5000)})
+        &gt;&gt;&gt; az.plot_bf(idata, var_name="a", ref_val=0)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_bpv-Tuple" id="ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot Bayesian p-value for observed data and Posterior/Prior predictive.
+
+    Parameters
+    ----------
+    data : InferenceData
+        :class:`arviz.InferenceData` object containing the observed and
+        posterior/prior predictive data.
+    kind : {"u_value", "p_value", "t_stat"}, default "u_value"
+        Specify the kind of plot:
+
+        * The ``kind="p_value"`` computes :math:`p := p(y* \leq y | y)`.
+          This is the probability of the data y being larger or equal than the predicted data y*.
+          The ideal value is 0.5 (half the predictions below and half above the data).
+        * The ``kind="u_value"`` argument computes :math:`p_i := p(y_i* \leq y_i | y)`.
+          i.e. like a p_value but per observation :math:`y_i`. This is also known as marginal
+          p_value. The ideal distribution is uniform. This is similar to the LOO-PIT
+          calculation/plot, the difference is than in LOO-pit plot we compute
+          :math:`pi = p(y_i* r \leq y_i | y_{-i} )`, where :math:`y_{-i}`,
+          is all other data except :math:`y_i`.
+        * The ``kind="t_stat"`` argument computes :math:`:= p(T(y)* \leq T(y) | y)`
+          where T is any test statistic. See ``t_stat`` argument below for details
+          of available options.
+
+    t_stat : str, float, or callable, default "median"
+        Test statistics to compute from the observations and predictive distributions.
+        Allowed strings are “mean”, “median” or “std”. Alternative a quantile can be passed
+        as a float (or str) in the interval (0, 1). Finally a user defined function is also
+        acepted, see examples section for details.
+    bpv : bool, default True
+        If True add the Bayesian p_value to the legend when ``kind = t_stat``.
+    plot_mean : bool, default True
+        Whether or not to plot the mean test statistic.
+    reference : {"analytical", "samples", None}, default "analytical"
+        How to compute the distributions used as reference for ``kind=u_values``
+        or ``kind=p_values``. Use `None` to not plot any reference.
+    mse : bool, default False
+        Show scaled mean square error between uniform distribution and marginal p_value
+        distribution.
+    n_ref : int, default 100
+        Number of reference distributions to sample when ``reference=samples``.
+    hdi_prob : float, optional
+        Probability for the highest density interval for the analytical reference distribution when
+        ``kind=u_values``. Should be in the interval (0, 1]. Defaults to the
+        rcParam ``stats.hdi_prob``. See :ref:`this section &lt;common_hdi_prob&gt;` for usage examples.
+    color : str, optional
+        Matplotlib color
+    grid : tuple, optional
+        Number of rows and columns. By default, the rows and columns are
+        automatically inferred. See :ref:`this section &lt;common_grid&gt;` for usage examples.
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on `figsize`.
+    data_pairs : dict, optional
+        Dictionary containing relations between observed data and posterior/prior predictive data.
+        Dictionary structure:
+
+        - key = data var_name
+        - value = posterior/prior predictive var_name
+
+        For example, ``data_pairs = {'y' : 'y_hat'}``
+        If None, it will assume that the observed data and the posterior/prior
+        predictive data have the same variable name.
+    Labeller : Labeller, optional
+        Class providing the method ``make_pp_label`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    var_names : list of str, optional
+        Variables to be plotted. If `None` all variable are plotted. Prefix the variables by ``~``
+        when you want to exclude them from the plot. See the :ref:`this section &lt;common_var_names&gt;`
+        for usage examples. See :ref:`this section &lt;common_var_names&gt;` for usage examples.
+    filter_vars : {None, "like", "regex"}, default None
+        If `None` (default), interpret `var_names` as the real variables names. If "like",
+        interpret `var_names` as substrings of the real variables names. If "regex",
+        interpret `var_names` as regular expressions on the real variables names. See
+        :ref:`this section &lt;common_filter_vars&gt;` for usage examples.
+    coords : dict, optional
+        Dictionary mapping dimensions to selected coordinates to be plotted.
+        Dimensions without a mapping specified will include all coordinates for
+        that dimension. Defaults to including all coordinates for all
+        dimensions if None. See :ref:`this section &lt;common_coords&gt;` for usage examples.
+    flatten : list, optional
+        List of dimensions to flatten in observed_data. Only flattens across the coordinates
+        specified in the coords argument. Defaults to flattening all of the dimensions.
+    flatten_pp : list, optional
+        List of dimensions to flatten in posterior_predictive/prior_predictive. Only flattens
+        across the coordinates specified in the coords argument. Defaults to flattening all
+        of the dimensions. Dimensions should match flatten excluding dimensions for data_pairs
+        parameters. If `flatten` is defined and `flatten_pp` is None, then ``flatten_pp=flatten``.
+    legend : bool, default True
+        Add legend to figure.
+    ax : 2D array-like of matplotlib_axes or bokeh_figure, optional
+        A 2D array of locations into which to plot the densities. If not supplied, ArviZ will create
+        its own array of plot areas (and return it).
+    backend : str, optional
+        Select plotting backend {"matplotlib", "bokeh"}. Default "matplotlib".
+    plot_ref_kwargs :  dict, optional
+        Extra keyword arguments to control how reference is represented.
+        Passed to :meth:`matplotlib.axes.Axes.plot` or
+        :meth:`matplotlib.axes.Axes.axhspan` (when ``kind=u_value``
+        and ``reference=analytical``).
+    backend_kwargs : bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    group : {"posterior", "prior"}, default "posterior"
+        Specifies which InferenceData group should be plotted. If "posterior", then the values
+        in `posterior_predictive` group are compared to the ones in `observed_data`, if "prior" then
+        the same comparison happens, but with the values in `prior_predictive` group.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : 2D ndarray of matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    plot_ppc : Plot for posterior/prior predictive checks.
+    plot_loo_pit : Plot Leave-One-Out probability integral transformation (PIT) predictive checks.
+    plot_dist_comparison : Plot to compare fitted and unfitted distributions.
+
+    References
+    ----------
+    * Gelman et al. (2013) see http://www.stat.columbia.edu/~gelman/book/ pages 151-153 for details
+
+    Examples
+    --------
+    Plot Bayesian p_values.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data("regression1d")
+        &gt;&gt;&gt; az.plot_bpv(data, kind="p_value")
+
+    Plot custom test statistic comparison.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data("regression1d")
+        &gt;&gt;&gt; az.plot_bpv(data, kind="t_stat", t_stat=lambda x:np.percentile(x, q=50, axis=-1))
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_compare-Tuple" id="ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Summary plot for model comparison.
+
+    Models are compared based on their expected log pointwise predictive density (ELPD).
+    This plot is in the style of the one used in [2]_. Chapter 6 in the first edition
+    or 7 in the second.
+
+    Notes
+    -----
+    The ELPD is estimated either by Pareto smoothed importance sampling leave-one-out
+    cross-validation (LOO) or using the widely applicable information criterion (WAIC).
+    We recommend LOO in line with the work presented by [1]_.
+
+    Parameters
+    ----------
+    comp_df : pandas.DataFrame
+        Result of the :func:`arviz.compare` method.
+    insample_dev : bool, default False
+        Plot in-sample ELPD, that is the value of the information criteria without the
+        penalization given by the effective number of parameters (p_loo or p_waic).
+    plot_standard_error : bool, default True
+        Plot the standard error of the ELPD.
+    plot_ic_diff : bool, default True
+        Plot standard error of the difference in ELPD between each model
+        and the top-ranked model.
+    order_by_rank : bool, default True
+        If True ensure the best model is used as reference.
+    legend : bool, default True
+        Add legend to figure.
+    figsize : (float, float), optional
+        If `None`, size is (6, num of models) inches.
+    title : bool, default True
+        Show a tittle with a description of how to interpret the plot.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled based
+        on `figsize`.
+    labeller : Labeller, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    plot_kwargs : dict, optional
+        Optional arguments for plot elements. Currently accepts 'color_ic',
+        'marker_ic', 'color_insample_dev', 'marker_insample_dev', 'color_dse',
+        'marker_dse', 'ls_min_ic' 'color_ls_min_ic',  'fontsize'
+    ax : matplotlib_axes or bokeh_figure, optional
+        Matplotlib axes or bokeh figure.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    plot_elpd : Plot pointwise elpd differences between two or more models.
+    compare : Compare models based on PSIS-LOO loo or WAIC waic cross-validation.
+    loo : Compute Pareto-smoothed importance sampling leave-one-out cross-validation (PSIS-LOO-CV).
+    waic : Compute the widely applicable information criterion.
+
+    References
+    ----------
+    .. [1] Vehtari et al. (2016). Practical Bayesian model evaluation using leave-one-out
+    cross-validation and WAIC https://arxiv.org/abs/1507.04544
+
+    .. [2] McElreath R. (2022). Statistical Rethinking A Bayesian Course with Examples in
+    R and Stan, Second edition, CRC Press.
+
+    Examples
+    --------
+    Show default compare plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; model_compare = az.compare({'Centered 8 schools': az.load_arviz_data('centered_eight'),
+        &gt;&gt;&gt;                  'Non-centered 8 schools': az.load_arviz_data('non_centered_eight')})
+        &gt;&gt;&gt; az.plot_compare(model_compare)
+
+    Include the in-sample ELDP
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_compare(model_compare, insample_dev=True)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_density-Tuple" id="ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Generate KDE plots for continuous variables and histograms for discrete ones.
+
+    Plots are truncated at their 100*(1-alpha)% highest density intervals. Plots are grouped per
+    variable and colors assigned to models.
+
+    Parameters
+    ----------
+    data : InferenceData or iterable of InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object, or an Iterator
+        returning a sequence of such objects.
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details.
+    group : {"posterior", "prior"}, default "posterior"
+        Specifies which InferenceData group should be plotted. If "posterior", then the values
+        in `posterior_predictive` group are compared to the ones in `observed_data`, if "prior" then
+        the same comparison happens, but with the values in `prior_predictive` group.
+    data_labels : list of str, default None
+        List with names for the datasets passed as "data." Useful when plotting more than one
+        dataset.  Must be the same shape as the data parameter.
+    var_names : list of str, optional
+        List of variables to plot. If multiple datasets are supplied and `var_names` is not None,
+        will print the same set of variables for each dataset. Defaults to None, which results in
+        all the variables being plotted.
+    filter_vars : {None, "like", "regex"}, default None
+        If `None` (default), interpret `var_names` as the real variables names. If "like",
+        interpret `var_names` as substrings of the real variables names. If "regex",
+        interpret `var_names` as regular expressions on the real variables names. See
+        :ref:`this section &lt;common_filter_vars&gt;` for usage examples.
+    combine_dims : set_like of str, optional
+        List of dimensions to reduce. Defaults to reducing only the "chain" and "draw" dimensions.
+        See :ref:`this section &lt;common_combine_dims&gt;` for usage examples.
+    transform : callable
+        Function to transform data (defaults to `None` i.e. the identity function).
+    hdi_prob : float, default 0.94
+        Probability for the highest density interval. Should be in the interval (0, 1].
+        See :ref:`this section &lt;common_hdi_prob&gt;` for usage examples.
+    point_estimate : str, optional
+        Plot point estimate per variable. Values should be 'mean', 'median', 'mode' or None.
+        Defaults to 'auto' i.e. it falls back to default set in ``rcParams``.
+    colors : str or list of str, optional
+        List with valid matplotlib colors, one color per model. Alternative a string can be passed.
+        If the string is `cycle`, it will automatically choose a color per model from matplotlib's
+        cycle. If a single color is passed, e.g. 'k', 'C2' or 'red' this color will be used for all
+        models. Defaults to `cycle`.
+    outline : bool, default True
+        Use a line to draw KDEs and histograms.
+    hdi_markers : str
+        A valid `matplotlib.markers` like 'v', used to indicate the limits of the highest density
+        interval. Defaults to empty string (no marker).
+    shade : float, default 0
+        Alpha blending value for the shaded area under the curve, between 0 (no shade) and 1
+        (opaque).
+    bw : float or str, optional
+        If numeric, indicates the bandwidth and must be positive.
+        If str, indicates the method to estimate the bandwidth and must be
+        one of "scott", "silverman", "isj" or "experimental" when `circular` is False
+        and "taylor" (for now) when `circular` is True.
+        Defaults to "default" which means "experimental" when variable is not circular
+        and "taylor" when it is.
+    circular : bool, default False
+        If True, it interprets the values passed are from a circular variable measured in radians
+        and a circular KDE is used. Only valid for 1D KDE.
+    grid : tuple, optional
+        Number of rows and columns. Defaults to ``None``, the rows and columns are
+        automatically inferred. See :ref:`this section &lt;common_grid&gt;` for usage examples.
+    figsize : (float, float), optional
+        Figure size. If `None` it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled based
+        on `figsize`.
+    labeller : Labeller, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax : 2D array-like of matplotlib_axes or bokeh_figure, optional
+        A 2D array of locations into which to plot the densities. If not supplied, ArviZ will create
+        its own array of plot areas (and return it).
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : 2D ndarray of matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    plot_dist : Plot distribution as histogram or kernel density estimates.
+    plot_posterior : Plot Posterior densities in the style of John K. Kruschke's book.
+
+    Examples
+    --------
+    Plot default density plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; centered = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; non_centered = az.load_arviz_data('non_centered_eight')
+        &gt;&gt;&gt; az.plot_density([centered, non_centered])
+
+    Plot variables in a 4x5 grid
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_density([centered, non_centered], grid=(4, 5))
+
+    Plot subset variables by specifying variable name exactly
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"])
+
+    Plot a specific `az.InferenceData` group
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"], group="prior")
+
+    Specify highest density interval
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"], hdi_prob=.5)
+
+    Shade plots and/or remove outlines
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"], outline=False, shade=.8)
+
+    Specify binwidth for kernel density estimation
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"], bw=.9)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist-Tuple" id="ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot distribution as histogram or kernel density estimates.
+
+    By default continuous variables are plotted using KDEs and discrete ones using histograms
+
+    Parameters
+    ----------
+    values : array-like
+        Values to plot from an unknown continuous or discrete distribution.
+    values2 : array-like, optional
+        Values to plot. If present, a 2D KDE or a hexbin will be estimated.
+    color : string
+        valid matplotlib color.
+    kind : string, default "auto"
+        By default ("auto") continuous variables will use the kind defined by rcParam
+        ``plot.density_kind`` and discrete ones will use histograms.
+        To override this use "hist" to plot histograms and "kde" for KDEs.
+    cumulative : bool, default False
+        If true plot the estimated cumulative distribution function. Defaults to False.
+        Ignored for 2D KDE.
+    label : string
+        Text to include as part of the legend.
+    rotated : bool, default False
+        Whether to rotate the 1D KDE plot 90 degrees.
+    rug : bool, default False
+        Add a `rug plot &lt;https://en.wikipedia.org/wiki/Rug_plot&gt;`_ for a specific subset
+        of values. Ignored for 2D KDE.
+    bw : float or str, optional
+        If numeric, indicates the bandwidth and must be positive.
+        If str, indicates the method to estimate the bandwidth and must be
+        one of "scott", "silverman", "isj" or "experimental" when ``is_circular`` is False
+        and "taylor" (for now) when ``is_circular`` is True.
+        Defaults to "experimental" when variable is not circular and "taylor" when it is.
+    quantiles : list, optional
+        Quantiles in ascending order used to segment the KDE. Use [.25, .5, .75] for quartiles.
+    contour : bool, default True
+        If True plot the 2D KDE using contours, otherwise plot a smooth 2D KDE.
+    fill_last : bool, default True
+        If True fill the last contour of the 2D KDE plot.
+    figsize : (float, float), optional
+        Figure size. If `None` it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled based
+        on `figsize`. Not implemented for bokeh backend.
+    plot_kwargs : dict
+        Keywords passed to the pdf line of a 1D KDE. Passed to :func:`arviz.plot_kde` as
+        ``plot_kwargs``.
+    fill_kwargs : dict
+        Keywords passed to the fill under the line (use fill_kwargs={'alpha': 0} to disable fill).
+        Ignored for 2D KDE. Passed to :func:`arviz.plot_kde` as ``fill_kwargs``.
+    rug_kwargs : dict
+        Keywords passed to the rug plot. Ignored if ``rug=False`` or for 2D KDE
+        Use ``space`` keyword (float) to control the position of the rugplot.
+        The larger this number the lower the rugplot. Passed to
+        :func:`arviz.plot_kde` as ``rug_kwargs``.
+    contour_kwargs : dict
+        Keywords passed to the contourplot. Ignored for 1D KDE.
+    contourf_kwargs : dict
+        Keywords passed to :meth:`matplotlib.axes.Axes.contourf`. Ignored for 1D KDE.
+    pcolormesh_kwargs : dict
+        Keywords passed to :meth:`matplotlib.axes.Axes.pcolormesh`. Ignored for 1D KDE.
+    hist_kwargs : dict
+        Keyword arguments used to customize the histogram. Ignored when plotting a KDE.
+        They are passed to :meth:`matplotlib.axes.Axes.hist` if using matplotlib,
+        or to :meth:`bokeh.plotting.figure.quad` if using bokeh. In bokeh case,
+        the following extra keywords are also supported:
+
+        * ``color``: replaces the ``fill_color`` and ``line_color`` of the ``quad`` method
+        * ``bins``: taken from ``hist_kwargs`` and passed to :func:`numpy.histogram` instead
+        * ``density``: normalize histogram to represent a probability density function,
+          Defaults to ``True``
+
+        * ``cumulative``: plot the cumulative counts. Defaults to ``False``.
+
+    is_circular : {False, True, "radians", "degrees"}, default False
+        Select input type {"radians", "degrees"} for circular histogram or KDE plot. If True,
+        default input type is "radians". When this argument is present, it interprets the
+        values passed are from a circular variable measured in radians and a circular KDE is
+        used. Inputs in "degrees" will undergo an internal conversion to radians. Only valid
+        for 1D KDE.
+    ax : matplotlib_axes or bokeh_figure, optional
+        Matplotlib or bokeh targets on which to plot. If not supplied, Arviz will create
+        its own plot area (and return it).
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs :dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib axes or bokeh figure
+
+    See Also
+    --------
+    plot_posterior : Plot Posterior densities in the style of John K. Kruschke's book.
+    plot_density : Generate KDE plots for continuous variables and histograms for discrete ones.
+    plot_kde : 1D or 2D KDE plot taking into account boundary conditions.
+
+    Examples
+    --------
+    Plot an integer distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; a = np.random.poisson(4, 1000)
+        &gt;&gt;&gt; az.plot_dist(a)
+
+    Plot a continuous distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; b = np.random.normal(0, 1, 1000)
+        &gt;&gt;&gt; az.plot_dist(b)
+
+    Add a rug under the Gaussian distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dist(b, rug=True)
+
+    Segment into quantiles
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dist(b, rug=True, quantiles=[.25, .5, .75])
+
+    Plot as the cumulative distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dist(b, rug=True, quantiles=[.25, .5, .75], cumulative=True)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist_comparison-Tuple" id="ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot to compare fitted and unfitted distributions.
+
+    The resulting plots will show the compared distributions both on
+    separate axes (particularly useful when one of them is substantially tighter
+    than another), and plotted together, displaying a grid of three plots per
+    distribution.
+
+    Parameters
+    ----------
+    data : InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        containing the posterior/prior data. Refer to documentation of
+        :func:`arviz.convert_to_dataset` for details.
+    kind : {"latent", "observed"}, default "latent"
+        kind of plot to display The "latent" option includes {"prior", "posterior"},
+        and the "observed" option includes
+        {"observed_data", "prior_predictive", "posterior_predictive"}.
+    figsize : (float, float), optional
+        Figure size. If ``None`` it will be defined automatically.
+    textsize : float
+        Text size scaling factor for labels, titles and lines. If ``None`` it will be
+        autoscaled based on `figsize`.
+    var_names : str, list, list of lists, optional
+        if str, plot the variable. if list, plot all the variables in list
+        of all groups. if list of lists, plot the vars of groups in respective lists.
+        See :ref:`this section &lt;common_var_names&gt;` for usage examples.
+    coords : dict
+        Dictionary mapping dimensions to selected coordinates to be plotted.
+        Dimensions without a mapping specified will include all coordinates for
+        that dimension. See :ref:`this section &lt;common_coords&gt;` for usage examples.
+    combine_dims : set_like of str, optional
+        List of dimensions to reduce. Defaults to reducing only the "chain" and "draw" dimensions.
+        See :ref:`this section &lt;common_combine_dims&gt;` for usage examples.
+    transform : callable
+        Function to transform data (defaults to `None` i.e. the identity function).
+    legend : bool
+        Add legend to figure. By default True.
+    labeller : Labeller, optional
+        Class providing the method ``make_pp_label`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax : (nvars, 3) array-like of matplotlib_axes, optional
+        Matplotlib axes: The ax argument should have shape (nvars, 3), where the
+        last column is for the combined before/after plots and columns 0 and 1 are
+        for the before and after plots, respectively.
+    prior_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_dist` for prior/predictive groups.
+    posterior_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_dist` for posterior/predictive groups.
+    observed_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_dist` for observed_data group.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : 2D ndarray of matplotlib_axes
+        Returned object will have shape (nvars, 3),
+        where the last column is the combined plot and the first columns are the single plots.
+
+    See Also
+    --------
+    plot_bpv : Plot Bayesian p-value for observed data and Posterior/Prior predictive.
+
+    Examples
+    --------
+    Plot the prior/posterior plot for specified vars and coords.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('rugby')
+        &gt;&gt;&gt; az.plot_dist_comparison(data, var_names=["defs"], coords={"team" : ["Italy"]})
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_dot-Tuple" id="ArviZPythonPlots.plot_dot-Tuple"><code>ArviZPythonPlots.plot_dot</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot distribution as dot plot or quantile dot plot.
+
+    This function uses the Wilkinson's Algorithm [1]_ to allot dots to bins.
+    The quantile dot plots was inspired from [2]_.
+
+    Parameters
+    ----------
+    values : array-like
+        Values to plot from an unknown continuous or discrete distribution.
+    binwidth : float, optional
+        Width of the bin for drawing the dot plot.
+    dotsize : float, default 1
+        The size of the dots relative to the bin width. The default makes dots be
+        just about as wide as the bin width.
+    stackratio : float, default 1
+        The distance between the center of the dots in the same stack relative to the bin height.
+        The default makes dots in the same stack just touch each other.
+    point_interval : bool, default False
+        Plots the point interval. Uses ``hdi_prob`` to plot the HDI interval
+    point_estimate : str, optional
+        Plot point estimate per variable. Values should be ``mean``, ``median``, ``mode`` or None.
+        Defaults to ``auto`` i.e. it falls back to default set in rcParams.
+    dotcolor : string, optional
+        The color of the dots. Should be a valid matplotlib color.
+    intervalcolor : string, optional
+        The color of the interval. Should be a valid matplotlib color.
+    linewidth : int, default None
+        Line width throughout. If None it will be autoscaled based on `figsize`.
+    markersize : int, default None
+        Markersize throughout. If None it will be autoscaled based on `figsize`.
+    markercolor : string, optional
+        The color of the marker when plot_interval is True. Should be a valid matplotlib color.
+    marker : string, default "o"
+        The shape of the marker. Valid for matplotlib backend.
+    hdi_prob : float, optional
+        Valid only when point_interval is True. Plots HDI for chosen percentage of density.
+        Defaults to ``stats.hdi_prob`` rcParam. See :ref:`this section &lt;common_hdi_prob&gt;`
+        for usage examples.
+    rotated : bool, default False
+        Whether to rotate the dot plot by 90 degrees.
+    nquantiles : int, default 50
+        Number of quantiles to plot, used for quantile dot plots.
+    quartiles : bool, default True
+        If True then the quartile interval will be plotted with the HDI.
+    figsize : (float,float), optional
+        Figure size. If ``None`` it will be defined automatically.
+    plot_kwargs : dict, optional
+        Keywords passed for customizing the dots. Passed to :class:`mpl:matplotlib.patches.Circle`
+        in matplotlib and :meth:`bokeh.plotting.figure.circle` in bokeh.
+    backend :{"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    ax : axes, optional
+        Matplotlib_axes or bokeh_figure.
+    show : bool, optional
+        Call backend show function.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    plot_dist : Plot distribution as histogram or kernel density estimates.
+
+    References
+    ----------
+    .. [1] Leland Wilkinson (1999) Dot Plots, The American Statistician, 53:3, 276-281,
+        DOI: 10.1080/00031305.1999.10474474
+    .. [2] Matthew Kay, Tara Kola, Jessica R. Hullman,
+        and Sean A. Munson. 2016. When (ish) is My Bus? User-centered Visualizations of Uncertainty
+        in Everyday, Mobile Predictive Systems. DOI:https://doi.org/10.1145/2858036.2858558
+
+    Examples
+    --------
+    Plot dot plot for a set of data points
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; values = np.random.normal(0, 1, 500)
+        &gt;&gt;&gt; az.plot_dot(values)
+
+    Manually adjust number of quantiles to plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dot(values, nquantiles=100)
+
+    Add a point interval under the dot plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dot(values, point_interval=True)
+
+    Rotate the dot plots by 90 degrees i.e swap x and y axis
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_dot(values, point_interval=True, rotated=True)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_ecdf-Tuple" id="ArviZPythonPlots.plot_ecdf-Tuple"><code>ArviZPythonPlots.plot_ecdf</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot ECDF or ECDF-Difference Plot with Confidence bands.
+
+    Plots of the empirical CDF estimates of an array. When `values2` argument is provided,
+    the two empirical CDFs are overlaid with the distribution of `values` on top
+    (in a darker shade) and confidence bands in a more transparent shade. Optionally, the difference
+    between the two empirical CDFs can be computed, and the PIT for a single dataset or a comparison
+    between two samples.
+
+    Notes
+    -----
+    This plot computes the confidence bands with the simulated based algorithm presented in [1]_.
+
+    Parameters
+    ----------
+    values : array-like
+        Values to plot from an unknown continuous or discrete distribution.
+    values2 : array-like, optional
+        Values to compare to the original sample.
+    cdf : callable, optional
+        Cumulative distribution function of the distribution to compare the original sample.
+    difference : bool, default False
+        If True then plot ECDF-difference plot otherwise ECDF plot.
+    pit : bool, default False
+        If True plots the ECDF or ECDF-diff of PIT of sample.
+    confidence_bands : bool, default None
+        If True plots the simultaneous or pointwise confidence bands with `1 - fpr`
+        confidence level.
+    pointwise : bool, default False
+        If True plots pointwise confidence bands otherwise simultaneous bands.
+    npoints : int, default 100
+        This denotes the granularity size of our plot i.e the number of evaluation points
+        for the ecdf or ecdf-difference plots.
+    num_trials : int, default 500
+        The number of random ECDFs to generate for constructing simultaneous confidence bands.
+    fpr : float, default 0.05
+        The type I error rate s.t `1 - fpr` denotes the confidence level of bands.
+    figsize : (float,float), optional
+        Figure size. If `None` it will be defined automatically.
+    fill_band : bool, default True
+        If True it fills in between to mark the area inside the confidence interval. Otherwise,
+        plot the border lines.
+    plot_kwargs : dict, optional
+        Additional kwargs passed to :func:`mpl:matplotlib.pyplot.step` or
+        :meth:`bokeh.plotting.figure.step`
+    fill_kwargs : dict, optional
+        Additional kwargs passed to :func:`mpl:matplotlib.pyplot.fill_between` or
+        :meth:`bokeh:bokeh.plotting.Figure.varea`
+    plot_outline_kwargs : dict, optional
+        Additional kwargs passed to :meth:`mpl:matplotlib.axes.Axes.plot` or
+        :meth:`bokeh:bokeh.plotting.Figure.line`
+    ax :axes, optional
+        Matplotlib axes or bokeh figures.
+    show : bool, optional
+        Call backend show function.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    References
+    ----------
+    .. [1] Säilynoja, T., Bürkner, P.C. and Vehtari, A., 2021. Graphical Test for
+        Discrete Uniformity and its Applications in Goodness of Fit Evaluation and
+        Multiple Sample Comparison. arXiv preprint arXiv:2103.10522.
+
+    Examples
+    --------
+    Plot ecdf plot for a given sample
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; from scipy.stats import uniform, binom, norm
+
+        &gt;&gt;&gt; sample = norm(0,1).rvs(1000)
+        &gt;&gt;&gt; az.plot_ecdf(sample)
+
+    Plot ecdf plot with confidence bands for comparing a given sample w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; distribution = norm(0,1)
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf, confidence_bands = True)
+
+    Plot ecdf-difference plot with confidence bands for comparing a given sample
+    w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf,
+        &gt;&gt;&gt;              confidence_bands = True, difference = True)
+
+    Plot ecdf plot with confidence bands for PIT of sample for comparing a given sample
+    w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf,
+        &gt;&gt;&gt;              confidence_bands = True, pit = True)
+
+    Plot ecdf-difference plot with confidence bands for PIT of sample for comparing a given
+    sample w.r.t a given distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ecdf(sample, cdf = distribution.cdf,
+        &gt;&gt;&gt;              confidence_bands = True, difference = True, pit = True)
+
+    You could also plot the above w.r.t another sample rather than a given distribution.
+    For eg: Plot ecdf-difference plot with confidence bands for PIT of sample for
+    comparing a given sample w.r.t a given sample
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; sample2 = norm(0,1).rvs(5000)
+        &gt;&gt;&gt; az.plot_ecdf(sample, sample2, confidence_bands = True, difference = True, pit = True)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_elpd-Tuple" id="ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot pointwise elpd differences between two or more models.
+
+    Pointwise model comparison based on their expected log pointwise predictive density (ELPD).
+
+    Notes
+    -----
+    The ELPD is estimated either by Pareto smoothed importance sampling leave-one-out
+    cross-validation (LOO) or using the widely applicable information criterion (WAIC).
+    We recommend LOO in line with the work presented by [1]_.
+
+    Parameters
+    ----------
+    compare_dict : mapping of {str : ELPDData or InferenceData}
+        A dictionary mapping the model name to the object containing inference data or the result
+        of :func:`arviz.loo` or :func:`arviz.waic` functions.
+        Refer to :func:`arviz.convert_to_inference_data` for details on possible dict items.
+    color : str or array_like, default "C0"
+        Colors of the scatter plot. If color is a str all dots will have the same color.
+        If it is the size of the observations, each dot will have the specified color.
+        Otherwise, it will be interpreted as a list of the dims to be used for the color code.
+    xlabels : bool, default False
+        Use coords as xticklabels.
+    figsize : (float, float), optional
+        If `None`, size is (8 + numvars, 8 + numvars).
+    textsize : float, optional
+        Text size for labels. If `None` it will be autoscaled based on `figsize`.
+    coords : mapping, optional
+        Coordinates of points to plot. **All** values are used for computation, but only a
+        subset can be plotted for convenience. See :ref:`this section &lt;common_coords&gt;`
+        for usage examples.
+    legend : bool, default False
+        Include a legend to the plot. Only taken into account when color argument is a dim name.
+    threshold : float, optional
+        If some elpd difference is larger than ``threshold * elpd.std()``, show its label. If
+        `None`, no observations will be highlighted.
+    ic : str, optional
+        Information Criterion ("loo" for PSIS-LOO, "waic" for WAIC) used to compare models.
+        Defaults to ``rcParams["stats.information_criterion"]``.
+        Only taken into account when input is :class:`arviz.InferenceData`.
+    scale : str, optional
+        Scale argument passed to :func:`arviz.loo` or :func:`arviz.waic`, see their docs for
+        details. Only taken into account when values in ``compare_dict`` are
+        :class:`arviz.InferenceData`.
+    var_name : str, optional
+        Argument passed to to :func:`arviz.loo` or :func:`arviz.waic`, see their docs for
+        details. Only taken into account when values in ``compare_dict`` are
+        :class:`arviz.InferenceData`.
+    plot_kwargs : dicts, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.scatter`.
+    ax : axes, optional
+        :class:`matplotlib.axes.Axes` or :class:`bokeh.plotting.Figure`.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    plot_compare : Summary plot for model comparison.
+    loo : Compute Pareto-smoothed importance sampling leave-one-out cross-validation (PSIS-LOO-CV).
+    waic : Compute the widely applicable information criterion.
+
+    References
+    ----------
+    .. [1] Vehtari et al. (2016). Practical Bayesian model evaluation using leave-one-out
+    cross-validation and WAIC https://arxiv.org/abs/1507.04544
+
+    Examples
+    --------
+    Compare pointwise PSIS-LOO for centered and non centered models of the 8-schools problem
+    using matplotlib.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata1 = az.load_arviz_data("centered_eight")
+        &gt;&gt;&gt; idata2 = az.load_arviz_data("non_centered_eight")
+        &gt;&gt;&gt; az.plot_elpd(
+        &gt;&gt;&gt;     {"centered model": idata1, "non centered model": idata2},
+        &gt;&gt;&gt;     xlabels=True
+        &gt;&gt;&gt; )
+
+    .. bokeh-plot::
+        :source-position: above
+
+        import arviz as az
+        idata1 = az.load_arviz_data("centered_eight")
+        idata2 = az.load_arviz_data("non_centered_eight")
+        az.plot_elpd(
+            {"centered model": idata1, "non centered model": idata2},
+            backend="bokeh"
+        )
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_energy-Tuple" id="ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot energy transition distribution and marginal energy distribution in HMC algorithms.
+
+    This may help to diagnose poor exploration by gradient-based algorithms like HMC or NUTS.
+    The energy function in HMC can identify posteriors with heavy tailed distributions, that
+    in practice are challenging for sampling.
+
+    This plot is in the style of the one used in [1]_.
+
+    Parameters
+    ----------
+    data : obj
+        :class:`xarray.Dataset`, or any object that can be converted (must represent
+        ``sample_stats`` and have an ``energy`` variable).
+    kind : str, optional
+        Type of plot to display ("kde", "hist").
+    bfmi : bool, default True
+        If True add to the plot the value of the estimated Bayesian fraction of missing
+        information.
+    figsize : (float, float), optional
+        Figure size. If `None` it will be defined automatically.
+    legend : bool, default True
+        Flag for plotting legend.
+    fill_alpha : tuple, default (1, 0.75)
+        Alpha blending value for the shaded area under the curve, between 0
+        (no shade) and 1 (opaque).
+    fill_color : tuple of valid matplotlib color, default ('C0', 'C5')
+        Color for Marginal energy distribution and Energy transition distribution.
+    bw : float or str, optional
+        If numeric, indicates the bandwidth and must be positive.
+        If str, indicates the method to estimate the bandwidth and must be
+        one of "scott", "silverman", "isj" or "experimental". Defaults to "experimental".
+        Only works if ``kind='kde'``.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled
+        based on `figsize`.
+    fill_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_kde` (to control the shade).
+    plot_kwargs : dicts, optional
+        Additional keywords passed to :func:`arviz.plot_kde` or :func:`matplotlib.pyplot.hist`
+        (if ``type='hist'``).
+    ax : axes, optional
+        :class:`matplotlib.axes.Axes` or :class:`bokeh.plotting.Figure`.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    bfmi : Calculate the estimated Bayesian fraction of missing information (BFMI).
+
+    References
+    ----------
+    .. [1] Betancourt (2016). Diagnosing Suboptimal Cotangent Disintegrations in
+    Hamiltonian Monte Carlo https://arxiv.org/abs/1604.00695
+
+    Examples
+    --------
+    Plot a default energy plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_energy(data)
+
+    Represent energy plot via histograms
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_energy(data, kind='hist')
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_ess-Tuple" id="ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Generate quantile, local, or evolution ESS plots.
+
+    The local and the quantile ESS plots are recommended for checking
+    that there are enough samples for all the explored regions of the
+    parameter space. Checking local and quantile ESS is particularly
+    relevant when working with HDI intervals as opposed to ESS bulk,
+    which is suitable for point estimates.
+
+    Parameters
+    ----------
+    idata : InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details.
+    var_names : list of str, optional
+        Variables to be plotted. Prefix the variables by ``~`` when you want to exclude
+        them from the plot. See :ref:`this section &lt;common_var_names&gt;` for usage examples.
+    filter_vars : {None, "like", "regex"}, default None
+        If `None` (default), interpret `var_names` as the real variables names. If "like",
+        interpret `var_names` as substrings of the real variables names. If "regex",
+        interpret `var_names` as regular expressions on the real variables names. See
+        :ref:`this section &lt;common_filter_vars&gt;` for usage examples.
+    kind : {"local", "quantile", "evolution"}, default "local"
+        Specify the kind of plot:
+
+        * The ``kind="local"`` argument generates the ESS' local efficiency for
+          estimating quantiles of a desired posterior.
+        * The ``kind="quantile"`` argument generates the ESS' local efficiency
+          for estimating small-interval probability of a desired posterior.
+        * The ``kind="evolution"`` argument generates the estimated ESS'
+          with incrised number of iterations of a desired posterior.
+
+    relative : bool, default False
+        Show relative ess in plot ``ress = ess / N``.
+    coords : dict, optional
+        Coordinates of `var_names` to be plotted. Passed to :meth:`xarray.Dataset.sel`.
+        See :ref:`this section &lt;common_coords&gt;` for usage examples.
+    grid : tuple, optional
+        Number of rows and columns. By default, the rows and columns are
+        automatically inferred. See :ref:`this section &lt;common_grid&gt;` for usage examples.
+    figsize : (float, float), optional
+        Figure size. If ``None`` it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If ``None`` it will be autoscaled
+        based on `figsize`.
+    rug : bool, default False
+        Add a `rug plot &lt;https://en.wikipedia.org/wiki/Rug_plot&gt;`_ for a specific subset of values.
+    rug_kind : str, default "diverging"
+        Variable in sample stats to use as rug mask. Must be a boolean variable.
+    n_points : int, default 20
+        Number of points for which to plot their quantile/local ess or number of subsets
+        in the evolution plot.
+    extra_methods : bool, default False
+        Plot mean and sd ESS as horizontal lines. Not taken into account if ``kind = 'evolution'``.
+    min_ess : int, default 400
+        Minimum number of ESS desired. If ``relative=True`` the line is plotted at
+        ``min_ess / n_samples`` for local and quantile kinds and as a curve following
+        the ``min_ess / n`` dependency in evolution kind.
+    labeller : Labeller, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax : 2D array-like of matplotlib_axes or bokeh_figure, optional
+        A 2D array of locations into which to plot the densities. If not supplied, ArviZ will create
+        its own array of plot areas (and return it).
+    extra_kwargs : dict, optional
+        If evolution plot, `extra_kwargs` is used to plot ess tail and differentiate it
+        from ess bulk. Otherwise, passed to extra methods lines.
+    text_kwargs : dict, optional
+        Only taken into account when ``extra_methods=True``. kwargs passed to ax.annotate
+        for extra methods lines labels. It accepts the additional
+        key ``x`` to set ``xy=(text_kwargs["x"], mcse)``
+    hline_kwargs : dict, optional
+        kwargs passed to :func:`~matplotlib.axes.Axes.axhline` or to :class:`~bokeh.models.Span`
+        depending on the backend for the horizontal minimum ESS line.
+        For relative ess evolution plots the kwargs are passed to
+        :func:`~matplotlib.axes.Axes.plot` or to :class:`~bokeh.plotting.figure.line`
+    rug_kwargs : dict
+        kwargs passed to rug plot.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+    **kwargs
+        Passed as-is to :meth:`mpl:matplotlib.axes.Axes.hist` or
+        :meth:`mpl:matplotlib.axes.Axes.plot` function depending on the
+        value of `kind`.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figure
+
+    See Also
+    --------
+    ess : Calculate estimate of the effective sample size.
+
+    References
+    ----------
+    .. [1] Vehtari et al. (2019). Rank-normalization, folding, and
+        localization: An improved Rhat for assessing convergence of
+        MCMC https://arxiv.org/abs/1903.08008
+
+    Examples
+    --------
+    Plot local ESS.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata = az.load_arviz_data("centered_eight")
+        &gt;&gt;&gt; coords = {"school": ["Choate", "Lawrenceville"]}
+        &gt;&gt;&gt; az.plot_ess(
+        ...     idata, kind="local", var_names=["mu", "theta"], coords=coords
+        ... )
+
+    Plot ESS evolution as the number of samples increase. When the model is converging properly,
+    both lines in this plot should be roughly linear.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ess(
+        ...     idata, kind="evolution", var_names=["mu", "theta"], coords=coords
+        ... )
+
+    Customize local ESS plot to look like reference paper.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ess(
+        ...     idata, kind="local", var_names=["mu"], drawstyle="steps-mid", color="k",
+        ...     linestyle="-", marker=None, rug=True, rug_kwargs={"color": "r"}
+        ... )
+
+    Customize ESS evolution plot to look like reference paper.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; extra_kwargs = {"color": "lightsteelblue"}
+        &gt;&gt;&gt; az.plot_ess(
+        ...     idata, kind="evolution", var_names=["mu"],
+        ...     color="royalblue", extra_kwargs=extra_kwargs
+        ... )
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_forest-Tuple" id="ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Forest plot to compare HDI intervals from a number of distributions.
+
+    Generate forest or ridge plots to compare distributions from a model or list of models.
+    Additionally, the function can display effective sample sizes (ess) and Rhats to visualize
+    convergence diagnostics alongside the distributions.
+
+    Parameters
+    ----------
+    data : InferenceData
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details.
+    kind : {"foresplot", "ridgeplot"}, default "forestplot"
+        Specify the kind of plot:
+
+        * The ``kind="forestplot"`` generates credible intervals, where the central points are the
+          estimated posterior means, the thick lines are the central quartiles, and the thin lines
+          represent the :math:`100\times`(`hdi_prob`)% highest density intervals.
+        * The ``kind="ridgeplot"`` option generates density plots (kernel density estimate or
+          histograms) in the same graph. Ridge plots can be configured to have different overlap,
+          truncation bounds and quantile markers.
+
+    model_names : list of str, optional
+        List with names for the models in the list of data. Useful when plotting more that one
+        dataset.
+    var_names : list of str, optional
+        Variables to be plotted. Prefix the variables by ``~`` when you want to exclude
+        them from the plot. See :ref:`this section &lt;common_var_names&gt;` for usage examples.
+    combine_dims : set_like of str, optional
+        List of dimensions to reduce. Defaults to reducing only the "chain" and "draw" dimensions.
+        See :ref:`this section &lt;common_combine_dims&gt;` for usage examples.
+    filter_vars : {None, "like", "regex"}, default None
+        If `None` (default), interpret `var_names` as the real variables names. If "like",
+        interpret `var_names` as substrings of the real variables names. If "regex",
+        interpret `var_names` as regular expressions on the real variables names. See
+        :ref:`this section &lt;common_filter_vars&gt;` for usage examples.
+    transform : callable, optional
+        Function to transform data (defaults to None i.e.the identity function).
+    coords : dict, optional
+        Coordinates of ``var_names`` to be plotted. Passed to :meth:`xarray.Dataset.sel`.
+        See :ref:`this section &lt;common_coords&gt;` for usage examples.
+    combined : bool, default False
+        Flag for combining multiple chains into a single chain. If False, chains will
+        be plotted separately. See :ref:`this section &lt;common_combine&gt;` for usage examples.
+    hdi_prob : float, default 0.94
+        Plots highest posterior density interval for chosen percentage of density.
+        See :ref:`this section &lt;common_ hdi_prob&gt;` for usage examples.
+    rope : tuple or dictionary of tuples
+        Lower and upper values of the Region of Practical Equivalence. If a list with one interval
+        only is provided, the ROPE will be displayed across the y-axis. If more than one
+        interval is provided the length of the list should match the number of variables.
+    quartiles : bool, default True
+        Flag for plotting the interquartile range, in addition to the ``hdi_prob`` intervals.
+    r_hat : bool, default False
+        Flag for plotting Split R-hat statistics. Requires 2 or more chains.
+    ess : bool, default False
+        Flag for plotting the effective sample size.
+    colors : list or string, optional
+        list with valid matplotlib colors, one color per model. Alternative a string can be passed.
+        If the string is `cycle`, it will automatically chose a color per model from the matplotlibs
+        cycle. If a single color is passed, eg 'k', 'C2', 'red' this color will be used for all
+        models. Defaults to 'cycle'.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If `None` it will be autoscaled based
+        on ``figsize``.
+    linewidth : int, optional
+        Line width throughout. If `None` it will be autoscaled based on ``figsize``.
+    markersize : int, optional
+        Markersize throughout. If `None` it will be autoscaled based on ``figsize``.
+    legend : bool, optional
+        Show a legend with the color encoded model information.
+        Defaults to True, if there are multiple models.
+    labeller : Labeller, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ridgeplot_alpha: float, optional
+        Transparency for ridgeplot fill.  If ``ridgeplot_alpha=0``, border is colored by model,
+        otherwise a `black` outline is used.
+    ridgeplot_overlap : float, default 2
+        Overlap height for ridgeplots.
+    ridgeplot_kind : string, optional
+        By default ("auto") continuous variables are plotted using KDEs and discrete ones using
+        histograms. To override this use "hist" to plot histograms and "density" for KDEs.
+    ridgeplot_truncate : bool, default True
+        Whether to truncate densities according to the value of ``hdi_prob``.
+    ridgeplot_quantiles : list, optional
+        Quantiles in ascending order used to segment the KDE. Use [.25, .5, .75] for quartiles.
+    figsize : (float, float), optional
+        Figure size. If `None`, it will be defined automatically.
+    ax : axes, optional
+        :class:`matplotlib.axes.Axes` or :class:`bokeh.plotting.Figure`.
+    backend : {"matplotlib", "bokeh"}, default "matplotlib"
+        Select plotting backend.
+    backend_config : dict, optional
+        Currently specifies the bounds to use for bokeh axes. Defaults to value set in ``rcParams``.
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :class:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    1D ndarray of matplotlib_axes or bokeh_figures
+
+    See Also
+    --------
+    plot_posterior : Plot Posterior densities in the style of John K. Kruschke's book.
+    plot_density : Generate KDE plots for continuous variables and histograms for discrete ones.
+    summary : Create a data frame with summary statistics.
+
+    Examples
+    --------
+    Forestplot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; non_centered_data = az.load_arviz_data('non_centered_eight')
+        &gt;&gt;&gt; axes = az.plot_forest(non_centered_data,
+        &gt;&gt;&gt;                            kind='forestplot',
+        &gt;&gt;&gt;                            var_names=["^the"],
+        &gt;&gt;&gt;                            filter_vars="regex",
+        &gt;&gt;&gt;                            combined=True,
+        &gt;&gt;&gt;                            figsize=(9, 7))
+        &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
+
+    Forestplot with multiple datasets
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; centered_data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; axes = az.plot_forest([non_centered_data, centered_data],
+        &gt;&gt;&gt;                            model_names = ["non centered eight", "centered eight"],
+        &gt;&gt;&gt;                            kind='forestplot',
+        &gt;&gt;&gt;                            var_names=["^the"],
+        &gt;&gt;&gt;                            filter_vars="regex",
+        &gt;&gt;&gt;                            combined=True,
+        &gt;&gt;&gt;                            figsize=(9, 7))
+        &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools models')
+
+    Forestplot with ropes
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; rope = {'theta': [{'school': 'Choate', 'rope': (2, 4)}], 'mu': [{'rope': (-2, 2)}]}
+        &gt;&gt;&gt; axes = az.plot_forest(non_centered_data,
+        &gt;&gt;&gt;                            rope=rope,
+        &gt;&gt;&gt;                            var_names='~tau',
+        &gt;&gt;&gt;                            combined=True,
+        &gt;&gt;&gt;                            figsize=(9, 7))
+        &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
+
+
+    Ridgeplot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; axes = az.plot_forest(non_centered_data,
+        &gt;&gt;&gt;                            kind='ridgeplot',
+        &gt;&gt;&gt;                            var_names=['theta'],
+        &gt;&gt;&gt;                            combined=True,
+        &gt;&gt;&gt;                            ridgeplot_overlap=3,
+        &gt;&gt;&gt;                            colors='white',
+        &gt;&gt;&gt;                            figsize=(9, 7))
+        &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
+
+    Ridgeplot non-truncated and with quantiles
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; axes = az.plot_forest(non_centered_data,
+        &gt;&gt;&gt;                            kind='ridgeplot',
+        &gt;&gt;&gt;                            var_names=['theta'],
+        &gt;&gt;&gt;                            combined=True,
+        &gt;&gt;&gt;                            ridgeplot_truncate=False,
+        &gt;&gt;&gt;                            ridgeplot_quantiles=[.25, .5, .75],
+        &gt;&gt;&gt;                            ridgeplot_overlap=0.7,
+        &gt;&gt;&gt;                            colors='white',
+        &gt;&gt;&gt;                            figsize=(9, 7))
+        &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_hdi-Tuple" id="ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">
+    Plot HDI intervals for regression data.
+
+    Parameters
+    ----------
+    x : array-like
+        Values to plot.
+    y : array-like, optional
+        Values from which to compute the HDI. Assumed shape ``(chain, draw, \*shape)``.
+        Only optional if ``hdi_data`` is present.
+    hdi_data : array_like, optional
+        Precomputed HDI values to use. Assumed shape is ``(*x.shape, 2)``.
+    hdi_prob : float, optional
+        Probability for the highest density interval. Defaults to ``stats.hdi_prob`` rcParam.
+    color : str, optional
+        Color used for the limits of the HDI and fill. Should be a valid matplotlib color.
+    circular : bool, optional
+        Whether to compute the HDI taking into account ``x`` is a circular variable
+        (in the range [-np.pi, np.pi]) or not. Defaults to False (i.e non-circular variables).
+    smooth : boolean, optional
+        If True the result will be smoothed by first computing a linear interpolation of the data
+        over a regular grid and then applying the Savitzky-Golay filter to the interpolated data.
+        Defaults to True.
+    smooth_kwargs : dict, optional
+        Additional keywords modifying the Savitzky-Golay filter. See
+        :func:`scipy:scipy.signal.savgol_filter` for details.
+    figsize : tuple
+        Figure size. If None it will be defined automatically.
+    fill_kwargs : dict, optional
+        Keywords passed to :meth:`mpl:matplotlib.axes.Axes.fill_between`
+        (use ``fill_kwargs={'alpha': 0}`` to disable fill) or to
+        :meth:`bokeh.plotting.Figure.patch`.
+    plot_kwargs : dict, optional
+        HDI limits keyword arguments, passed to :meth:`mpl:matplotlib.axes.Axes.plot` or
+        :meth:`bokeh.plotting.Figure.patch`.
+    hdi_kwargs : dict, optional
+        Keyword arguments passed to :func:`~arviz.hdi`. Ignored if ``hdi_data`` is present.
+    ax : axes, optional
+        Matplotlib axes or bokeh figures.
+    backend : {"matplotlib","bokeh"}, optional
+        Select plotting backend.
+    backend_kwargs : bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :meth:`mpl:matplotlib.axes.Axes.plot` or
+        :meth:`bokeh.plotting.Figure.patch`.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    hdi : Calculate highest density interval (HDI) of array for given probability.
+
+    Examples
+    --------
+    Plot HDI interval of simulated regression data using `y` argument:
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; x_data = np.random.normal(0, 1, 100)
+        &gt;&gt;&gt; y_data = np.random.normal(2 + x_data * 0.5, 0.5, size=(2, 50, 100))
+        &gt;&gt;&gt; az.plot_hdi(x_data, y_data)
+
+    ``plot_hdi`` can also be given precalculated values with the argument ``hdi_data``. This example
+    shows how to use :func:`~arviz.hdi` to precalculate the values and pass these values to
+    ``plot_hdi``. Similarly to an example in ``hdi`` we are using the ``input_core_dims``
+    argument of :func:`~arviz.wrap_xarray_ufunc` to manually define the dimensions over which
+    to calculate the HDI.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; hdi_data = az.hdi(y_data, input_core_dims=[["draw"]])
+        &gt;&gt;&gt; ax = az.plot_hdi(x_data, hdi_data=hdi_data[0], color="r", fill_kwargs={"alpha": .2})
+        &gt;&gt;&gt; az.plot_hdi(x_data, hdi_data=hdi_data[1], color="k", ax=ax, fill_kwargs={"alpha": .2})
+
+    ``plot_hdi`` can also be used with Inference Data objects. Here we use the posterior predictive
+    to plot the HDI interval.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; X = np.random.normal(0,1,100)
+        &gt;&gt;&gt; Y = np.random.normal(2 + X * 0.5, 0.5, size=(2,10,100))
+        &gt;&gt;&gt; idata = az.from_dict(posterior={"y": Y}, constant_data={"x":X})
+        &gt;&gt;&gt; x_data = idata.constant_data.x
+        &gt;&gt;&gt; y_data = idata.posterior.y
+        &gt;&gt;&gt; az.plot_hdi(x_data, y_data)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_kde-Tuple" id="ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">1D or 2D KDE plot taking into account boundary conditions.
+
+    Parameters
+    ----------
+    values : array-like
+        Values to plot
+    values2 : array-like, optional
+        Values to plot. If present, a 2D KDE will be estimated
+    cumulative : bool
+        If true plot the estimated cumulative distribution function. Defaults to False.
+        Ignored for 2D KDE
+    rug : bool
+        If True adds a rugplot. Defaults to False. Ignored for 2D KDE
+    label : string
+        Text to include as part of the legend
+    bw : float or str, optional
+        If numeric, indicates the bandwidth and must be positive.
+        If str, indicates the method to estimate the bandwidth and must be
+        one of "scott", "silverman", "isj" or "experimental" when ``is_circular`` is False
+        and "taylor" (for now) when ``is_circular`` is True.
+        Defaults to "default" which means "experimental" when variable is not circular
+        and "taylor" when it is.
+    adaptive : bool, optional.
+        If True, an adaptative bandwidth is used. Only valid for 1D KDE.
+        Defaults to False.
+    quantiles : list
+        Quantiles in ascending order used to segment the KDE.
+        Use [.25, .5, .75] for quartiles. Defaults to None.
+    rotated : bool
+        Whether to rotate the 1D KDE plot 90 degrees.
+    contour : bool
+        If True plot the 2D KDE using contours, otherwise plot a smooth 2D KDE.
+        Defaults to True.
+    hdi_probs : list
+        Plots highest density credibility regions for the provided probabilities for a 2D KDE.
+        Defaults to matplotlib chosen levels with no fixed probability associated.
+    fill_last : bool
+        If True fill the last contour of the 2D KDE plot. Defaults to False.
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+    textsize : float
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on ``figsize``. Not implemented for bokeh backend.
+    plot_kwargs : dict
+        Keywords passed to the pdf line of a 1D KDE. See :meth:`mpl:matplotlib.axes.Axes.plot`
+        or :meth:`bokeh:bokeh.plotting.Figure.line` for a description of accepted values.
+    fill_kwargs : dict
+        Keywords passed to the fill under the line (use ``fill_kwargs={'alpha': 0}``
+        to disable fill). Ignored for 2D KDE. Passed to
+        :meth:`bokeh.plotting.Figure.patch`.
+    rug_kwargs : dict
+        Keywords passed to the rug plot. Ignored if ``rug=False`` or for 2D KDE
+        Use ``space`` keyword (float) to control the position of the rugplot. The larger this number
+        the lower the rugplot. Passed to :class:`bokeh:bokeh.models.glyphs.Scatter`.
+    contour_kwargs : dict
+        Keywords passed to :meth:`mpl:matplotlib.axes.Axes.contour`
+        to draw contour lines or :meth:`bokeh.plotting.Figure.patch`.
+        Ignored for 1D KDE.
+    contourf_kwargs : dict
+        Keywords passed to :meth:`mpl:matplotlib.axes.Axes.contourf`
+        to draw filled contours. Ignored for 1D KDE.
+    pcolormesh_kwargs : dict
+        Keywords passed to :meth:`mpl:matplotlib.axes.Axes.pcolormesh` or
+        :meth:`bokeh.plotting.Figure.image`.
+        Ignored for 1D KDE.
+    is_circular : {False, True, "radians", "degrees"}. Default False.
+        Select input type {"radians", "degrees"} for circular histogram or KDE plot. If True,
+        default input type is "radians". When this argument is present, it interprets ``values``
+        is a circular variable measured in radians and a circular KDE is used. Inputs in
+        "degrees" will undergo an internal conversion to radians.
+    ax : axes, optional
+        Matplotlib axes or bokeh figures.
+    legend : bool
+        Add legend to the figure. By default True.
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`. For additional documentation
+        check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+    return_glyph : bool, optional
+        Internal argument to return glyphs for bokeh
+
+    Returns
+    -------
+    axes : matplotlib.Axes or bokeh.plotting.Figure
+        Object containing the kde plot
+    glyphs : list, optional
+        Bokeh glyphs present in plot.  Only provided if ``return_glyph`` is True.
+
+    See Also
+    --------
+    kde : One dimensional density estimation.
+    plot_dist : Plot distribution as histogram or kernel density estimates.
+
+    Examples
+    --------
+    Plot default KDE
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; non_centered = az.load_arviz_data('non_centered_eight')
+        &gt;&gt;&gt; mu_posterior = np.concatenate(non_centered.posterior["mu"].values)
+        &gt;&gt;&gt; tau_posterior = np.concatenate(non_centered.posterior["tau"].values)
+        &gt;&gt;&gt; az.plot_kde(mu_posterior)
+
+
+    Plot KDE with rugplot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, rug=True)
+
+    Plot KDE with adaptive bandwidth
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, adaptive=True)
+
+    Plot KDE with a different bandwidth estimator
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, bw="scott")
+
+    Plot KDE with a bandwidth specified manually
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, bw=0.4)
+
+    Plot KDE for a circular variable
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; rvs = np.random.vonmises(mu=np.pi, kappa=2, size=500)
+        &gt;&gt;&gt; az.plot_kde(rvs, is_circular=True)
+
+
+    Plot a cumulative distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, cumulative=True)
+
+
+
+    Rotate plot 90 degrees
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, rotated=True)
+
+
+    Plot 2d contour KDE
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, values2=tau_posterior)
+
+
+    Plot 2d contour KDE, without filling and contour lines using viridis cmap
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, values2=tau_posterior,
+        ...             contour_kwargs={"colors":None, "cmap":plt.cm.viridis},
+        ...             contourf_kwargs={"alpha":0});
+
+    Plot 2d contour KDE, set the number of levels to 3.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(
+        ...     mu_posterior, values2=tau_posterior,
+        ...     contour_kwargs={"levels":3}, contourf_kwargs={"levels":3}
+        ... );
+
+    Plot 2d contour KDE with 30%, 60% and 90% HDI contours.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, values2=tau_posterior, hdi_probs=[0.3, 0.6, 0.9])
+
+    Plot 2d smooth KDE
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_kde(mu_posterior, values2=tau_posterior, contour=False)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_khat-Tuple" id="ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">
+    Plot Pareto tail indices for diagnosing convergence.
+
+    Parameters
+    ----------
+    khats : ELPDData containing Pareto shapes information or array of
+        Pareto tail indices.
+    color : str or array_like, optional
+        Colors of the scatter plot, if color is a str all dots will
+        have the same color, if it is the size of the observations,
+        each dot will have the specified color, otherwise, it will be
+        interpreted as a list of the dims to be used for the color
+        code. If Matplotlib c argument is passed, it will override
+        the color argument
+    xlabels : bool, optional
+        Use coords as xticklabels
+    show_hlines : bool, optional
+        Show the horizontal lines, by default at the values [0, 0.5, 0.7, 1].
+    show_bins : bool, optional
+        Show the percentage of khats falling in each bin, as delimited by hlines.
+    bin_format : str, optional
+        The string is used as formatting guide calling ``bin_format.format(count, pct)``.
+    threshold : float, optional
+        Show the labels of k values larger than threshold. Defaults to `None`,
+        no observations will be highlighted.
+    hover_label : bool, optional
+        Show the datapoint label when hovering over it with the mouse. Requires an interactive
+        backend.
+    hover_format : str, optional
+        String used to format the hover label via ``hover_format.format(idx, coord_label)``
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on figsize.
+    coords : mapping, optional
+        Coordinates of points to plot. **All** values are used for computation, but only a
+        a subset can be plotted for convenience.
+    legend : bool, optional
+        Include a legend to the plot. Only taken into account when color argument is a dim name.
+    markersize : int, optional
+        markersize for scatter plot. Defaults to `None` in which case it will
+        be chosen based on autoscaling for figsize.
+    ax : axes, optional
+        Matplotlib axes or bokeh figures.
+    hlines_kwargs : dictionary, optional
+        Additional keywords passed to
+        :meth:`matplotlib.axes.Axes.hlines`.
+    backend : str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs : bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    show : bool, optional
+        Call backend show function.
+    kwargs :
+        Additional keywords passed to
+        :meth:`matplotlib.axes.Axes.scatter`.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figures
+
+    See Also
+    --------
+    psislw : Pareto smoothed importance sampling (PSIS).
+
+    Examples
+    --------
+    Plot estimated pareto shape parameters showing how many fall in each category.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; radon = az.load_arviz_data("radon")
+        &gt;&gt;&gt; loo_radon = az.loo(radon, pointwise=True)
+        &gt;&gt;&gt; az.plot_khat(loo_radon, show_bins=True)
+
+    Show xlabels
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; centered_eight = az.load_arviz_data("centered_eight")
+        &gt;&gt;&gt; khats = az.loo(centered_eight, pointwise=True).pareto_k
+        &gt;&gt;&gt; az.plot_khat(khats, xlabels=True, threshold=1)
+
+    Use custom color scheme
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; counties = radon.posterior.County[radon.constant_data.county_idx].values
+        &gt;&gt;&gt; colors = [
+        ...     "blue" if county[-1] in ("A", "N") else "green" for county in counties
+        ... ]
+        &gt;&gt;&gt; az.plot_khat(loo_radon, color=colors)
+
+    Notes
+    -----
+    The Generalized Pareto distribution (GPD) may be used to diagnose
+    convergence rates for importance sampling.  GPD has parameters
+    offset, scale, and shape. The shape parameter is usually denoted
+    with ``k``. ``k`` also tells how many finite moments the
+    distribution has. The pre-asymptotic convergence rate of
+    importance sampling can be estimated based on the fractional
+    number of finite moments of the importance ratio distribution. GPD
+    is fitted to the largest importance ratios and the estimated shape
+    parameter ``k``, i.e., ``\hat{k}`` can then be used as a diagnostic
+    (most importantly if ``\hat{k} &gt; 0.7``, then the convergence rate
+    is impractically low). See [1]_.
+
+    References
+    ----------
+    .. [1] Vehtari, A., Simpson, D., Gelman, A., Yao, Y., Gabry, J.,
+        2019. Pareto Smoothed Importance Sampling. arXiv:1507.02646 [stat].
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_lm-Tuple" id="ArviZPythonPlots.plot_lm-Tuple"><code>ArviZPythonPlots.plot_lm</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Posterior predictive and mean plots for regression-like data.
+
+    Parameters
+    ----------
+    y : str or DataArray or ndarray
+        If str, variable name from ``observed_data``.
+    idata : InferenceData, Optional
+        Optional only if ``y`` is not str.
+    x : str, tuple of strings, DataArray or array-like, optional
+        If str or tuple, variable name from ``constant_data``.
+        If ndarray, could be 1D, or 2D for multiple plots.
+        If None, coords name of ``y`` (``y`` should be DataArray).
+    y_model : str or Sequence, Optional
+        If str, variable name from ``posterior``.
+        Its dimensions should be same as ``y`` plus added chains and draws.
+    y_hat : str, Optional
+        If str, variable name from ``posterior_predictive``.
+        Its dimensions should be same as ``y`` plus added chains and draws.
+    num_samples : int, Optional, Default 50
+        Significant if ``kind_pp`` is "samples" or ``kind_model`` is "lines".
+        Number of samples to be drawn from posterior predictive or
+    kind_pp : {"samples", "hdi"}, Default "samples"
+        Options to visualize uncertainty in data.
+    kind_model : {"lines", "hdi"}, Default "lines"
+        Options to visualize uncertainty in mean of the data.
+    plot_dim : str, Optional
+        Necessary if ``y`` is multidimensional.
+    backend : str, Optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    y_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.circle` in bokeh
+    y_hat_plot_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.circle` in bokeh
+    y_hat_fill_kwargs : dict, optional
+        Passed to :func:`arviz.plot_hdi`
+    y_model_plot_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.line` in bokeh
+    y_model_fill_kwargs : dict, optional
+        Significant if ``kind_model`` is "hdi". Passed to :func:`arviz.plot_hdi`
+    y_model_mean_kwargs : dict, optional
+        Passed to :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib
+        and :meth:`bokeh:bokeh.plotting.Figure.line` in bokeh
+    backend_kwargs : dict, optional
+        These are kwargs specific to the backend being used. Passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If None it will be
+        autoscaled based on ``figsize``.
+    axes : 2D numpy array-like of matplotlib_axes or bokeh_figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, Arviz will create
+        its own array of plot areas (and return it).
+    show : bool, optional
+        Call backend show function.
+    legend : bool, optional
+        Add legend to figure. By default True.
+    grid : bool, optional
+        Add grid to figure. By default True.
+
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_ts : Plot timeseries data
+    plot_ppc : Plot for posterior/prior predictive checks
+
+    Examples
+    --------
+    Plot regression default plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; import numpy as np
+        &gt;&gt;&gt; import xarray as xr
+        &gt;&gt;&gt; idata = az.load_arviz_data('regression1d')
+        &gt;&gt;&gt; x = xr.DataArray(np.linspace(0, 1, 100))
+        &gt;&gt;&gt; idata.posterior["y_model"] = idata.posterior["intercept"] + idata.posterior["slope"]*x
+        &gt;&gt;&gt; az.plot_lm(idata=idata, y="y", x=x)
+
+    Plot regression data and mean uncertainty
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_lm(idata=idata, y="y", x=x, y_model="y_model")
+
+    Plot regression data and mean uncertainty in hdi form
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_lm(
+        ...     idata=idata, y="y", x=x, y_model="y_model", kind_pp="hdi", kind_model="hdi"
+        ... )
+
+    Plot regression data for multi-dimensional y using plot_dim
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; data = az.from_dict(
+        ...     observed_data = { "y": np.random.normal(size=(5, 7)) },
+        ...     posterior_predictive = {"y": np.random.randn(4, 1000, 5, 7) / 2},
+        ...     dims={"y": ["dim1", "dim2"]},
+        ...     coords={"dim1": range(5), "dim2": range(7)}
+        ... )
+        &gt;&gt;&gt; az.plot_lm(idata=data, y="y", plot_dim="dim1")
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_loo_pit-Tuple" id="ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot Leave-One-Out (LOO) probability integral transformation (PIT) predictive checks.
+
+    Parameters
+    ----------
+    idata : InferenceData
+        :class:`arviz.InferenceData` object.
+    y : array, DataArray or str
+        Observed data. If str, ``idata`` must be present and contain the observed data group
+    y_hat : array, DataArray or str
+        Posterior predictive samples for ``y``. It must have the same shape as y plus an
+        extra dimension at the end of size n_samples (chains and draws stacked). If str or
+        None, ``idata`` must contain the posterior predictive group. If None, ``y_hat`` is taken
+        equal to y, thus, y must be str too.
+    log_weights : array or DataArray
+        Smoothed log_weights. It must have the same shape as ``y_hat``
+    ecdf : bool, optional
+        Plot the difference between the LOO-PIT Empirical Cumulative Distribution Function
+        (ECDF) and the uniform CDF instead of LOO-PIT kde.
+        In this case, instead of overlaying uniform distributions, the beta ``hdi_prob``
+        around the theoretical uniform CDF is shown. This approximation only holds
+        for large S and ECDF values not very close to 0 nor 1. For more information, see
+        `Vehtari et al. (2019)`, `Appendix G &lt;https://avehtari.github.io/rhat_ess/rhat_ess.html&gt;`_.
+    ecdf_fill : bool, optional
+        Use :meth:`matplotlib.axes.Axes.fill_between` to mark the area
+        inside the credible interval. Otherwise, plot the
+        border lines.
+    n_unif : int, optional
+        Number of datasets to simulate and overlay from the uniform distribution.
+    use_hdi : bool, optional
+        Compute expected hdi values instead of overlaying the sampled uniform distributions.
+    hdi_prob : float, optional
+        Probability for the highest density interval. Works with ``use_hdi=True`` or ``ecdf=True``.
+    figsize : (float, float), optional
+        If None, size is (8 + numvars, 8 + numvars)
+    textsize : int, optional
+        Text size for labels. If None it will be autoscaled based on ``figsize``.
+    labeller : Labeller, optional
+        Class providing the method ``make_pp_label`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    color : str or array_like, optional
+        Color of the LOO-PIT estimated pdf plot. If ``plot_unif_kwargs`` has no "color" key,
+        a slightly lighter color than this argument will be used for the uniform kde lines.
+        This will ensure that LOO-PIT kde and uniform kde have different default colors.
+    legend : bool, optional
+        Show the legend of the figure.
+    ax : axes, optional
+        Matplotlib axes or bokeh figures.
+    plot_kwargs : dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.plot`
+        for LOO-PIT line (kde or ECDF)
+    plot_unif_kwargs : dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.plot` for
+        overlaid uniform distributions or for beta credible interval
+        lines if ``ecdf=True``
+    hdi_kwargs : dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.axhspan`
+    fill_kwargs : dict, optional
+        Additional kwargs passed to :meth:`matplotlib.axes.Axes.fill_between`
+    backend : str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs : bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`. For additional documentation
+        check the plotting method of the backend.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib_axes or bokeh_figures
+
+    See Also
+    --------
+    plot_bpv : Plot Bayesian p-value for observed data and Posterior/Prior predictive.
+    loo_pit : Compute leave one out (PSIS-LOO) probability integral transform (PIT) values.
+
+    References
+    ----------
+    * Gabry et al. (2017) see https://arxiv.org/abs/1709.01449
+    * https://mc-stan.org/bayesplot/reference/PPC-loo.html
+    * Gelman et al. BDA (2014) Section 6.3
+
+    Examples
+    --------
+    Plot LOO-PIT predictive checks overlaying the KDE of the LOO-PIT values to several
+    realizations of uniform variable sampling with the same number of observations.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata = az.load_arviz_data("radon")
+        &gt;&gt;&gt; az.plot_loo_pit(idata=idata, y="y")
+
+    Fill the area containing the 94% highest density interval of the difference between uniform
+    variables empirical CDF and the real uniform CDF. A LOO-PIT ECDF clearly outside of these
+    theoretical boundaries indicates that the observations and the posterior predictive
+    samples do not follow the same distribution.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_loo_pit(idata=idata, y="y", ecdf=True)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_mcse-Tuple" id="ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot quantile or local Monte Carlo Standard Error.
+
+    Parameters
+    ----------
+    idata : obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details
+    var_names : list of variable names, optional
+        Variables to be plotted. Prefix the variables by ``~`` when you want to exclude
+        them from the plot.
+    filter_vars : {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        `pandas.filter`.
+    coords : dict, optional
+        Coordinates of var_names to be plotted. Passed to :meth:`xarray.Dataset.sel`
+    errorbar : bool, optional
+        Plot quantile value +/- mcse instead of plotting mcse.
+    grid : tuple
+        Number of rows and columns. Defaults to None, the rows and columns are
+        automatically inferred.
+    figsize : (float, float), optional
+        Figure size. If None it will be defined automatically.
+    textsize : float, optional
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on figsize.
+    extra_methods : bool, optional
+        Plot mean and sd MCSE as horizontal lines. Only taken into account when
+        ``errorbar=False``.
+    rug : bool
+        Plot rug plot of values diverging or that reached the max tree depth.
+    rug_kind : bool
+        Variable in sample stats to use as rug mask. Must be a boolean variable.
+    n_points : int
+        Number of points for which to plot their quantile/local ess or number of subsets
+        in the evolution plot.
+    labeller : Labeller, optional
+        Class providing the method `make_label_vert` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax : 2D array-like of matplotlib_axes or bokeh_figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, Arviz will create
+        its own array of plot areas (and return it).
+    rug_kwargs : dict
+        kwargs passed to rug plot in
+        :meth:`mpl:matplotlib.axes.Axes.plot` or :class:`bokeh:bokeh.models.glyphs.Scatter`.
+    extra_kwargs : dict, optional
+        kwargs passed as extra method lines in
+        :meth:`mpl:matplotlib.axes.Axes.axhline` or :class:`bokeh:bokeh.models.Span`
+    text_kwargs : dict, optional
+        kwargs passed to :meth:`mpl:matplotlib.axes.Axes.annotate` for extra methods lines labels.
+        It accepts the additional key ``x`` to set ``xy=(text_kwargs["x"], mcse)``.
+        text_kwargs are ignored for the bokeh plotting backend.
+    backend : str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs : bool, optional
+        These are kwargs specific to the backend being passed to
+        :func:`matplotlib.pyplot.subplots` or :func:`bokeh.plotting.figure`.
+    show: bool, optional
+        Call backend show function.
+    **kwargs
+        Passed as-is to :meth:`mpl:matplotlib.axes.Axes.hist` or
+        :meth:`mpl:matplotlib.axes.Axes.plot` in matplotlib depending on the value of `kind`.
+
+    Returns
+    -------
+    axes : matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    :func:`arviz.mcse`: Calculate Markov Chain Standard Error statistic.
+
+    References
+    ----------
+    * Vehtari et al. (2019) see https://arxiv.org/abs/1903.08008
+
+    Examples
+    --------
+    Plot quantile Monte Carlo Standard Error.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata = az.load_arviz_data("centered_eight")
+        &gt;&gt;&gt; coords = {"school": ["Deerfield", "Lawrenceville"]}
+        &gt;&gt;&gt; az.plot_mcse(
+        ...     idata, var_names=["mu", "theta"], coords=coords
+        ... )
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_pair-Tuple" id="ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">
+    Plot a scatter, kde and/or hexbin matrix with (optional) marginals on the diagonal.
+
+    Parameters
+    ----------
+    data: obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object.
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details
+    group: str, optional
+        Specifies which InferenceData group should be plotted.  Defaults to 'posterior'.
+    var_names: list of variable names, optional
+        Variables to be plotted, if None all variable are plotted. Prefix the
+        variables by ``~`` when you want to exclude them from the plot.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    combine_dims : set_like of str, optional
+        List of dimensions to reduce. Defaults to reducing only the "chain" and "draw" dimensions.
+        See the :ref:`this section &lt;common_combine_dims&gt;` for usage examples.
+    coords: mapping, optional
+        Coordinates of var_names to be plotted. Passed to :meth:`xarray.Dataset.sel`.
+    marginals: bool, optional
+        If True pairplot will include marginal distributions for every variable
+    figsize: figure size tuple
+        If None, size is (8 + numvars, 8 + numvars)
+    textsize: int
+        Text size for labels. If None it will be autoscaled based on ``figsize``.
+    kind : str or List[str]
+        Type of plot to display (scatter, kde and/or hexbin)
+    gridsize: int or (int, int), optional
+        Only works for ``kind=hexbin``. The number of hexagons in the x-direction.
+        The corresponding number of hexagons in the y-direction is chosen
+        such that the hexagons are approximately regular. Alternatively, gridsize
+        can be a tuple with two elements specifying the number of hexagons
+        in the x-direction and the y-direction.
+    divergences: Boolean
+        If True divergences will be plotted in a different color, only if group is either 'prior'
+        or 'posterior'.
+    colorbar: bool
+        If True a colorbar will be included as part of the plot (Defaults to False).
+        Only works when ``kind=hexbin``
+    labeller : labeller instance, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax: axes, optional
+        Matplotlib axes or bokeh figures.
+    divergences_kwargs: dicts, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.scatter` for divergences
+    scatter_kwargs:
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.scatter` when using scatter kind
+    kde_kwargs: dict, optional
+        Additional keywords passed to :func:`arviz.plot_kde` when using kde kind
+    hexbin_kwargs: dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.hexbin` when
+        using hexbin kind
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    marginal_kwargs: dict, optional
+        Additional keywords passed to :func:`arviz.plot_dist`, modifying the
+        marginal distributions plotted in the diagonal.
+    point_estimate: str, optional
+        Select point estimate from 'mean', 'mode' or 'median'. The point estimate will be
+        plotted using a scatter marker and vertical/horizontal lines.
+    point_estimate_kwargs: dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.axvline`,
+        :meth:`matplotlib.axes.Axes.axhline` (matplotlib) or
+        :class:`bokeh:bokeh.models.Span` (bokeh)
+    point_estimate_marker_kwargs: dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.scatter`
+        or :meth:`bokeh:bokeh.plotting.Figure.square` in point
+        estimate plot. Not available in bokeh
+    reference_values: dict, optional
+        Reference values for the plotted variables. The Reference values will be plotted
+        using a scatter marker
+    reference_values_kwargs: dict, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.plot` or
+        :meth:`bokeh:bokeh.plotting.Figure.circle` in reference values plot
+    show: bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    Examples
+    --------
+    KDE Pair Plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; centered = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; coords = {'school': ['Choate', 'Deerfield']}
+        &gt;&gt;&gt; az.plot_pair(centered,
+        &gt;&gt;&gt;             var_names=['theta', 'mu', 'tau'],
+        &gt;&gt;&gt;             kind='kde',
+        &gt;&gt;&gt;             coords=coords,
+        &gt;&gt;&gt;             divergences=True,
+        &gt;&gt;&gt;             textsize=18)
+
+    Hexbin pair plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_pair(centered,
+        &gt;&gt;&gt;             var_names=['theta', 'mu'],
+        &gt;&gt;&gt;             coords=coords,
+        &gt;&gt;&gt;             textsize=18,
+        &gt;&gt;&gt;             kind='hexbin')
+
+    Pair plot showing divergences and select variables with regular expressions
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_pair(centered,
+        ...             var_names=['^t', 'mu'],
+        ...             filter_vars="regex",
+        ...             coords=coords,
+        ...             divergences=True,
+        ...             textsize=18)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_parallel-Tuple" id="ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">
+    Plot parallel coordinates plot showing posterior points with and without divergences.
+
+    Described by https://arxiv.org/abs/1709.01449
+
+    Parameters
+    ----------
+    data: obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        refer to documentation of :func:`arviz.convert_to_dataset` for details
+    var_names: list of variable names
+        Variables to be plotted, if `None` all variables are plotted. Can be used to change the
+        order of the plotted variables. Prefix the variables by ``~`` when you want to exclude
+        them from the plot.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    coords: mapping, optional
+        Coordinates of ``var_names`` to be plotted.
+        Passed to :meth:`xarray.Dataset.sel`.
+    figsize: tuple
+        Figure size. If None it will be defined automatically.
+    textsize: float
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on ``figsize``.
+    legend: bool
+        Flag for plotting legend (defaults to True)
+    colornd: valid matplotlib color
+        color for non-divergent points. Defaults to 'k'
+    colord: valid matplotlib color
+        color for divergent points. Defaults to 'C1'
+    shadend: float
+        Alpha blending value for non-divergent points, between 0 (invisible) and 1 (opaque).
+        Defaults to .025
+    labeller : labeller instance, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax: axes, optional
+        Matplotlib axes or bokeh figures.
+    norm_method: str
+        Method for normalizing the data. Methods include normal, minmax and rank.
+        Defaults to none.
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_config: dict, optional
+        Currently specifies the bounds to use for bokeh axes.
+        Defaults to value set in ``rcParams``.
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    show: bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_pair : Plot a scatter, kde and/or hexbin matrix with (optional) marginals on the diagonal.
+    plot_trace : Plot distribution (histogram or kernel density estimates) and sampled values
+                 or rank plot
+
+    Examples
+    --------
+    Plot default parallel plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_parallel(data, var_names=["mu", "tau"])
+
+
+    Plot parallel plot with normalization
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_parallel(data, var_names=["theta", "tau", "mu"], norm_method="normal")
+
+    Plot parallel plot with minmax
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; ax = az.plot_parallel(data, var_names=["theta", "tau", "mu"], norm_method="minmax")
+        &gt;&gt;&gt; ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+
+    Plot parallel plot with rank
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; ax = az.plot_parallel(data, var_names=["theta", "tau", "mu"], norm_method="rank")
+        &gt;&gt;&gt; ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_posterior-Tuple" id="ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot Posterior densities in the style of John K. Kruschke's book.
+
+    Parameters
+    ----------
+    data: obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object.
+        Refer to the documentation of :func:`arviz.convert_to_dataset` for details
+    var_names: list of variable names
+        Variables to be plotted, two variables are required. Prefix the variables with ``~``
+        when you want to exclude them from the plot.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    combine_dims : set_like of str, optional
+        List of dimensions to reduce. Defaults to reducing only the "chain" and "draw" dimensions.
+        See the :ref:`this section &lt;common_combine_dims&gt;` for usage examples.
+    transform: callable
+        Function to transform data (defaults to None i.e.the identity function)
+    coords: mapping, optional
+        Coordinates of var_names to be plotted. Passed to :meth:`xarray.Dataset.sel`
+    grid : tuple
+        Number of rows and columns. Defaults to None, the rows and columns are
+        automatically inferred.
+    figsize: tuple
+        Figure size. If None it will be defined automatically.
+    textsize: float
+        Text size scaling factor for labels, titles and lines. If None it will be autoscaled based
+        on ``figsize``.
+    hdi_prob: float, optional
+        Plots highest density interval for chosen percentage of density.
+        Use 'hide' to hide the highest density interval. Defaults to 0.94.
+    multimodal: bool
+        If true (default) it may compute more than one credible interval if the distribution is
+        multimodal and the modes are well separated.
+    skipna : bool
+        If true ignores nan values when computing the hdi and point estimates. Defaults to false.
+    round_to: int, optional
+        Controls formatting of floats. Defaults to 2 or the integer part, whichever is bigger.
+    point_estimate: Optional[str]
+        Plot point estimate per variable. Values should be 'mean', 'median', 'mode' or None.
+        Defaults to 'auto' i.e. it falls back to default set in rcParams.
+    group: str, optional
+        Specifies which InferenceData group should be plotted. Defaults to 'posterior'.
+    rope: tuple or dictionary of tuples
+        Lower and upper values of the Region Of Practical Equivalence. If a list is provided, its
+        length should match the number of variables.
+    ref_val: float or dictionary of floats
+        display the percentage below and above the values in ref_val. Must be None (default),
+        a constant, a list or a dictionary like see an example below. If a list is provided, its
+        length should match the number of variables.
+    rope_color: str, optional
+        Specifies the color of ROPE and displayed percentage within ROPE
+    ref_val_color: str, optional
+        Specifies the color of the displayed percentage
+    kind: str
+        Type of plot to display (kde or hist) For discrete variables this argument is ignored and
+        a histogram is always used. Defaults to rcParam ``plot.density_kind``
+    bw: float or str, optional
+        If numeric, indicates the bandwidth and must be positive.
+        If str, indicates the method to estimate the bandwidth and must be
+        one of "scott", "silverman", "isj" or "experimental" when `circular` is False
+        and "taylor" (for now) when `circular` is True.
+        Defaults to "default" which means "experimental" when variable is not circular
+        and "taylor" when it is. Only works if `kind == kde`.
+    circular: bool, optional
+        If True, it interprets the values passed are from a circular variable measured in radians
+        and a circular KDE is used. Only valid for 1D KDE. Defaults to False.
+        Only works if `kind == kde`.
+    bins: integer or sequence or 'auto', optional
+        Controls the number of bins,accepts the same keywords :func:`matplotlib.pyplot.hist` does.
+        Only works if `kind == hist`. If None (default) it will use `auto` for continuous variables
+        and `range(xmin, xmax + 1)` for discrete variables.
+    labeller : labeller instance, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax: numpy array-like of matplotlib axes or bokeh figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, Arviz will create
+        its own array of plot areas (and return it).
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :func:`bokeh.plotting.figure`
+    show: bool, optional
+        Call backend show function.
+    **kwargs
+        Passed as-is to :func:`matplotlib.pyplot.hist` or :func:`matplotlib.pyplot.plot` function
+        depending on the value of `kind`.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_dist : Plot distribution as histogram or kernel density estimates.
+    plot_density : Generate KDE plots for continuous variables and histograms for discrete ones.
+    plot_forest : Forest plot to compare HDI intervals from a number of distributions.
+
+    Examples
+    --------
+    Show a default kernel density plot following style of John Kruschke
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_posterior(data)
+
+    Plot subset variables by specifying variable name exactly
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu'])
+
+    Plot Region of Practical Equivalence (rope) and select variables with regular expressions
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu', '^the'], filter_vars="regex", rope=(-1, 1))
+
+    Plot Region of Practical Equivalence for selected distributions
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; rope = {'mu': [{'rope': (-2, 2)}], 'theta': [{'school': 'Choate', 'rope': (2, 4)}]}
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu', 'theta'], rope=rope)
+
+    Using `coords` argument to plot only a subset of data
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; coords = {"school": ["Choate","Phillips Exeter"]}
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=["mu", "theta"], coords=coords)
+
+    Add reference lines
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu', 'theta'], ref_val=0)
+
+    Show point estimate of distribution
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu', 'theta'], point_estimate='mode')
+
+    Show reference values using variable names and coordinates
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, ref_val= {"theta": [{"school": "Deerfield", "ref_val": 4},
+        ...                                             {"school": "Choate", "ref_val": 3}]})
+
+    Show reference values using a list
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, ref_val=[1] + [5] * 8 + [1])
+
+
+    Plot posterior as a histogram
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu'], kind='hist')
+
+    Change size of highest density interval
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu'], hdi_prob=.75)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_ppc-Tuple" id="ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">
+    Plot for posterior/prior predictive checks.
+
+    Parameters
+    ----------
+    data: az.InferenceData object
+        :class:`arviz.InferenceData` object containing the observed and posterior/prior
+        predictive data.
+    kind: str
+        Type of plot to display ("kde", "cumulative", or "scatter"). Defaults to `kde`.
+    alpha: float
+        Opacity of posterior/prior predictive density curves.
+        Defaults to 0.2 for ``kind = kde`` and cumulative, for scatter defaults to 0.7.
+    mean: bool
+        Whether or not to plot the mean posterior/prior predictive distribution.
+        Defaults to ``True``.
+    observed: bool, default True
+        Whether or not to plot the observed data.
+    observed: bool, default False
+        Whether or not to plot a rug plot for the observed data. Only valid if `observed` is
+        `True` and for kind `kde` or `cumulative`.
+    color: str
+        Valid matplotlib ``color``. Defaults to ``C0``.
+    color: list
+        List with valid matplotlib colors corresponding to the posterior/prior predictive
+        distribution, observed data and mean of the posterior/prior predictive distribution.
+        Defaults to ["C0", "k", "C1"].
+    grid : tuple
+        Number of rows and columns. Defaults to None, the rows and columns are
+        automatically inferred.
+    figsize: tuple
+        Figure size. If None, it will be defined automatically.
+    textsize: float
+        Text size scaling factor for labels, titles and lines. If None, it will be
+        autoscaled based on ``figsize``.
+    data_pairs: dict
+        Dictionary containing relations between observed data and posterior/prior predictive data.
+        Dictionary structure:
+
+        - key = data var_name
+        - value = posterior/prior predictive var_name
+
+        For example, ``data_pairs = {'y' : 'y_hat'}``
+        If None, it will assume that the observed data and the posterior/prior
+        predictive data have the same variable name.
+    var_names: list of variable names
+        Variables to be plotted, if `None` all variable are plotted. Prefix the
+        variables by ``~`` when you want to exclude them from the plot.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    coords: dict
+        Dictionary mapping dimensions to selected coordinates to be plotted.
+        Dimensions without a mapping specified will include all coordinates for
+        that dimension. Defaults to including all coordinates for all
+        dimensions if None.
+    flatten: list
+        List of dimensions to flatten in ``observed_data``. Only flattens across the coordinates
+        specified in the ``coords`` argument. Defaults to flattening all of the dimensions.
+    flatten_pp: list
+        List of dimensions to flatten in posterior_predictive/prior_predictive. Only flattens
+        across the coordinates specified in the ``coords`` argument. Defaults to flattening all
+        of the dimensions. Dimensions should match flatten excluding dimensions for ``data_pairs``
+        parameters. If ``flatten`` is defined and ``flatten_pp`` is None, then
+        ``flatten_pp = flatten``.
+    num_pp_samples: int
+        The number of posterior/prior predictive samples to plot. For ``kind`` = 'scatter' and
+        ``animation = False`` if defaults to a maximum of 5 samples and will set jitter to 0.7.
+        unless defined. Otherwise it defaults to all provided samples.
+    random_seed: int
+        Random number generator seed passed to ``numpy.random.seed`` to allow
+        reproducibility of the plot. By default, no seed will be provided
+        and the plot will change each call if a random sample is specified
+        by ``num_pp_samples``.
+    jitter: float
+        If ``kind`` is "scatter", jitter will add random uniform noise to the height
+        of the ppc samples and observed data. By default 0.
+    animated: bool
+        Create an animation of one posterior/prior predictive sample per frame.
+        Defaults to ``False``. Only works with matploblib backend.
+        To run animations inside a notebook you have to use the `nbAgg` matplotlib's backend.
+        Try with `%matplotlib notebook` or  `%matplotlib  nbAgg`. You can switch back to the
+        default matplotlib's backend with `%matplotlib  inline` or `%matplotlib  auto`.
+        If switching back and forth between matplotlib's backend, you may need to run twice the cell
+        with the animation.
+        If you experience problems rendering the animation try setting
+        `animation_kwargs({'blit':False}`) or changing the matplotlib's backend (e.g. to TkAgg)
+        If you run the animation from a script write `ax, ani = az.plot_ppc(.)`
+    animation_kwargs : dict
+        Keywords passed to  :class:`matplotlib.animation.FuncAnimation`. Ignored with
+        matplotlib backend.
+    legend : bool
+        Add legend to figure. By default ``True``.
+    labeller : labeller instance, optional
+        Class providing the method ``make_pp_label`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    ax: numpy array-like of matplotlib axes or bokeh figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, Arviz will create
+        its own array of plot areas (and return it).
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default to "matplotlib".
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :func:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    group: {"prior", "posterior"}, optional
+        Specifies which InferenceData group should be plotted. Defaults to 'posterior'.
+        Other value can be 'prior'.
+    show: bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_bpv: Plot Bayesian p-value for observed data and Posterior/Prior predictive.
+    plot_lm: Posterior predictive and mean plots for regression-like data.
+    plot_ppc: plot for posterior/prior predictive checks.
+    plot_ts: Plot timeseries data.
+
+    Examples
+    --------
+    Plot the observed data KDE overlaid on posterior predictive KDEs.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('radon')
+        &gt;&gt;&gt; az.plot_ppc(data, data_pairs={"y":"y"})
+
+    Plot the overlay with empirical CDFs.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ppc(data, kind='cumulative')
+
+    Use the ``coords`` and ``flatten`` parameters to plot selected variable dimensions
+    across multiple plots. We will now modify the dimension ``obs_id`` to contain
+    indicate the name of the county where the measure was taken. The change has to
+    be done on both ``posterior_predictive`` and ``observed_data`` groups, which is
+    why we will use :meth:`~arviz.InferenceData.map` to apply the same function to
+    both groups. Afterwards, we will select the counties to be plotted with the
+    ``coords`` arg.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; obs_county = data.posterior["County"][data.constant_data["county_idx"]]
+        &gt;&gt;&gt; data = data.assign_coords(obs_id=obs_county, groups="observed_vars")
+        &gt;&gt;&gt; az.plot_ppc(data, coords={'obs_id': ['ANOKA', 'BELTRAMI']}, flatten=[])
+
+    Plot the overlay using a stacked scatter plot that is particularly useful
+    when the sample sizes are small.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ppc(data, kind='scatter', flatten=[],
+        &gt;&gt;&gt;             coords={'obs_id': ['AITKIN', 'BELTRAMI']})
+
+    Plot random posterior predictive sub-samples.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_ppc(data, num_pp_samples=30, random_seed=7)
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_rank-Tuple" id="ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot rank order statistics of chains.
+
+    From the paper: Rank plots are histograms of the ranked posterior draws (ranked over all
+    chains) plotted separately for each chain.
+    If all of the chains are targeting the same posterior, we expect the ranks in each chain to be
+    uniform, whereas if one chain has a different location or scale parameter, this will be
+    reflected in the deviation from uniformity. If rank plots of all chains look similar, this
+    indicates good mixing of the chains.
+
+    This plot was introduced by Aki Vehtari, Andrew Gelman, Daniel Simpson, Bob Carpenter,
+    Paul-Christian Burkner (2019): Rank-normalization, folding, and localization: An improved R-hat
+    for assessing convergence of MCMC. arXiv preprint https://arxiv.org/abs/1903.08008
+
+
+    Parameters
+    ----------
+    data: obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object.
+        Refer to documentation of  :func:`arviz.convert_to_dataset` for details
+    var_names: string or list of variable names
+        Variables to be plotted. Prefix the variables by ``~`` when you want to exclude
+        them from the plot.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    transform: callable
+        Function to transform data (defaults to None i.e.the identity function)
+    coords: mapping, optional
+        Coordinates of var_names to be plotted. Passed to :meth:`xarray.Dataset.sel`
+    bins: None or passed to np.histogram
+        Binning strategy used for histogram. By default uses twice the result of Sturges' formula.
+        See :func:`numpy.histogram` documentation for, other available arguments.
+    kind: string
+        If bars (defaults), ranks are represented as stacked histograms (one per chain). If vlines
+        ranks are represented as vertical lines above or below ``ref_line``.
+    colors: string or list of strings
+        List with valid matplotlib colors, one color per model. Alternative a string can be passed.
+        If the string is `cycle`, it will automatically choose a color per model from matplotlib's
+        cycle. If a single color is passed, e.g. 'k', 'C2' or 'red' this color will be used for all
+        models. Defaults to `cycle`.
+    ref_line: boolean
+        Whether to include a dashed line showing where a uniform distribution would lie
+    labels: bool
+        whether to plot or not the x and y labels, defaults to True
+    labeller : labeller instance, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    grid : tuple
+        Number of rows and columns. Defaults to None, the rows and columns are
+        automatically inferred.
+    figsize: tuple
+        Figure size. If None it will be defined automatically.
+    ax: numpy array-like of matplotlib axes or bokeh figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, ArviZ will create
+        its own array of plot areas (and return it).
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    ref_line_kwargs : dict, optional
+        Reference line keyword arguments, passed to :meth:`mpl:matplotlib.axes.Axes.axhline` or
+        :class:`bokeh:bokeh.models.Span`.
+    bar_kwargs : dict, optional
+        Bars keyword arguments, passed to :meth:`mpl:matplotlib.axes.Axes.bar` or
+        :meth:`bokeh:bokeh.plotting.Figure.vbar`.
+    vlines_kwargs : dict, optional
+        Vlines keyword arguments, passed to :meth:`mpl:matplotlib.axes.Axes.vlines` or
+        :meth:`bokeh:bokeh.plotting.Figure.multi_line`.
+    marker_vlines_kwargs : dict, optional
+        Marker for the vlines keyword arguments, passed to :meth:`mpl:matplotlib.axes.Axes.plot` or
+        :meth:`bokeh:bokeh.plotting.Figure.circle`.
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`. For additional documentation
+        check the plotting method of the backend.
+    show: bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_trace : Plot distribution (histogram or kernel density estimates) and
+                 sampled values or rank plot.
+
+    Examples
+    --------
+    Show a default rank plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_rank(data)
+
+    Recreate Figure 13 from the arxiv preprint
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_rank(data, var_names='tau')
+
+    Use vlines to compare results for centered vs noncentered models
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import matplotlib.pyplot as plt
+        &gt;&gt;&gt; centered_data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; noncentered_data = az.load_arviz_data('non_centered_eight')
+        &gt;&gt;&gt; _, ax = plt.subplots(1, 2, figsize=(12, 3))
+        &gt;&gt;&gt; az.plot_rank(centered_data, var_names="mu", kind='vlines', ax=ax[0])
+        &gt;&gt;&gt; az.plot_rank(noncentered_data, var_names="mu", kind='vlines', ax=ax[1])
+
+    Change the aesthetics using kwargs
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_rank(noncentered_data, var_names="mu", kind="vlines",
+        &gt;&gt;&gt;              vlines_kwargs={'lw':0}, marker_vlines_kwargs={'lw':3});
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_separation-Tuple" id="ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Separation plot for binary outcome models.
+
+    Model predictions are sorted and plotted using a color code according to
+    the observed data.
+
+    Parameters
+    ----------
+    idata : InferenceData
+        :class:`arviz.InferenceData` object.
+    y : array, DataArray or str
+        Observed data. If str, ``idata`` must be present and contain the observed data group
+    y_hat : array, DataArray or str
+        Posterior predictive samples for ``y``. It must have the same shape as ``y``. If str or
+        None, ``idata`` must contain the posterior predictive group.
+    y_hat_line : bool, optional
+        Plot the sorted ``y_hat`` predictions.
+    expected_events : bool, optional
+        Plot the total number of expected events.
+    figsize : figure size tuple, optional
+        If None, size is (8 + numvars, 8 + numvars)
+    textsize: int, optional
+        Text size for labels. If None it will be autoscaled based on ``figsize``.
+    color : str, optional
+        Color to assign to the positive class. The negative class will be plotted using the
+        same color and an `alpha=0.3` transparency.
+    legend : bool, optional
+        Show the legend of the figure.
+    ax: axes, optional
+        Matplotlib axes or bokeh figures.
+    plot_kwargs : dict, optional
+        Additional keywords passed to :meth:`mpl:matplotlib.axes.Axes.bar` or
+        :meth:`bokeh:bokeh.plotting.Figure.vbar` for separation plot.
+    y_hat_line_kwargs : dict, optional
+        Additional keywords passed to ax.plot for ``y_hat`` line.
+    exp_events_kwargs : dict, optional
+        Additional keywords passed to ax.scatter for ``expected_events`` marker.
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default "matplotlib".
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    show : bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes : matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_ppc : Plot for posterior/prior predictive checks.
+
+    References
+    ----------
+    .. [1] Greenhill, B. *et al.*, The Separation Plot: A New Visual Method
+       for Evaluating the Fit of Binary Models, *American Journal of
+       Political Science*, (2011) see https://doi.org/10.1111/j.1540-5907.2011.00525.x
+
+    Examples
+    --------
+    Separation plot for a logistic regression model.
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; idata = az.load_arviz_data('classification10d')
+        &gt;&gt;&gt; az.plot_separation(idata=idata, y='outcome', y_hat='outcome', figsize=(8, 1))
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_trace-Tuple" id="ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot distribution (histogram or kernel density estimates) and sampled values or rank plot.
+
+    If `divergences` data is available in `sample_stats`, will plot the location of divergences as
+    dashed vertical lines.
+
+    Parameters
+    ----------
+    data: obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details
+    var_names: str or list of str, optional
+        One or more variables to be plotted. Prefix the variables by ``~`` when you want
+        to exclude them from the plot.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    coords: dict of {str: slice or array_like}, optional
+        Coordinates of var_names to be plotted. Passed to :meth:`xarray.Dataset.sel`
+    divergences: {"bottom", "top", None}, optional
+        Plot location of divergences on the traceplots.
+    kind: {"trace", "rank_bars", "rank_vlines"}, optional
+        Choose between plotting sampled values per iteration and rank plots.
+    transform: callable, optional
+        Function to transform data (defaults to None i.e.the identity function)
+    figsize: tuple of (float, float), optional
+        If None, size is (12, variables * 2)
+    rug: bool, optional
+        If True adds a rugplot of samples. Defaults to False. Ignored for 2D KDE.
+        Only affects continuous variables.
+    lines: list of tuple of (str, dict, array_like), optional
+        List of (var_name, {'coord': selection}, [line, positions]) to be overplotted as
+        vertical lines on the density and horizontal lines on the trace.
+    circ_var_names : str or list of str, optional
+        List of circular variables to account for when plotting KDE.
+    circ_var_units : str
+        Whether the variables in ``circ_var_names`` are in "degrees" or "radians".
+    compact: bool, optional
+        Plot multidimensional variables in a single plot.
+    compact_prop: str or dict {str: array_like}, optional
+         Defines the property name and the property values to distinguish different
+        dimensions with compact=True.
+        When compact=True it defaults to color, it is
+        ignored otherwise.
+    combined: bool, optional
+        Flag for combining multiple chains into a single line. If False (default), chains will be
+        plotted separately.
+    chain_prop: str or dict {str: array_like}, optional
+        Defines the property name and the property values to distinguish different chains.
+        If compact=True it defaults to linestyle,
+        otherwise it uses the color to distinguish
+        different chains.
+    legend: bool, optional
+        Add a legend to the figure with the chain color code.
+    plot_kwargs, fill_kwargs, rug_kwargs, hist_kwargs: dict, optional
+        Extra keyword arguments passed to :func:`arviz.plot_dist`. Only affects continuous
+        variables.
+    trace_kwargs: dict, optional
+        Extra keyword arguments passed to :meth:`matplotlib.axes.Axes.plot`
+    labeller : labeller instance, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    rank_kwargs : dict, optional
+        Extra keyword arguments passed to :func:`arviz.plot_rank`
+    axes: axes, optional
+        Matplotlib axes or bokeh figures.
+    backend: {"matplotlib", "bokeh"}, optional
+        Select plotting backend.
+    backend_config: dict, optional
+        Currently specifies the bounds to use for bokeh axes. Defaults to value set in rcParams.
+    backend_kwargs: dict, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or
+        :func:`bokeh.plotting.figure`.
+    show: bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_rank : Plot rank order statistics of chains.
+
+    Examples
+    --------
+    Plot a subset variables and select them with partial naming
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('non_centered_eight')
+        &gt;&gt;&gt; coords = {'school': ['Choate', 'Lawrenceville']}
+        &gt;&gt;&gt; az.plot_trace(data, var_names=('theta'), filter_vars="like", coords=coords)
+
+    Show all dimensions of multidimensional variables in the same plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_trace(data, compact=True)
+
+    Display a rank plot instead of trace
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_trace(data, var_names=["mu", "tau"], kind="rank_bars")
+
+    Combine all chains into one distribution and select variables with regular expressions
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; az.plot_trace(
+        &gt;&gt;&gt;     data, var_names=('^theta'), filter_vars="regex", coords=coords, combined=True
+        &gt;&gt;&gt; )
+
+
+    Plot reference lines against distribution and trace
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; lines = (('theta_t',{'school': "Choate"}, [-1]),)
+        &gt;&gt;&gt; az.plot_trace(data, var_names=('theta_t', 'theta'), coords=coords, lines=lines)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article><article class="docstring"><header><a class="docstring-article-toggle-button fa-solid fa-chevron-down" href="javascript:;" title="Collapse docstring"></a><a class="docstring-binding" href="#ArviZPythonPlots.plot_violin-Tuple" id="ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a> — <span class="docstring-category">Method</span><span class="is-flex-grow-1 docstring-article-toggle-button" title="Collapse docstring"></span></header><section><div><pre><code class="language-julia hljs">Plot posterior of traces as violin plot.
+
+    Notes
+    -----
+    If multiple chains are provided for a variable they will be combined
+
+    Parameters
+    ----------
+    data: obj
+        Any object that can be converted to an :class:`arviz.InferenceData` object
+        Refer to documentation of :func:`arviz.convert_to_dataset` for details
+    var_names: list of variable names, optional
+        Variables to be plotted, if None all variable are plotted. Prefix the
+        variables by ``~`` when you want to exclude them from the plot.
+    combine_dims : set_like of str, optional
+        List of dimensions to reduce. Defaults to reducing only the "chain" and "draw" dimensions.
+        See the :ref:`this section &lt;common_combine_dims&gt;` for usage examples.
+    filter_vars: {None, "like", "regex"}, optional, default=None
+        If `None` (default), interpret var_names as the real variables names. If "like",
+        interpret var_names as substrings of the real variables names. If "regex",
+        interpret var_names as regular expressions on the real variables names. A la
+        ``pandas.filter``.
+    transform: callable
+        Function to transform data (defaults to None i.e. the identity function).
+    quartiles: bool, optional
+        Flag for plotting the interquartile range, in addition to the ``hdi_prob`` * 100%
+        intervals. Defaults to ``True``.
+    rug: bool
+        If ``True`` adds a jittered rugplot. Defaults to ``False``.
+    side : {"both", "left", "right"}, default "both"
+        If ``both``, both sides of the violin plot are rendered. If ``left`` or ``right``, only
+        the respective side is rendered. By separately plotting left and right halfs with
+        different data, split violin plots can be achieved.
+    hdi_prob: float, optional
+        Plots highest posterior density interval for chosen percentage of density.
+        Defaults to 0.94.
+    shade: float
+        Alpha blending value for the shaded area under the curve, between 0
+        (no shade) and 1 (opaque). Defaults to 0.
+    bw: float or str, optional
+        If numeric, indicates the bandwidth and must be positive.
+        If str, indicates the method to estimate the bandwidth and must be
+        one of "scott", "silverman", "isj" or "experimental" when ``circular`` is ``False``
+        and "taylor" (for now) when ``circular`` is ``True``.
+        Defaults to "default" which means "experimental" when variable is not circular
+        and "taylor" when it is.
+    circular: bool, optional.
+        If ``True``, it interprets `values` is a circular variable measured in radians
+        and a circular KDE is used. Defaults to ``False``.
+    grid : tuple
+        Number of rows and columns. Defaults to None, the rows and columns are
+        automatically inferred.
+    figsize: tuple
+        Figure size. If None it will be defined automatically.
+    textsize: int
+        Text size of the point_estimates, axis ticks, and highest density interval. If None it will
+        be autoscaled based on ``figsize``.
+    labeller : labeller instance, optional
+        Class providing the method ``make_label_vert`` to generate the labels in the plot titles.
+        Read the :ref:`label_guide` for more details and usage examples.
+    sharex: bool
+        Defaults to ``True``, violinplots share a common x-axis scale.
+    sharey: bool
+        Defaults to ``True``, violinplots share a common y-axis scale.
+    ax: numpy array-like of matplotlib axes or bokeh figures, optional
+        A 2D array of locations into which to plot the densities. If not supplied, Arviz will create
+        its own array of plot areas (and return it).
+    shade_kwargs: dicts, optional
+        Additional keywords passed to :meth:`matplotlib.axes.Axes.fill_between`, or
+        :meth:`matplotlib.axes.Axes.barh` to control the shade.
+    rug_kwargs: dict
+        Keywords passed to the rug plot. If true only the right half side of the violin will be
+        plotted.
+    backend: str, optional
+        Select plotting backend {"matplotlib","bokeh"}. Default to "matplotlib".
+    backend_kwargs: bool, optional
+        These are kwargs specific to the backend being used, passed to
+        :func:`matplotlib.pyplot.subplots` or :func:`bokeh.plotting.figure`.
+        For additional documentation check the plotting method of the backend.
+    show: bool, optional
+        Call backend show function.
+
+    Returns
+    -------
+    axes: matplotlib axes or bokeh figures
+
+    See Also
+    --------
+    plot_forest: Forest plot to compare HDI intervals from a number of distributions.
+
+    Examples
+    --------
+    Show a default violin plot
+
+    .. plot::
+        :context: close-figs
+
+        &gt;&gt;&gt; import arviz as az
+        &gt;&gt;&gt; data = az.load_arviz_data('centered_eight')
+        &gt;&gt;&gt; az.plot_violin(data)
+
+    
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/cda37b229acf0ed76805f6b31f774baf4f576bc1/src/plots.jl#L3" target="_blank">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../rcparams/">« rcParams</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.9.0 on <span class="colophon-date" title="Sunday 23 March 2025 19:07">Sunday 23 March 2025</span>. Using Julia version 1.11.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
