@@ -65,7 +65,7 @@ end</code></pre><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADPsAAARb
   :θ eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 2 entries:
-  "created_at" =&gt; "2025-04-10T18:12:28.68"
+  "created_at" =&gt; "2025-04-11T01:25:35.371"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>sample_stats</summary><pre><code>┌ 1000×4 Dataset ┐
 ├────────────────┴ dims ┐
@@ -85,7 +85,7 @@ end</code></pre><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADPsAAARb
   :step_size_nom    eltype: Float64 dims: draw, chain size: 1000×4
 ├───────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 2 entries:
-  "created_at" =&gt; "2025-04-10T18:12:28.587"
+  "created_at" =&gt; "2025-04-11T01:25:35.276"
   "inference_library" =&gt; "Turing"
 </code></pre></details></div><div class="markdown"><p>Each group is an <a href="https://julia.arviz.org/InferenceObjects/stable/dataset"><code>ArviZ.Dataset</code></a>, a <code>DimensionalData.AbstractDimStack</code> that can be used identically to a <a href="https://rafaqz.github.io/DimensionalData.jl/stable/reference/#DimensionalData.DimStack"><code>DimensionalData.Dimstack</code></a>. We can view a summary of the dataset.</p></div><pre class="language-julia"><code class="language-julia">idata_turing_post.posterior</code></pre><pre class="code-output documenter-example-output" id="var-hash997003">┌ 1000×4×8 Dataset ┐
 ├──────────────────┴───────────────────────────────────────────────────────────── dims ┐
@@ -98,7 +98,7 @@ end</code></pre><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADPsAAARb
   :θ eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 2 entries:
-  "created_at"        =&gt; "2025-04-10T18:12:28.68"
+  "created_at"        =&gt; "2025-04-11T01:25:35.371"
   "inference_library" =&gt; "Turing"
 </pre><div class="markdown"><p>Here is a plot of the trace. Note the intelligent labels.</p></div><pre class="language-julia"><code class="language-julia">begin
     plot_trace(idata_turing_post)
@@ -141,7 +141,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :θ eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:04.952"
+  "created_at" =&gt; "2025-04-11T01:26:13.435"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>posterior_predictive</summary><pre><code>┌ 1000×4×8 Dataset ┐
@@ -153,7 +153,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :y eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:04.617"
+  "created_at" =&gt; "2025-04-11T01:26:13.074"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>log_likelihood</summary><pre><code>┌ 1000×4×8 Dataset ┐
@@ -165,7 +165,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :y eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:04.788"
+  "created_at" =&gt; "2025-04-11T01:26:13.258"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>sample_stats</summary><pre><code>┌ 1000×4 Dataset ┐
@@ -186,7 +186,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :step_size_nom    eltype: Float64 dims: draw, chain size: 1000×4
 ├───────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:04.951"
+  "created_at" =&gt; "2025-04-11T01:26:13.434"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>prior</summary><pre><code>┌ 1000×1×8 Dataset ┐
@@ -200,7 +200,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :θ eltype: Float64 dims: draw, chain, school size: 1000×1×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:05.501"
+  "created_at" =&gt; "2025-04-11T01:26:14.019"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>prior_predictive</summary><pre><code>┌ 1000×1×8 Dataset ┐
@@ -212,7 +212,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :y eltype: Float64 dims: draw, chain, school size: 1000×1×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:05.349"
+  "created_at" =&gt; "2025-04-11T01:26:13.856"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>sample_stats_prior</summary><pre><code>┌ 1000×1 Dataset ┐
@@ -222,7 +222,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :lp eltype: Float64 dims: draw, chain size: 1000×1
 ├─────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:05.435"
+  "created_at" =&gt; "2025-04-11T01:26:13.947"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details><details><summary>observed_data</summary><pre><code>┌ 8-element Dataset ┐
@@ -232,7 +232,7 @@ end;</code></pre><div class="markdown"><p>This can then be included in the <a hr
   :y eltype: Float64 dims: school size: 8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 3 entries:
-  "created_at" =&gt; "2025-04-10T18:13:05.778"
+  "created_at" =&gt; "2025-04-11T01:26:14.256"
   "inference_library_version" =&gt; "0.37.0"
   "inference_library" =&gt; "Turing"
 </code></pre></details></div><div class="markdown"><p>Then we can for example compute the expected <em>leave-one-out (LOO)</em> predictive density, which is an estimate of the out-of-distribution predictive fit of the model:</p></div><pre class="language-julia"><code class="language-julia">loo(idata_turing) # higher ELPD is better</code></pre><pre class="code-output documenter-example-output" id="var-hash821273">PSISLOOResult with estimates
@@ -311,7 +311,7 @@ end</code></pre><div>InferenceData<details><summary>posterior</summary><pre><cod
   :theta eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2025-04-10T18:13:42.501"
+  "created_at" =&gt; "2025-04-11T01:26:52.152"
 </code></pre></details><details><summary>posterior_predictive</summary><pre><code>┌ 1000×4×8 Dataset ┐
 ├──────────────────┴───────────────────────────────────────────────────── dims ┐
   ↓ draw  ,
@@ -321,7 +321,7 @@ end</code></pre><div>InferenceData<details><summary>posterior</summary><pre><cod
   :y_hat eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2025-04-10T18:13:41.951"
+  "created_at" =&gt; "2025-04-11T01:26:51.635"
 </code></pre></details><details><summary>log_likelihood</summary><pre><code>┌ 1000×4×8 Dataset ┐
 ├──────────────────┴───────────────────────────────────────────────────── dims ┐
   ↓ draw  ,
@@ -331,7 +331,7 @@ end</code></pre><div>InferenceData<details><summary>posterior</summary><pre><cod
   :log_lik eltype: Float64 dims: draw, chain, school size: 1000×4×8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2025-04-10T18:13:42.348"
+  "created_at" =&gt; "2025-04-11T01:26:52.048"
 </code></pre></details><details><summary>sample_stats</summary><pre><code>┌ 1000×4 Dataset ┐
 ├────────────────┴ dims ┐
   ↓ draw, → chain
@@ -345,7 +345,7 @@ end</code></pre><div>InferenceData<details><summary>posterior</summary><pre><cod
   :step_size       eltype: Float64 dims: draw, chain size: 1000×4
 ├──────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2025-04-10T18:13:42.136"
+  "created_at" =&gt; "2025-04-11T01:26:51.834"
 </code></pre></details><details><summary>observed_data</summary><pre><code>┌ 8-element Dataset ┐
 ├───────────────────┴──────────────────────────────────────────────────── dims ┐
   ↓ school Categorical{String} [Choate, Deerfield, …, St. Paul's, Mt. Hermon] Unordered
@@ -353,7 +353,7 @@ end</code></pre><div>InferenceData<details><summary>posterior</summary><pre><cod
   :y eltype: Float64 dims: school size: 8
 ├──────────────────────────────────────────────────────────────────── metadata ┤
   Dict{String, Any} with 1 entry:
-  "created_at" =&gt; "2025-04-10T18:13:42.567"
+  "created_at" =&gt; "2025-04-11T01:26:52.216"
 </code></pre></details></div><pre class="language-julia"><code class="language-julia">begin
     plot_density(idata_stan; var_names=(:mu, :tau))
     gcf()
@@ -375,7 +375,7 @@ end</code></pre><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADPsAAAir
   [31c24e10] Distributions v0.25.118
   [e30172f5] Documenter v1.10.1
   [f6006082] EvoTrees v0.17.2
-  [b5cf5a8d] InferenceObjects v0.4.9
+  [b5cf5a8d] InferenceObjects v0.4.10
   [be115224] MCMCDiagnosticTools v0.3.14
   [a7f614a8] MLJBase v1.8.1
   [614be32b] MLJIteration v0.6.3
@@ -405,4 +405,4 @@ Environment:
   JULIA_NUM_THREADS = 2
   JULIA_REVISE_WORKER_ONLY = 1
   JULIA_PYTHONCALL_EXE = /home/runner/work/ArviZ.jl/ArviZ.jl/docs/.CondaPkg/.pixi/envs/default/bin/python
-</pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../working_with_inference_data/">Working with <code>InferenceData</code> »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.10.1 on <span class="colophon-date" title="Thursday 10 April 2025 18:16">Thursday 10 April 2025</span>. Using Julia version 1.11.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+</pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../working_with_inference_data/">Working with <code>InferenceData</code> »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.10.1 on <span class="colophon-date" title="Friday 11 April 2025 01:30">Friday 11 April 2025</span>. Using Julia version 1.11.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
