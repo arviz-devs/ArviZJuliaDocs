@@ -1,3 +1,4 @@
+using Comonicon
 using Downloads
 using MultiDocumenter
 
@@ -75,7 +76,19 @@ function deploy_to_ghpages(git_root, out_dir)
     return nothing
 end
 
-function make(;
+"""
+Build ArviZ Julia ecosystem docs using MultiDocumenter
+
+# Options
+
+- `-c, --clone-dir <arg>`: the directory where subpackage docs will be cloned
+- `-o, --out-dir <arg>`: the directory where docs will be built
+
+# Flags
+
+- `--deploy`: deploy docs using GitHub Pages
+"""
+Comonicon.@main function make(;
     clone_dir::String="", out_dir::String="", deploy::Bool=false
 )
     if isempty(clone_dir)
@@ -114,5 +127,3 @@ function make(;
     deploy && deploy_to_ghpages(git_root, out_dir)
     return nothing
 end
-
-make()
