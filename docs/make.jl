@@ -19,7 +19,7 @@ packages = [
     "Data" => [
         PkgInfo("InferenceObjects"),
         PkgInfo("ArviZExampleData"),
-        # PkgInfo("DimensionalData"; org="rafaqz", tag=external),
+        PkgInfo("DimensionalData"; org="rafaqz", tag=external),
         # PkgInfo("ArviZGen"; tag=experimental),
     ],
 ]
