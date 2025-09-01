@@ -1,8 +1,8 @@
 name: Documentation
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
   schedule:
     - cron: 0 0 * * *
   workflow_dispatch:
@@ -30,4 +30,4 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          julia --project=docs docs/make.jl
+          julia --project=docs docs/make.jl ${{ github.ref == 'refs/heads/main' && '--deploy' || '' }}
