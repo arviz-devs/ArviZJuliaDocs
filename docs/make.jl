@@ -1,4 +1,3 @@
-using Comonicon
 using Downloads
 using MultiDocumenter
 
@@ -77,20 +76,17 @@ function deploy_to_ghpages(git_root, out_dir)
 end
 
 """
-Build ArviZ Julia ecosystem docs using MultiDocumenter
+    make_docs(; kwargs...)
 
-# Options
+Build ArviZ Julia ecosystem docs using MultiDocumenter.
 
-- `-c, --clone-dir <arg>`: the directory where subpackage docs will be cloned
-- `-o, --out-dir <arg>`: the directory where docs will be built
+# Keyword arguments
 
-# Flags
-
-- `--deploy`: deploy docs using GitHub Pages
+- `deploy=false`: deploy docs using GitHub Pages
+- `clone_dir=""`: directory where subpackage docs will be cloned
+- `out_dir=""`: directory where docs will be built
 """
-Comonicon.@main function make(;
-    clone_dir::String="", out_dir::String="", deploy::Bool=false
-)
+function make_docs(; deploy::Bool=false, clone_dir::String="", out_dir::String="")
     if isempty(clone_dir)
         clone_dir = mktempdir(; cleanup=false)
     end
@@ -127,3 +123,56 @@ Comonicon.@main function make(;
     deploy && deploy_to_ghpages(git_root, out_dir)
     return nothing
 end
+
+# CLI
+
+function parse_flag(args, flag::String, default::T) where {T}
+    inds = findall(==(flag), args)
+    isempty(inds) && return default
+    if length(inds) > 1
+        print_help()
+        println("Error: Multiple $flag flags found.")
+        exit(1)
+    end
+    i = inds[1] + 1
+    if i > length(args)
+        print_help()
+        println("Error: Missing value for $flag.")
+        exit(1)
+    end
+    try
+        return T === String ? args[i] : parse(T, args[i])
+    catch
+        print_help()
+        println("Error: Invalid value for $flag: $(args[i])")
+        exit(1)
+    end
+end
+
+function parse_args(args)
+    if "--help" in args
+        print_help()
+        exit(0)
+    end
+    deploy = "--deploy" in args
+    clone_dir = parse_flag(args, "--clone-dir", "")
+    out_dir = parse_flag(args, "--out-dir", "")
+    return (; deploy, clone_dir, out_dir)
+end
+
+function print_help()
+    print("""
+    Usage: julia [julia_options] docs/make.jl [options]
+    Build ArviZ Julia ecosystem docs using MultiDocumenter.
+
+    Options:
+    --deploy         Deploy docs using GitHub Pages
+    --clone-dir=STR  Directory where subpackage docs will be cloned
+    --out-dir=STR    Directory where docs will be built
+    --help           Print this help message
+    """)
+end
+
+main(args) = make_docs(; parse_args(args)...)
+
+@main
