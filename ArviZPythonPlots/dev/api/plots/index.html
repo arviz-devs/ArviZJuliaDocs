@@ -93,7 +93,7 @@ Specify maximum lag (x axis bound)
 
     &gt;&gt;&gt; az.plot_autocorr(data, var_names=['mu', 'tau'], max_lag=200, combined=True)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_bf-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_bf-Tuple"><code>ArviZPythonPlots.plot_bf</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Approximated Bayes Factor for comparing hypothesis of two nested models.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_bf-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_bf-Tuple"><code>ArviZPythonPlots.plot_bf</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Approximated Bayes Factor for comparing hypothesis of two nested models.
 
 The Bayes factor is estimated by comparing a model (H1) against a model in which the
 parameter of interest has been restricted to be a point-null (H0). This computation
@@ -161,7 +161,7 @@ Moderate evidence indicating that the parameter "a" is different from zero.
     &gt;&gt;&gt; az.plot_bf(idata, var_name="a", ref_val=0)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_bpv-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Bayesian p-value for observed data and Posterior/Prior predictive.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_bpv-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_bpv-Tuple"><code>ArviZPythonPlots.plot_bpv</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Bayesian p-value for observed data and Posterior/Prior predictive.
 
 Parameters
 ----------
@@ -316,7 +316,7 @@ Plot custom test statistic comparison.
     &gt;&gt;&gt; data = az.load_arviz_data("regression1d")
     &gt;&gt;&gt; az.plot_bpv(data, kind="t_stat", t_stat=lambda x:np.percentile(x, q=50, axis=-1))
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_compare-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Summary plot for model comparison.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_compare-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_compare-Tuple"><code>ArviZPythonPlots.plot_compare</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Summary plot for model comparison.
 
 Models are compared based on their expected log pointwise predictive density (ELPD).
 This plot is in the style of the one used in [2]_. Chapter 6 in the first edition
@@ -408,7 +408,7 @@ Include the in-sample ELDP
     &gt;&gt;&gt; az.plot_compare(model_compare, insample_dev=True)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_density-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Generate KDE plots for continuous variables and histograms for discrete ones.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_density-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_density-Tuple"><code>ArviZPythonPlots.plot_density</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Generate KDE plots for continuous variables and histograms for discrete ones.
 
 Plots are truncated at their 100*(1-alpha)% highest density intervals. Plots are grouped per
 variable and colors assigned to models.
@@ -555,7 +555,7 @@ Specify binwidth for kernel density estimation
 
     &gt;&gt;&gt; az.plot_density([centered, non_centered], var_names=["mu"], bw=.9)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_dist-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot distribution as histogram or kernel density estimates.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_dist-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist-Tuple"><code>ArviZPythonPlots.plot_dist</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot distribution as histogram or kernel density estimates.
 
 By default continuous variables are plotted using KDEs and discrete ones using histograms
 
@@ -697,7 +697,7 @@ Plot as the cumulative distribution
 
     &gt;&gt;&gt; az.plot_dist(b, rug=True, quantiles=[.25, .5, .75], cumulative=True)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_dist_comparison-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot to compare fitted and unfitted distributions.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_dist_comparison-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_dist_comparison-Tuple"><code>ArviZPythonPlots.plot_dist_comparison</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot to compare fitted and unfitted distributions.
 
 The resulting plots will show the compared distributions both on
 separate axes (particularly useful when one of them is substantially tighter
@@ -778,7 +778,7 @@ Plot the prior/posterior plot for specified vars and coords.
     &gt;&gt;&gt; az.plot_dist_comparison(data, var_names=["defs"], coords={"team" : ["Italy"]})
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_dot-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_dot-Tuple"><code>ArviZPythonPlots.plot_dot</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot distribution as dot plot or quantile dot plot.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_dot-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_dot-Tuple"><code>ArviZPythonPlots.plot_dot</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot distribution as dot plot or quantile dot plot.
 
 This function uses the Wilkinson's Algorithm [1]_ to allot dots to bins.
 The quantile dot plots was inspired from [2]_.
@@ -888,7 +888,7 @@ Rotate the dot plots by 90 degrees i.e swap x and y axis
     &gt;&gt;&gt; az.plot_dot(values, point_interval=True, rotated=True)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_ecdf-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_ecdf-Tuple"><code>ArviZPythonPlots.plot_ecdf</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot ECDF or ECDF-Difference Plot with Confidence bands.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_ecdf-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_ecdf-Tuple"><code>ArviZPythonPlots.plot_ecdf</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot ECDF or ECDF-Difference Plot with Confidence bands.
 
 Plots of the empirical cumulative distribution function (ECDF) of an array. Optionally, A `cdf`
 argument representing a reference CDF may be provided for comparison using a difference ECDF
@@ -1076,7 +1076,7 @@ Plot an ECDF-difference plot of PIT values.
     &gt;&gt;&gt;     difference = True
     &gt;&gt;&gt; )
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_elpd-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot pointwise elpd differences between two or more models.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_elpd-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_elpd-Tuple"><code>ArviZPythonPlots.plot_elpd</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot pointwise elpd differences between two or more models.
 
 Pointwise model comparison based on their expected log pointwise predictive density (ELPD).
 
@@ -1179,7 +1179,7 @@ using matplotlib.
     )
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_energy-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot energy transition distribution and marginal energy distribution in HMC algorithms.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_energy-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_energy-Tuple"><code>ArviZPythonPlots.plot_energy</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot energy transition distribution and marginal energy distribution in HMC algorithms.
 
 This may help to diagnose poor exploration by gradient-based algorithms like HMC or NUTS.
 The energy function in HMC can identify posteriors with heavy tailed distributions, that
@@ -1262,7 +1262,7 @@ Represent energy plot via histograms
     &gt;&gt;&gt; az.plot_energy(data, kind='hist')
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_ess-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Generate quantile, local, or evolution ESS plots.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_ess-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_ess-Tuple"><code>ArviZPythonPlots.plot_ess</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Generate quantile, local, or evolution ESS plots.
 
 The local and the quantile ESS plots are recommended for checking
 that there are enough samples for all the explored regions of the
@@ -1412,7 +1412,7 @@ Customize ESS evolution plot to look like reference paper.
     ... )
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_forest-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Forest plot to compare HDI intervals from a number of distributions.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_forest-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_forest-Tuple"><code>ArviZPythonPlots.plot_forest</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Forest plot to compare HDI intervals from a number of distributions.
 
 Generate forest or ridge plots to compare distributions from a model or list of models.
 Additionally, the function can display effective sample sizes (ess) and Rhats to visualize
@@ -1584,7 +1584,7 @@ Ridgeplot non-truncated and with quantiles
     &gt;&gt;&gt;                            figsize=(9, 7))
     &gt;&gt;&gt; axes[0].set_title('Estimated theta for 8 schools model')
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_hdi-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot HDI intervals for regression data.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_hdi-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_hdi-Tuple"><code>ArviZPythonPlots.plot_hdi</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot HDI intervals for regression data.
 
 Parameters
 ----------
@@ -1684,7 +1684,7 @@ to plot the HDI interval.
     &gt;&gt;&gt; az.plot_hdi(x_data, y_data)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_kde-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">1D or 2D KDE plot taking into account boundary conditions.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_kde-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_kde-Tuple"><code>ArviZPythonPlots.plot_kde</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">1D or 2D KDE plot taking into account boundary conditions.
 
 Parameters
 ----------
@@ -1888,7 +1888,7 @@ Plot 2d smooth KDE
     &gt;&gt;&gt; az.plot_kde(mu_posterior, values2=tau_posterior, contour=False)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_khat-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Pareto tail indices :math:`\hat{k}` for diagnosing convergence in PSIS-LOO.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_khat-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_khat-Tuple"><code>ArviZPythonPlots.plot_khat</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Pareto tail indices :math:`\hat{k}` for diagnosing convergence in PSIS-LOO.
 
 Parameters
 ----------
@@ -2004,7 +2004,7 @@ References
     Research, 25(72):1-58.
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_lm-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_lm-Tuple"><code>ArviZPythonPlots.plot_lm</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Posterior predictive and mean plots for regression-like data.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_lm-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_lm-Tuple"><code>ArviZPythonPlots.plot_lm</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Posterior predictive and mean plots for regression-like data.
 
 Parameters
 ----------
@@ -2122,7 +2122,7 @@ Plot regression data for multi-dimensional y using plot_dim
     ... )
     &gt;&gt;&gt; az.plot_lm(idata=data, y="y", plot_dim="dim1")
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_loo_pit-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Leave-One-Out (LOO) probability integral transformation (PIT) predictive checks.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_loo_pit-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_loo_pit-Tuple"><code>ArviZPythonPlots.plot_loo_pit</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Leave-One-Out (LOO) probability integral transformation (PIT) predictive checks.
 
 Parameters
 ----------
@@ -2228,7 +2228,7 @@ samples do not follow the same distribution.
     &gt;&gt;&gt; az.plot_loo_pit(idata=idata, y="y", ecdf=True)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_mcse-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot quantile or local Monte Carlo Standard Error.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_mcse-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_mcse-Tuple"><code>ArviZPythonPlots.plot_mcse</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot quantile or local Monte Carlo Standard Error.
 
 Parameters
 ----------
@@ -2321,7 +2321,7 @@ Plot quantile Monte Carlo Standard Error.
     ... )
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_pair-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_pair-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_pair-Tuple"><code>ArviZPythonPlots.plot_pair</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">
 Plot a scatter, kde and/or hexbin matrix with (optional) marginals on the diagonal.
 
 Parameters
@@ -2451,7 +2451,7 @@ Pair plot showing divergences and select variables with regular expressions
     ...             divergences=True,
     ...             textsize=18)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_parallel-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_parallel-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_parallel-Tuple"><code>ArviZPythonPlots.plot_parallel</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">
 Plot parallel coordinates plot showing posterior points with and without divergences.
 
 Described by https://arxiv.org/abs/1709.01449
@@ -2552,7 +2552,7 @@ Plot parallel plot with rank
     &gt;&gt;&gt; ax = az.plot_parallel(data, var_names=["theta", "tau", "mu"], norm_method="rank")
     &gt;&gt;&gt; ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_posterior-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Posterior densities in the style of John K. Kruschke's book.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_posterior-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_posterior-Tuple"><code>ArviZPythonPlots.plot_posterior</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot Posterior densities in the style of John K. Kruschke's book.
 
 Parameters
 ----------
@@ -2738,7 +2738,7 @@ Change size of highest density interval
 
     &gt;&gt;&gt; az.plot_posterior(data, var_names=['mu'], hdi_prob=.75)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_ppc-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_ppc-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_ppc-Tuple"><code>ArviZPythonPlots.plot_ppc</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">
 Plot for posterior/prior predictive checks.
 
 Parameters
@@ -2911,7 +2911,7 @@ Plot random posterior predictive sub-samples.
 
     &gt;&gt;&gt; az.plot_ppc(data, num_pp_samples=30, random_seed=7)
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_rank-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot rank order statistics of chains.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_rank-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_rank-Tuple"><code>ArviZPythonPlots.plot_rank</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot rank order statistics of chains.
 
 From the paper: Rank plots are histograms of the ranked posterior draws (ranked over all
 chains) plotted separately for each chain.
@@ -3038,7 +3038,7 @@ Change the aesthetics using kwargs
     &gt;&gt;&gt; az.plot_rank(noncentered_data, var_names="mu", kind="vlines",
     &gt;&gt;&gt;              vlines_kwargs={'lw':0}, marker_vlines_kwargs={'lw':3});
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_separation-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Separation plot for binary outcome models.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_separation-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_separation-Tuple"><code>ArviZPythonPlots.plot_separation</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Separation plot for binary outcome models.
 
 Model predictions are sorted and plotted using a color code according to
 the observed data.
@@ -3109,7 +3109,7 @@ Separation plot for a logistic regression model.
     &gt;&gt;&gt; az.plot_separation(idata=idata, y='outcome', y_hat='outcome', figsize=(8, 1))
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_trace-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot distribution (histogram or kernel density estimates) and sampled values or rank plot.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_trace-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_trace-Tuple"><code>ArviZPythonPlots.plot_trace</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot distribution (histogram or kernel density estimates) and sampled values or rank plot.
 
 If `divergences` data is available in `sample_stats`, will plot the location of divergences as
 dashed vertical lines.
@@ -3240,7 +3240,7 @@ Plot reference lines against distribution and trace
     &gt;&gt;&gt; az.plot_trace(data, var_names=('theta_t', 'theta'), coords=coords, lines=lines)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_violin-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot posterior of traces as violin plot.
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article><article><details class="docstring" open="true"><summary id="ArviZPythonPlots.plot_violin-Tuple"><a class="docstring-binding" href="#ArviZPythonPlots.plot_violin-Tuple"><code>ArviZPythonPlots.plot_violin</code></a> — <span class="docstring-category">Method</span></summary><section><div><pre><code class="language-julia hljs">Plot posterior of traces as violin plot.
 
 Notes
 -----
@@ -3342,4 +3342,4 @@ Show a default violin plot
     &gt;&gt;&gt; az.plot_violin(data)
 
 
-</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/12ae8579f6746f7331afc4d1dffaf9417c4b3ecc/src/plots.jl#L3" target="_blank">source</a></section></details></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../rcparams/">« rcParams</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Friday 19 June 2026 11:50">Friday 19 June 2026</span>. Using Julia version 1.12.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
+</code></pre></div><a class="docs-sourcelink" href="https://github.com/arviz-devs/ArviZPythonPlots.jl/blob/da79cead55b5831bd003e33e4e67cd1b24164cfb/src/plots.jl#L3" target="_blank">source</a></section></details></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../rcparams/">« rcParams</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label></p><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div><p></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.17.0 on <span class="colophon-date" title="Monday 22 June 2026 12:01">Monday 22 June 2026</span>. Using Julia version 1.12.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></HTML>
